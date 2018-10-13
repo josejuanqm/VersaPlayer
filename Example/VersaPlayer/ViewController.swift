@@ -7,12 +7,20 @@
 //
 
 import UIKit
+import VersaPlayer
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var player: VersaPlayer!
+    @IBOutlet weak var controls: VersaPlayerControls!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        player.use(controls: controls)
+        if let url = URL.init(string: "http://rmcdn.2mdn.net/Demo/html5/output.mp4") {
+            let item = VPlayerItem(url: url)
+            player.set(item: item)
+        }
     }
 
     override func didReceiveMemoryWarning() {

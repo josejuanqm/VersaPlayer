@@ -28,11 +28,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2D60F411AB935399C0F611DD /* VersaPlayer.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = VersaPlayer.podspec; path = ../VersaPlayer.podspec; sourceTree = "<group>"; };
+		2D60F411AB935399C0F611DD /* VersaPlayer.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = VersaPlayer.podspec; path = ../VersaPlayer.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		369F345F91B7DC6B2333C646 /* Pods-VersaPlayer_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VersaPlayer_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VersaPlayer_Example/Pods-VersaPlayer_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		453B4BE7E99AB25D841F09CF /* Pods_VersaPlayer_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VersaPlayer_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B755516747595732EABC8E6 /* Pods-VersaPlayer_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VersaPlayer_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VersaPlayer_Tests/Pods-VersaPlayer_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		603FB9A37D69854403A5068B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		603FB9A37D69854403A5068B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* VersaPlayer_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VersaPlayer_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,7 +43,7 @@
 		607FACE51AFB9204008FA782 /* VersaPlayer_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VersaPlayer_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		61987D76827F0100052BC590 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		61987D76827F0100052BC590 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		650C1A5472FC2CD6B7B77A5F /* Pods-VersaPlayer_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VersaPlayer_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-VersaPlayer_Example/Pods-VersaPlayer_Example.release.xcconfig"; sourceTree = "<group>"; };
 		CF49618A893807644469A189 /* Pods_VersaPlayer_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VersaPlayer_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E37CB3BED5A0A9C993284B37 /* Pods-VersaPlayer_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VersaPlayer_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VersaPlayer_Tests/Pods-VersaPlayer_Tests.debug.xcconfig"; sourceTree = "<group>"; };
