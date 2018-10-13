@@ -1,9 +1,13 @@
-# VersaPlayer
-
 [![CI Status](https://img.shields.io/travis/jose.juan.qm@gmail.com/VersaPlayer.svg?style=flat)](https://travis-ci.org/jose.juan.qm@gmail.com/VersaPlayer)
 [![Version](https://img.shields.io/cocoapods/v/VersaPlayer.svg?style=flat)](https://cocoapods.org/pods/VersaPlayer)
 [![License](https://img.shields.io/cocoapods/l/VersaPlayer.svg?style=flat)](https://cocoapods.org/pods/VersaPlayer)
 [![Platform](https://img.shields.io/cocoapods/p/VersaPlayer.svg?style=flat)](https://cocoapods.org/pods/VersaPlayer)
+
+<div>
+  <p align="center">
+    <img src="https://github.com/josejuanqm/VersaPlayer/blob/master/Image.png" />
+  </p>
+</div>
 
 ## Example
 
@@ -22,7 +26,7 @@ pod 'VersaPlayer'
 
 ## Author
 
-jose.juan.qm@gmail.com, jose.quintero@fox.com
+Jose Quintero - jose.juan.qm@gmail.com
 
 ## License
 
