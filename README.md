@@ -9,6 +9,31 @@
   </p>
 </div>
 
+<div>
+  <ol>
+    <li>
+      <a href="#example">Example</a>
+    </li>
+    <li>
+      <a href="#installation">Installation</a>
+    </li>
+    <li>
+      <a href="#usage">Usage</a>
+    </li>
+    <ol>
+      <li>
+        <a href="#basic-usage">Basic Usage</a>
+      </li>
+      <li>
+        <a href="#adding-controls">Adding Controls</a>
+      </li>
+    </ol>
+    <li>
+      <a href="#extensions">Extensions</a>
+    </li>
+  </ol>
+</div>
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
