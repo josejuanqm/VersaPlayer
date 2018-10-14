@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         player.use(controls: controls)
+        player.use(controls: <#T##VersaPlayerControls#>)
         if let url = URL.init(string: "http://rmcdn.2mdn.net/Demo/html5/output.mp4") {
             let item = VPlayerItem(url: url)
             player.set(item: item)

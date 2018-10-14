@@ -11,7 +11,10 @@ import AVKit
 
 open class VPlayerLayer: CALayer {
     
+    /// Player Layer to be used
     public var playerLayer: AVPlayerLayer!
+    
+    /// VersaPlayer instance being rendered
     public var handler: VersaPlayer!
     
     override public init(layer: Any) {

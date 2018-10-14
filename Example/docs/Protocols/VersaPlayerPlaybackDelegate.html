@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>VersaPlayerPlaybackDelegate Protocol Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Protocol/VersaPlayerPlaybackDelegate" class="dashAnchor"></a>
+    <a title="VersaPlayerPlaybackDelegate Protocol Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (100% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        VersaPlayerPlaybackDelegate Protocol Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/VPlayer.html">VPlayer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/VPlayer/VPlayerNotificationInfoKey.html">– VPlayerNotificationInfoKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/VPlayer/VPlayerNotificationName.html">– VPlayerNotificationName</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/c:@M@VersaPlayer_Example@objc(cs)VPlayerItem">VPlayerItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/VPlayerLayer.html">VPlayerLayer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/VPlayerRenderingView.html">VPlayerRenderingView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/VersaPlayer.html">VersaPlayer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/VersaPlayerControls.html">VersaPlayerControls</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/VersaPlayerControlsBehaviour.html">VersaPlayerControlsBehaviour</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/VersaPlayerControlsCoordinator.html">VersaPlayerControlsCoordinator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/VersaPlayerExtension.html">VersaPlayerExtension</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/VersaPlayerGestureRecieverView.html">VersaPlayerGestureRecieverView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/VersaSeekbarSlider.html">VersaSeekbarSlider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/VersaStatefulButton.html">VersaStatefulButton</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/VersaTimeLabel.html">VersaTimeLabel</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/VersaPlayerGestureRecieverViewDelegate.html">VersaPlayerGestureRecieverViewDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/VersaPlayerPlaybackDelegate.html">VersaPlayerPlaybackDelegate</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>VersaPlayerPlaybackDelegate</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">VersaPlayerPlaybackDelegate</span></code></pre>
+
+                </div>
+              </div>
+            
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19VersaPlayer_Example0aB16PlaybackDelegateP13timeDidChangeyAA7VPlayerC03forB0_SC6CMTimeV2totF"></a>
+                    <a name="//apple_ref/swift/Method/timeDidChange(forPlayer:to:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19VersaPlayer_Example0aB16PlaybackDelegateP13timeDidChangeyAA7VPlayerC03forB0_SC6CMTimeV2totF">timeDidChange(forPlayer:to:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Notifies when playback time changes</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">timeDidChange</span><span class="p">(</span><span class="n">forPlayer</span> <span class="nv">player</span><span class="p">:</span> <span class="kt"><a href="../Classes/VPlayer.html">VPlayer</a></span><span class="p">,</span> <span class="n">to</span> <span class="nv">time</span><span class="p">:</span> <span class="kt">CMTime</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>player</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>VPlayer being used</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>time</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Current time</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19VersaPlayer_Example0aB16PlaybackDelegateP19playbackShouldBeginSbAA7VPlayerC03forB0_tF"></a>
+                    <a name="//apple_ref/swift/Method/playbackShouldBegin(forPlayer:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19VersaPlayer_Example0aB16PlaybackDelegateP19playbackShouldBeginSbAA7VPlayerC03forB0_tF">playbackShouldBegin(forPlayer:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Whether if playback should begin on specified player</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">playbackShouldBegin</span><span class="p">(</span><span class="n">forPlayer</span> <span class="nv">player</span><span class="p">:</span> <span class="kt"><a href="../Classes/VPlayer.html">VPlayer</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>player</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>VPlayer being used</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Boolean to validate if should play</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19VersaPlayer_Example0aB16PlaybackDelegateP15playbackDidJumpyAA7VPlayerC03forB0_tF"></a>
+                    <a name="//apple_ref/swift/Method/playbackDidJump(forPlayer:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19VersaPlayer_Example0aB16PlaybackDelegateP15playbackDidJumpyAA7VPlayerC03forB0_tF">playbackDidJump(forPlayer:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Whether if playback is skipping frames</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">playbackDidJump</span><span class="p">(</span><span class="n">forPlayer</span> <span class="nv">player</span><span class="p">:</span> <span class="kt"><a href="../Classes/VPlayer.html">VPlayer</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>player</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>VPlayer being used</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19VersaPlayer_Example0aB16PlaybackDelegateP17playbackWillBeginyAA7VPlayerC03forB0_tF"></a>
+                    <a name="//apple_ref/swift/Method/playbackWillBegin(forPlayer:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19VersaPlayer_Example0aB16PlaybackDelegateP17playbackWillBeginyAA7VPlayerC03forB0_tF">playbackWillBegin(forPlayer:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Notifies when player will begin playback</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">playbackWillBegin</span><span class="p">(</span><span class="n">forPlayer</span> <span class="nv">player</span><span class="p">:</span> <span class="kt"><a href="../Classes/VPlayer.html">VPlayer</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>player</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>VPlayer being used</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19VersaPlayer_Example0aB16PlaybackDelegateP13playbackReadyyAA7VPlayerC03forB0_tF"></a>
+                    <a name="//apple_ref/swift/Method/playbackReady(forPlayer:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19VersaPlayer_Example0aB16PlaybackDelegateP13playbackReadyyAA7VPlayerC03forB0_tF">playbackReady(forPlayer:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Notifies when playback is ready to play</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">playbackReady</span><span class="p">(</span><span class="n">forPlayer</span> <span class="nv">player</span><span class="p">:</span> <span class="kt"><a href="../Classes/VPlayer.html">VPlayer</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>player</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>VPlayer being used</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19VersaPlayer_Example0aB16PlaybackDelegateP16playbackDidBeginyAA7VPlayerC03forB0_tF"></a>
+                    <a name="//apple_ref/swift/Method/playbackDidBegin(forPlayer:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19VersaPlayer_Example0aB16PlaybackDelegateP16playbackDidBeginyAA7VPlayerC03forB0_tF">playbackDidBegin(forPlayer:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Notifies when playback did begin</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">playbackDidBegin</span><span class="p">(</span><span class="n">forPlayer</span> <span class="nv">player</span><span class="p">:</span> <span class="kt"><a href="../Classes/VPlayer.html">VPlayer</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>player</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>VPlayer being used</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19VersaPlayer_Example0aB16PlaybackDelegateP14playbackDidEndyAA7VPlayerC03forB0_tF"></a>
+                    <a name="//apple_ref/swift/Method/playbackDidEnd(forPlayer:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19VersaPlayer_Example0aB16PlaybackDelegateP14playbackDidEndyAA7VPlayerC03forB0_tF">playbackDidEnd(forPlayer:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Notifies when player ended playback</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">playbackDidEnd</span><span class="p">(</span><span class="n">forPlayer</span> <span class="nv">player</span><span class="p">:</span> <span class="kt"><a href="../Classes/VPlayer.html">VPlayer</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>player</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>VPlayer being used</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19VersaPlayer_Example0aB16PlaybackDelegateP20playerDidFailToStartyAA7VPlayerC03forB0_tF"></a>
+                    <a name="//apple_ref/swift/Method/playerDidFailToStart(forPlayer:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19VersaPlayer_Example0aB16PlaybackDelegateP20playerDidFailToStartyAA7VPlayerC03forB0_tF">playerDidFailToStart(forPlayer:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Notifies when player failed to start playback</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">playerDidFailToStart</span><span class="p">(</span><span class="n">forPlayer</span> <span class="nv">player</span><span class="p">:</span> <span class="kt"><a href="../Classes/VPlayer.html">VPlayer</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>player</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>VPlayer being used</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19VersaPlayer_Example0aB16PlaybackDelegateP14startBufferingyAA7VPlayerC03forB0_tF"></a>
+                    <a name="//apple_ref/swift/Method/startBuffering(forPlayer:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19VersaPlayer_Example0aB16PlaybackDelegateP14startBufferingyAA7VPlayerC03forB0_tF">startBuffering(forPlayer:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Notifies when player starts buffering</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">startBuffering</span><span class="p">(</span><span class="nv">forPlayer</span><span class="p">:</span> <span class="kt"><a href="../Classes/VPlayer.html">VPlayer</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>player</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>VPlayer being used</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:19VersaPlayer_Example0aB16PlaybackDelegateP12endBufferingyAA7VPlayerC03forB0_tF"></a>
+                    <a name="//apple_ref/swift/Method/endBuffering(forPlayer:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:19VersaPlayer_Example0aB16PlaybackDelegateP12endBufferingyAA7VPlayerC03forB0_tF">endBuffering(forPlayer:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Notifies when player ends buffering</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">endBuffering</span><span class="p">(</span><span class="nv">forPlayer</span><span class="p">:</span> <span class="kt"><a href="../Classes/VPlayer.html">VPlayer</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>player</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>VPlayer being used</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2018-10-13)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

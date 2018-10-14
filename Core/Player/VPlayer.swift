@@ -10,10 +10,12 @@ import AVFoundation
 
 open class VPlayer: AVPlayer {
     
+    /// Notification key to extract info
     public enum VPlayerNotificationInfoKey: String {
         case time = "VERSA_PLAYER_TIME"
     }
     
+    /// Notification name to post
     public enum VPlayerNotificationName: String {
         case assetLoaded = "VERSA_ASSET_ADDED"
         case timeChanged = "VERSA_TIME_CHANGED"
@@ -24,12 +26,16 @@ open class VPlayer: AVPlayer {
         case endBuffering = "VERSA_PLAYER_END_BUFFERING"
         case didEnd = "VERSA_PLAYER_END_PLAYING"
         
+        /// Notification name representation
         public var notification: NSNotification.Name {
             return NSNotification.Name.init(self.rawValue)
         }
     }
     
+    /// VersaPlayer instance
     public var handler: VersaPlayer!
+    
+    /// Whether player is buffering
     public var isBuffering: Bool = false
     
     deinit {
@@ -37,6 +43,7 @@ open class VPlayer: AVPlayer {
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: self)
     }
     
+    /// Play content
     override open func play() {
         handler.playbackDelegate?.playbackWillBegin(forPlayer: self)
         NotificationCenter.default.post(name: VPlayer.VPlayerNotificationName.willPlay.notification, object: self, userInfo: nil)
@@ -48,11 +55,16 @@ open class VPlayer: AVPlayer {
         handler.playbackDelegate?.playbackDidBegin(forPlayer: self)
     }
     
+    /// Pause content
     override open func pause() {
         NotificationCenter.default.post(name: VPlayer.VPlayerNotificationName.pause.notification, object: self, userInfo: nil)
         super.pause()
     }
     
+    /// Replace current item with a new one
+    ///
+    /// - Parameters:
+    ///     - item: AVPlayer item instance to be added
     override open func replaceCurrentItem(with item: AVPlayerItem?) {
         super.replaceCurrentItem(with: item)
         NotificationCenter.default.post(name: VPlayer.VPlayerNotificationName.assetLoaded.notification, object: self, userInfo: nil)
@@ -67,6 +79,9 @@ open class VPlayer: AVPlayer {
 
 extension VPlayer {
     
+    /// Start time
+    ///
+    /// - Returns: Player's current item start time as CMTime
     public func startTime() -> CMTime {
         guard let item = currentItem else {
             return CMTime(seconds: 0, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
@@ -79,6 +94,9 @@ extension VPlayer {
         }
     }
     
+    /// End time
+    ///
+    /// - Returns: Player's current item end time as CMTime
     public func endTime() -> CMTime {
         guard let item = currentItem else {
             return CMTime(seconds: 0, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
@@ -95,6 +113,7 @@ extension VPlayer {
         }
     }
     
+    /// Prepare players playback delegate observers
     public func preparePlayerPlaybackDelegate() {
         NotificationCenter.default.addObserver(forName: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: self, queue: OperationQueue.main) { (notification) in
             NotificationCenter.default.post(name: VPlayer.VPlayerNotificationName.didEnd.notification, object: self, userInfo: nil)
@@ -116,6 +135,7 @@ extension VPlayer {
         addObserver(self, forKeyPath: "status", options: NSKeyValueObservingOptions.new, context: nil)
     }
     
+    /// Value observer
     override open func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if let obj = object as? VPlayer, obj == self {
             if keyPath == "status" {

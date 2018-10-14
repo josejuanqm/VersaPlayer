@@ -11,9 +11,16 @@ import AVKit
 
 open class VPlayerRenderingView: UIView {
     
+    /// VPlayerLayer instance used to render player content
     public var renderingLayer: VPlayerLayer!
+    
+    /// VersaPlayer instance being rendered by renderingLayer
     public var player: VersaPlayer!
     
+    /// Constructor
+    ///
+    /// - Parameters:
+    ///     - player: VersaPlayer instance to render.
     public init(with player: VersaPlayer) {
         super.init(frame: CGRect.zero)
         self.player = player

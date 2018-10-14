@@ -10,11 +10,22 @@ import UIKit
 
 open class VersaPlayerGestureRecieverView: UIView {
 
+    /// VersaPlayerGestureRecieverViewDelegate instance
     public var delegate: VersaPlayerGestureRecieverViewDelegate? = nil
+    
+    /// UITapGestureRecognizer
     public var tapGesture: UITapGestureRecognizer? = nil
+    
+    /// UIPanGestureRecognizer
     public var panGesture: UIPanGestureRecognizer? = nil
+    
+    /// UIPinchGestureRecognizer
     public var pinchGesture: UIPinchGestureRecognizer? = nil
+    
+    /// Whether or not reciever view is ready
     public var ready: Bool = false
+    
+    /// Pan gesture initial point
     public var panGestureInitialPoint: CGPoint = CGPoint.zero
     
     override open func didMoveToSuperview() {
@@ -31,6 +42,7 @@ open class VersaPlayerGestureRecieverView: UIView {
         }
     }
     
+    /// Prepare the view gesture recognizers
     public func prepare() {
         ready = true
         isUserInteractionEnabled = true
@@ -44,6 +56,7 @@ open class VersaPlayerGestureRecieverView: UIView {
         addGestureRecognizer(panGesture!)
         addGestureRecognizer(pinchGesture!)
     }
+    
     
     @objc public func tapHandler(with sender: UITapGestureRecognizer) {
         delegate?.didTap(at: sender.location(in: self))

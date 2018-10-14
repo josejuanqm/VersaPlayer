@@ -11,8 +11,13 @@ import CoreMedia
 
 open class VersaPlayerControlsCoordinator: UIView, VersaPlayerGestureRecieverViewDelegate {
 
+    /// VersaPlayer instance being used
     var player: VersaPlayer!
+    
+    /// VersaPlayerControls instance being used
     var controls: VersaPlayerControls!
+    
+    /// VersaPlayerGestureRecieverView instance being used
     var gestureReciever: VersaPlayerGestureRecieverView!
     
     override open func didMoveToSuperview() {
@@ -42,10 +47,18 @@ open class VersaPlayerControlsCoordinator: UIView, VersaPlayerGestureRecieverVie
         }
     }
     
+    /// Notifies when pinch was recognized
+    ///
+    /// - Parameters:
+    ///     - scale: CGFloat value
     public func didPinch(with scale: CGFloat) {
         player.renderingView.renderingLayer.playerLayer.videoGravity = player.renderingView.renderingLayer.playerLayer.videoGravity == .resizeAspect ? .resizeAspectFill : .resizeAspect
     }
     
+    /// Notifies when tap was recognized
+    ///
+    /// - Parameters:
+    ///     - point: CGPoint at which tap was recognized
     public func didTap(at point: CGPoint) {
         if controls.behaviour.showingControls {
             controls.behaviour.hide()
@@ -54,6 +67,11 @@ open class VersaPlayerControlsCoordinator: UIView, VersaPlayerGestureRecieverVie
         }
     }
     
+    /// Notifies when pan was recognized
+    ///
+    /// - Parameters:
+    ///     - translation: translation of pan in CGPoint representation
+    ///     - at: initial point recognized
     public func didPan(with translation: CGPoint, initially at: CGPoint) {
         let percentageTranslation: Double = Double(translation.x / gestureReciever.bounds.width)
         player.player.seek(to:

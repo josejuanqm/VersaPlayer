@@ -12,25 +12,53 @@ import AVKit
 
 open class VersaPlayerControls: UIView {
     
+    /// VersaPlayer intance being controlled
     public var handler: VersaPlayer!
+    
+    /// VersaPlayerControlsBehaviour being used to validate ui
     public var behaviour: VersaPlayerControlsBehaviour!
+    
+    /// VersaPlayerControlsCoordinator instance
     public var controlsCoordinator: VersaPlayerControlsCoordinator!
+    
+    /// VersaStatefulButton instance to represent the play/pause button
     @IBOutlet public weak var playPauseButton: VersaStatefulButton? = nil
+    
+    /// VersaStatefulButton instance to represent the fullscreen toggle button
     @IBOutlet public weak var fullscreenButton: VersaStatefulButton? = nil
+    
+    /// VersaStatefulButton instance to represent the PIP button
     @IBOutlet public weak var pipButton: VersaStatefulButton? = nil
+    
+    /// VersaStatefulButton instance to represent the rewind button
     @IBOutlet public weak var rewindButton: VersaStatefulButton? = nil
+    
+    /// VersaStatefulButton instance to represent the forward button
     @IBOutlet public weak var forwardButton: VersaStatefulButton? = nil
+    
+    /// VersaStatefulButton instance to represent the skip forward button
     @IBOutlet public weak var skipForwardButton: VersaStatefulButton? = nil
+    
+    /// VersaStatefulButton instance to represent the skip backward button
     @IBOutlet public weak var skipBackwardButton: VersaStatefulButton? = nil
+    
+    /// VersaSeekbarSlider instance to represent the seekbar slider
     @IBOutlet public weak var seekbarSlider: VersaSeekbarSlider? = nil
+    
+    /// VersaTimeLabel instance to represent the current time label
     @IBOutlet public weak var currentTimeLabel: VersaTimeLabel? = nil
+    
+    /// VersaTimeLabel instance to represent the total time label
     @IBOutlet public weak var totalTimeLabel: VersaTimeLabel? = nil
+    
+    /// UIView to be shown when buffering
     @IBOutlet public weak var bufferingView: UIView? = nil
     
     private var wasPlayingBeforeRewinding: Bool = false
     private var wasPlayingBeforeForwarding: Bool = false
     private var wasPlayingBeforeSeeking: Bool = false
     
+    /// Skip size in seconds to be used for skipping forward or backwards
     public var skipSize: Double = 30
     
     deinit {
@@ -56,6 +84,10 @@ open class VersaPlayerControls: UIView {
         }
     }
     
+    /// Notifies when time changes
+    ///
+    /// - Parameters:
+    ///     - time: CMTime representation of the current playback time
     public func timeDidChange(toTime time: CMTime) {
         currentTimeLabel?.update(toTime: time.seconds)
         totalTimeLabel?.update(toTime: handler.player.endTime().seconds)
@@ -68,10 +100,12 @@ open class VersaPlayerControls: UIView {
         }
     }
     
+    /// Remove coordinator from player
     public func removeFromPlayer() {
         controlsCoordinator.removeFromSuperview()
     }
     
+    /// Prepare controls targets and notification listeners
     public func prepare() {
         layout()
         
@@ -102,6 +136,7 @@ open class VersaPlayerControls: UIView {
         prepareNotificationListener()
     }
     
+    /// Layout in parent view
     public func layout() {
         translatesAutoresizingMaskIntoConstraints = false
         if let parent = superview {
@@ -112,6 +147,7 @@ open class VersaPlayerControls: UIView {
         }
     }
     
+    /// Prepares the notification observers/listeners
     public func prepareNotificationListener() {
         NotificationCenter.default.addObserver(forName: VPlayer.VPlayerNotificationName.timeChanged.notification, object: nil, queue: OperationQueue.main) { (notification) in
             if let time = notification.userInfo?[VPlayer.VPlayerNotificationInfoKey.time.rawValue] as? CMTime {
@@ -135,30 +171,36 @@ open class VersaPlayerControls: UIView {
         }
     }
     
+    /// Prepare the seekbar values
     public func prepareSeekbar() {
         seekbarSlider?.value = Float(handler.player.currentTime().seconds)
         seekbarSlider?.minimumValue = Float(handler.player.startTime().seconds)
         seekbarSlider?.maximumValue = Float(handler.player.endTime().seconds)
     }
     
+    /// Show buffering view
     public func showBuffering() {
         bufferingView?.isHidden = false
     }
     
+    /// Hide buffering view
     public func hideBuffering() {
         bufferingView?.isHidden = true
     }
     
+    /// Skip forward (n) seconds in time
     @IBAction public func skipForward() {
         let time = handler.player.currentTime() + CMTime(seconds: skipSize, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
         handler.player.seek(to: time)
     }
     
+    /// Skip backward (n) seconds in time
     @IBAction public func skipBackward() {
         let time = handler.player.currentTime() - CMTime(seconds: skipSize, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
         handler.player.seek(to: time)
     }
     
+    /// End seeking
     @IBAction public func seekingEnd() {
         handler.isSeeking = false
         if wasPlayingBeforeSeeking {
@@ -166,12 +208,17 @@ open class VersaPlayerControls: UIView {
         }
     }
     
+    /// Start Seeking
     @IBAction public func seekingStart() {
         wasPlayingBeforeSeeking = handler.isPlaying
         handler.isSeeking = true
         handler.pause()
     }
     
+    /// Playhead changed in UISlider
+    ///
+    /// - Parameters:
+    ///     - sender: UISlider that updated
     @IBAction public func playheadChanged(with sender: UISlider) {
         let value = Double(sender.value)
         let time = CMTime(seconds: value, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
@@ -179,15 +226,18 @@ open class VersaPlayerControls: UIView {
         behaviour.update(with: time.seconds)
     }
     
+    /// Toggle PIP mode
     @IBAction public func togglePip() {
         handler.setNativePip(enabled: !handler.isPipModeEnabled)
     }
     
+    /// Toggle fullscreen mode
     @IBAction public func toggleFullscreen() {
         fullscreenButton?.set(active: !handler.isFullscreenModeEnabled)
         handler.setFullscreen(enabled: !handler.isFullscreenModeEnabled)
     }
     
+    /// Toggle playback
     @IBAction public func togglePlayback() {
         if handler.isRewinding || handler.isForwarding {
             handler.player.rate = 1
@@ -205,6 +255,7 @@ open class VersaPlayerControls: UIView {
         }
     }
     
+    /// Toggle rewind
     @IBAction public func rewindToggle() {
         if handler.player.currentItem?.canPlayFastReverse ?? false {
             if handler.isRewinding {
@@ -227,6 +278,7 @@ open class VersaPlayerControls: UIView {
         }
     }
     
+    /// Forward toggle
     @IBAction public func forwardToggle() {
         if handler.player.currentItem?.canPlayFastForward ?? false {
             if handler.isForwarding {
