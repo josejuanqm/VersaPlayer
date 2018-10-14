@@ -51,6 +51,19 @@ To add controls for your player use the VersaPlayerControls class, which comes p
   </p>
 </div>
 
+## Extensions
+
+Versa is aimed to be versatile, and that's why it comes with an extensions feature, that lets you customize any aspect of the player by inheriting from VersaPlayerExtension.
+
+This class comes with a player attribute that points to the player instance from which is being used.
+To add an extension use the add(extension ext:) method found in https://josejuanqm.github.io/Libraries-Documentation/VersaPlayerCore/Classes/VersaPlayer.html.
+
+Here are some extensions for VersaPlayer that may be useful for you.
+
+[AirPlay Extension](https://github.com/josejuanqm/VersaPlayerAirplayExtension)
+[Ads Extension](https://github.com/josejuanqm/VersaPlayerAdsExtension)
+[Overlay Content Extension](https://github.com/josejuanqm/VersaPlayerOverlayContentExtension)
+
 ## Documentation
 
 Full documentation avilable https://josejuanqm.github.io/Libraries-Documentation/VersaPlayerCore/
