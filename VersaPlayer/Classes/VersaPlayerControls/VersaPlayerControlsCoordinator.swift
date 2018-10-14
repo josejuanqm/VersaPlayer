@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreMedia
+import AVFoundation
 
 open class VersaPlayerControlsCoordinator: UIView, VersaPlayerGestureRecieverViewDelegate {
 
@@ -52,7 +53,11 @@ open class VersaPlayerControlsCoordinator: UIView, VersaPlayerGestureRecieverVie
     /// - Parameters:
     ///     - scale: CGFloat value
     public func didPinch(with scale: CGFloat) {
-        player.renderingView.renderingLayer.playerLayer.videoGravity = player.renderingView.renderingLayer.playerLayer.videoGravity == .resizeAspect ? .resizeAspectFill : .resizeAspect
+        if player.renderingView.renderingLayer.playerLayer.videoGravity == AVLayerVideoGravity.resizeAspect {
+            player.renderingView.renderingLayer.playerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        }else {
+            player.renderingView.renderingLayer.playerLayer.videoGravity = AVLayerVideoGravity.resizeAspect
+        }
     }
     
     /// Notifies when tap was recognized

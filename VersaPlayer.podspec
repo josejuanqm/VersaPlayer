@@ -9,34 +9,17 @@
 Pod::Spec.new do |s|
   s.name             = 'VersaPlayer'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of VersaPlayer.'
+  s.summary          = 'Versatile AVPlayer implementation for iOS.'
 
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
+  s.description      = 'Versatile AVPlayer implementation for iOS.'
 
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
-
-  s.homepage         = 'https://github.com/jose.juan.qm@gmail.com/VersaPlayer'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.homepage         = 'https://github.com/josejuanqm/VersaPlayer'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'jose.juan.qm@gmail.com' => 'jose.quintero@fox.com' }
-  s.source           = { :git => 'https://github.com/jose.juan.qm@gmail.com/VersaPlayer.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.author           = { 'Jose Quintero' => 'jose.juan.qm@gmail.com' }
+  s.source           = { :git => 'https://github.com/josejuanqm/VersaPlayer.git', :tag => s.version.to_s }
+  s.social_media_url = 'https://twitter.com/josejuanqm'
 
   s.ios.deployment_target = '9.0'
-
+  s.swift_version = '4'
   s.source_files = 'VersaPlayer/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'VersaPlayer' => ['VersaPlayer/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end

@@ -12,6 +12,22 @@
 		0A1A3DC52B83AA8A153A008710FCBFFA /* NBSMockedApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D1E103702ABBD58F315C182A4866454 /* NBSMockedApplication.m */; };
 		0A2CA8B0DD7E300ABFCF1956E6B58248 /* Nimble.h in Headers */ = {isa = PBXBuildFile; fileRef = 40BD6C92C04852276647CF58AD53276A /* Nimble.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0A6B243CA8A33748F5641E813C8F7827 /* NSBundle+CurrentTestBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB39C57AE03999ABF85A055EC616AD8 /* NSBundle+CurrentTestBundle.swift */; };
+		1192B0212172F09B0054CD0F /* VPlayerLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1192B00B2172F09A0054CD0F /* VPlayerLayer.swift */; };
+		1192B0222172F09B0054CD0F /* VPlayerRenderingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1192B00C2172F09A0054CD0F /* VPlayerRenderingView.swift */; };
+		1192B0232172F09B0054CD0F /* VersaPlayerPlaybackDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1192B00E2172F09A0054CD0F /* VersaPlayerPlaybackDelegate.swift */; };
+		1192B0242172F09B0054CD0F /* VersaPlayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1192B00F2172F09A0054CD0F /* VersaPlayerExtension.swift */; };
+		1192B0252172F09B0054CD0F /* VPlayerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1192B0112172F09A0054CD0F /* VPlayerItem.swift */; };
+		1192B0262172F09B0054CD0F /* VPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1192B0122172F09A0054CD0F /* VPlayer.swift */; };
+		1192B0272172F09B0054CD0F /* VersaPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1192B0132172F09B0054CD0F /* VersaPlayer.swift */; };
+		1192B0282172F09B0054CD0F /* VersaPlayerControlsBehaviour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1192B0162172F09B0054CD0F /* VersaPlayerControlsBehaviour.swift */; };
+		1192B0292172F09B0054CD0F /* VersaPlayerGestureRecieverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1192B0172172F09B0054CD0F /* VersaPlayerGestureRecieverView.swift */; };
+		1192B02A2172F09B0054CD0F /* VersaPlayerGestureRecieverViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1192B0182172F09B0054CD0F /* VersaPlayerGestureRecieverViewDelegate.swift */; };
+		1192B02B2172F09B0054CD0F /* VersaPlayerControlsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1192B01A2172F09B0054CD0F /* VersaPlayerControlsExtension.swift */; };
+		1192B02C2172F09B0054CD0F /* VersaTimeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1192B01C2172F09B0054CD0F /* VersaTimeLabel.swift */; };
+		1192B02D2172F09B0054CD0F /* VersaStatefulButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1192B01D2172F09B0054CD0F /* VersaStatefulButton.swift */; };
+		1192B02E2172F09B0054CD0F /* VersaSeekbarSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1192B01E2172F09B0054CD0F /* VersaSeekbarSlider.swift */; };
+		1192B02F2172F09B0054CD0F /* VersaPlayerControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1192B01F2172F09B0054CD0F /* VersaPlayerControls.swift */; };
+		1192B0302172F09B0054CD0F /* VersaPlayerControlsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1192B0202172F09B0054CD0F /* VersaPlayerControlsCoordinator.swift */; };
 		17C8EE7DF3F57C8F99EAF63C6E61EA99 /* FailureMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C764AC540C4E0FE3477F5F61F53C36 /* FailureMessage.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		18EA4E0D8B74F2B2BBF8F39B49F49BF9 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7C5092E7187F4E8B59FED95067511E3 /* XCTest.framework */; };
 		1A3E19B9F5EEB773C3BB61CA42F8BF62 /* DSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A7D15DFB7100207E56A080910768F3 /* DSL.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
@@ -85,22 +101,6 @@
 		7F9F60FE04108CD86032C0AB34BDB8D9 /* Quick-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A4535D1894CE234782E1C507F0CFD8 /* Quick-dummy.m */; };
 		7FC992F4BD0376ACB4F97F9180B0F0B5 /* FBSnapshotTestCase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC05FFCDBC43073BECB34E4AFEF85F02 /* FBSnapshotTestCase.framework */; };
 		8170866E2ACE0ACFBC6D90081354EC65 /* Stringers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44486D4DB989823442DC4F41407A9336 /* Stringers.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		839BC3742172943C00466EBE /* VersaPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839BC35C2172943C00466EBE /* VersaPlayer.swift */; };
-		839BC3752172943C00466EBE /* VersaSeekbarSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839BC35F2172943C00466EBE /* VersaSeekbarSlider.swift */; };
-		839BC3762172943C00466EBE /* VersaStatefulButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839BC3602172943C00466EBE /* VersaStatefulButton.swift */; };
-		839BC3772172943C00466EBE /* VersaTimeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839BC3612172943C00466EBE /* VersaTimeLabel.swift */; };
-		839BC3782172943C00466EBE /* VersaPlayerControlsBehaviour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839BC3632172943C00466EBE /* VersaPlayerControlsBehaviour.swift */; };
-		839BC3792172943C00466EBE /* VersaPlayerGestureRecieverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839BC3642172943C00466EBE /* VersaPlayerGestureRecieverView.swift */; };
-		839BC37A2172943C00466EBE /* VersaPlayerGestureRecieverViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839BC3652172943C00466EBE /* VersaPlayerGestureRecieverViewDelegate.swift */; };
-		839BC37B2172943C00466EBE /* VersaPlayerControlsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839BC3672172943C00466EBE /* VersaPlayerControlsExtension.swift */; };
-		839BC37C2172943C00466EBE /* VersaPlayerControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839BC3682172943C00466EBE /* VersaPlayerControls.swift */; };
-		839BC37D2172943C00466EBE /* VersaPlayerControlsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839BC3692172943C00466EBE /* VersaPlayerControlsCoordinator.swift */; };
-		839BC37E2172943C00466EBE /* VPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839BC36C2172943C00466EBE /* VPlayer.swift */; };
-		839BC37F2172943C00466EBE /* VPlayerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839BC36D2172943C00466EBE /* VPlayerItem.swift */; };
-		839BC3802172943C00466EBE /* VersaPlayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839BC36F2172943C00466EBE /* VersaPlayerExtension.swift */; };
-		839BC3812172943C00466EBE /* VersaPlayerPlaybackDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839BC3702172943C00466EBE /* VersaPlayerPlaybackDelegate.swift */; };
-		839BC3822172943C00466EBE /* VPlayerLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839BC3722172943C00466EBE /* VPlayerLayer.swift */; };
-		839BC3832172943C00466EBE /* VPlayerRenderingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839BC3732172943C00466EBE /* VPlayerRenderingView.swift */; };
 		83F120F5369F2777AFD80E10263B8511 /* NSString+C99ExtendedIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF3D1AECDF53E3723EF1CB7BEC461CC /* NSString+C99ExtendedIdentifier.swift */; };
 		8B55BD430033027AD5FF22D630DD9F62 /* DSL.m in Sources */ = {isa = PBXBuildFile; fileRef = EA23EE0A80D318077C28121C5AD51D0D /* DSL.m */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		8EFD06A0875CFF2C22FB34176AF802B0 /* QuickSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E8052367487C857440067EC33D18F05 /* QuickSpec.m */; };
@@ -256,6 +256,22 @@
 		10FEF86C1F99EECA85B6BD1DBBEB0C4B /* RaisesException.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RaisesException.swift; path = Sources/Nimble/Matchers/RaisesException.swift; sourceTree = "<group>"; };
 		11021259140D59C15B4E5E8A32774767 /* NimbleXCTestHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NimbleXCTestHandler.swift; path = Sources/Nimble/Adapters/NimbleXCTestHandler.swift; sourceTree = "<group>"; };
 		1176D15EB10164D6B728ABDCF64DF44F /* BeGreaterThanOrEqualTo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeGreaterThanOrEqualTo.swift; path = Sources/Nimble/Matchers/BeGreaterThanOrEqualTo.swift; sourceTree = "<group>"; };
+		1192B00B2172F09A0054CD0F /* VPlayerLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VPlayerLayer.swift; sourceTree = "<group>"; };
+		1192B00C2172F09A0054CD0F /* VPlayerRenderingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VPlayerRenderingView.swift; sourceTree = "<group>"; };
+		1192B00E2172F09A0054CD0F /* VersaPlayerPlaybackDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersaPlayerPlaybackDelegate.swift; sourceTree = "<group>"; };
+		1192B00F2172F09A0054CD0F /* VersaPlayerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersaPlayerExtension.swift; sourceTree = "<group>"; };
+		1192B0112172F09A0054CD0F /* VPlayerItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VPlayerItem.swift; sourceTree = "<group>"; };
+		1192B0122172F09A0054CD0F /* VPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VPlayer.swift; sourceTree = "<group>"; };
+		1192B0132172F09B0054CD0F /* VersaPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VersaPlayer.swift; path = VersaPlayer/Classes/VersaPlayer.swift; sourceTree = "<group>"; };
+		1192B0162172F09B0054CD0F /* VersaPlayerControlsBehaviour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersaPlayerControlsBehaviour.swift; sourceTree = "<group>"; };
+		1192B0172172F09B0054CD0F /* VersaPlayerGestureRecieverView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersaPlayerGestureRecieverView.swift; sourceTree = "<group>"; };
+		1192B0182172F09B0054CD0F /* VersaPlayerGestureRecieverViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersaPlayerGestureRecieverViewDelegate.swift; sourceTree = "<group>"; };
+		1192B01A2172F09B0054CD0F /* VersaPlayerControlsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersaPlayerControlsExtension.swift; sourceTree = "<group>"; };
+		1192B01C2172F09B0054CD0F /* VersaTimeLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersaTimeLabel.swift; sourceTree = "<group>"; };
+		1192B01D2172F09B0054CD0F /* VersaStatefulButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersaStatefulButton.swift; sourceTree = "<group>"; };
+		1192B01E2172F09B0054CD0F /* VersaSeekbarSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersaSeekbarSlider.swift; sourceTree = "<group>"; };
+		1192B01F2172F09B0054CD0F /* VersaPlayerControls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersaPlayerControls.swift; sourceTree = "<group>"; };
+		1192B0202172F09B0054CD0F /* VersaPlayerControlsCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersaPlayerControlsCoordinator.swift; sourceTree = "<group>"; };
 		119CEA0DA2B14DC2FAB627D9F42338F0 /* MatcherProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MatcherProtocols.swift; path = Sources/Nimble/Matchers/MatcherProtocols.swift; sourceTree = "<group>"; };
 		1335B873C56217DFC32AE983C03A7E63 /* ExpectationMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpectationMessage.swift; path = Sources/Nimble/ExpectationMessage.swift; sourceTree = "<group>"; };
 		13AF186DBC7A1387C1B58C1C9300B648 /* NMBObjCMatcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NMBObjCMatcher.swift; path = Sources/Nimble/Adapters/NMBObjCMatcher.swift; sourceTree = "<group>"; };
@@ -347,22 +363,6 @@
 		7BC564E996E6C465DCF698F0FF8EC860 /* FBSnapshotTestCase.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FBSnapshotTestCase.xcconfig; sourceTree = "<group>"; };
 		7D1E103702ABBD58F315C182A4866454 /* NBSMockedApplication.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NBSMockedApplication.m; path = DynamicType/NBSMockedApplication.m; sourceTree = "<group>"; };
 		83595D2F26E08822D3A946FBAF82F228 /* Pods-VersaPlayer_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-VersaPlayer_Example-resources.sh"; sourceTree = "<group>"; };
-		839BC35C2172943C00466EBE /* VersaPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersaPlayer.swift; sourceTree = "<group>"; };
-		839BC35F2172943C00466EBE /* VersaSeekbarSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersaSeekbarSlider.swift; sourceTree = "<group>"; };
-		839BC3602172943C00466EBE /* VersaStatefulButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersaStatefulButton.swift; sourceTree = "<group>"; };
-		839BC3612172943C00466EBE /* VersaTimeLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersaTimeLabel.swift; sourceTree = "<group>"; };
-		839BC3632172943C00466EBE /* VersaPlayerControlsBehaviour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersaPlayerControlsBehaviour.swift; sourceTree = "<group>"; };
-		839BC3642172943C00466EBE /* VersaPlayerGestureRecieverView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersaPlayerGestureRecieverView.swift; sourceTree = "<group>"; };
-		839BC3652172943C00466EBE /* VersaPlayerGestureRecieverViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersaPlayerGestureRecieverViewDelegate.swift; sourceTree = "<group>"; };
-		839BC3672172943C00466EBE /* VersaPlayerControlsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersaPlayerControlsExtension.swift; sourceTree = "<group>"; };
-		839BC3682172943C00466EBE /* VersaPlayerControls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersaPlayerControls.swift; sourceTree = "<group>"; };
-		839BC3692172943C00466EBE /* VersaPlayerControlsCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersaPlayerControlsCoordinator.swift; sourceTree = "<group>"; };
-		839BC36C2172943C00466EBE /* VPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VPlayer.swift; sourceTree = "<group>"; };
-		839BC36D2172943C00466EBE /* VPlayerItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VPlayerItem.swift; sourceTree = "<group>"; };
-		839BC36F2172943C00466EBE /* VersaPlayerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersaPlayerExtension.swift; sourceTree = "<group>"; };
-		839BC3702172943C00466EBE /* VersaPlayerPlaybackDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersaPlayerPlaybackDelegate.swift; sourceTree = "<group>"; };
-		839BC3722172943C00466EBE /* VPlayerLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VPlayerLayer.swift; sourceTree = "<group>"; };
-		839BC3732172943C00466EBE /* VPlayerRenderingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VPlayerRenderingView.swift; sourceTree = "<group>"; };
 		840FD64E1CCF77D2557E76A7102D5CA2 /* HooksPhase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HooksPhase.swift; path = Sources/Quick/Hooks/HooksPhase.swift; sourceTree = "<group>"; };
 		8410112228FB3CFED48F6AE713689DC0 /* Pods_VersaPlayer_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VersaPlayer_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		88CD74D0C784FF37EA6848FB281B06AD /* Pods-VersaPlayer_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-VersaPlayer_Example.modulemap"; sourceTree = "<group>"; };
@@ -533,6 +533,85 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		1192B0092172F09A0054CD0F /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				1192B00A2172F09A0054CD0F /* Rendering */,
+				1192B00D2172F09A0054CD0F /* Protocols */,
+				1192B0102172F09A0054CD0F /* Player */,
+			);
+			name = Core;
+			path = VersaPlayer/Classes/Core;
+			sourceTree = "<group>";
+		};
+		1192B00A2172F09A0054CD0F /* Rendering */ = {
+			isa = PBXGroup;
+			children = (
+				1192B00B2172F09A0054CD0F /* VPlayerLayer.swift */,
+				1192B00C2172F09A0054CD0F /* VPlayerRenderingView.swift */,
+			);
+			path = Rendering;
+			sourceTree = "<group>";
+		};
+		1192B00D2172F09A0054CD0F /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				1192B00E2172F09A0054CD0F /* VersaPlayerPlaybackDelegate.swift */,
+				1192B00F2172F09A0054CD0F /* VersaPlayerExtension.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		1192B0102172F09A0054CD0F /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				1192B0112172F09A0054CD0F /* VPlayerItem.swift */,
+				1192B0122172F09A0054CD0F /* VPlayer.swift */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		1192B0142172F09B0054CD0F /* VersaPlayerControls */ = {
+			isa = PBXGroup;
+			children = (
+				1192B0152172F09B0054CD0F /* Core */,
+				1192B0192172F09B0054CD0F /* Extensions */,
+				1192B01B2172F09B0054CD0F /* Controls */,
+				1192B01F2172F09B0054CD0F /* VersaPlayerControls.swift */,
+				1192B0202172F09B0054CD0F /* VersaPlayerControlsCoordinator.swift */,
+			);
+			name = VersaPlayerControls;
+			path = VersaPlayer/Classes/VersaPlayerControls;
+			sourceTree = "<group>";
+		};
+		1192B0152172F09B0054CD0F /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				1192B0162172F09B0054CD0F /* VersaPlayerControlsBehaviour.swift */,
+				1192B0172172F09B0054CD0F /* VersaPlayerGestureRecieverView.swift */,
+				1192B0182172F09B0054CD0F /* VersaPlayerGestureRecieverViewDelegate.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		1192B0192172F09B0054CD0F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1192B01A2172F09B0054CD0F /* VersaPlayerControlsExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1192B01B2172F09B0054CD0F /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				1192B01C2172F09B0054CD0F /* VersaTimeLabel.swift */,
+				1192B01D2172F09B0054CD0F /* VersaStatefulButton.swift */,
+				1192B01E2172F09B0054CD0F /* VersaSeekbarSlider.swift */,
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
 		1623501078AD7652B04972ADFA6818B1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -575,9 +654,9 @@
 		37855A2B506FE82F6EE82087D3BA0231 /* VersaPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				839BC35C2172943C00466EBE /* VersaPlayer.swift */,
-				839BC36A2172943C00466EBE /* Core */,
-				839BC35D2172943C00466EBE /* VersaPlayerControls */,
+				1192B0092172F09A0054CD0F /* Core */,
+				1192B0132172F09B0054CD0F /* VersaPlayer.swift */,
+				1192B0142172F09B0054CD0F /* VersaPlayerControls */,
 				3707E3704CAF70A400CFEBA465D96115 /* Pod */,
 				D4BF99569BB7435F37ADDE2E40C7E109 /* Support Files */,
 			);
@@ -792,83 +871,6 @@
 				F26E1C8B8E6277339C03A5479B6ACFB8 /* Quick */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		839BC35D2172943C00466EBE /* VersaPlayerControls */ = {
-			isa = PBXGroup;
-			children = (
-				839BC35E2172943C00466EBE /* Controls */,
-				839BC3622172943C00466EBE /* Core */,
-				839BC3662172943C00466EBE /* Extensions */,
-				839BC3682172943C00466EBE /* VersaPlayerControls.swift */,
-				839BC3692172943C00466EBE /* VersaPlayerControlsCoordinator.swift */,
-			);
-			path = VersaPlayerControls;
-			sourceTree = "<group>";
-		};
-		839BC35E2172943C00466EBE /* Controls */ = {
-			isa = PBXGroup;
-			children = (
-				839BC35F2172943C00466EBE /* VersaSeekbarSlider.swift */,
-				839BC3602172943C00466EBE /* VersaStatefulButton.swift */,
-				839BC3612172943C00466EBE /* VersaTimeLabel.swift */,
-			);
-			path = Controls;
-			sourceTree = "<group>";
-		};
-		839BC3622172943C00466EBE /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				839BC3632172943C00466EBE /* VersaPlayerControlsBehaviour.swift */,
-				839BC3642172943C00466EBE /* VersaPlayerGestureRecieverView.swift */,
-				839BC3652172943C00466EBE /* VersaPlayerGestureRecieverViewDelegate.swift */,
-			);
-			path = Core;
-			sourceTree = "<group>";
-		};
-		839BC3662172943C00466EBE /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				839BC3672172943C00466EBE /* VersaPlayerControlsExtension.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		839BC36A2172943C00466EBE /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				839BC36B2172943C00466EBE /* Player */,
-				839BC36E2172943C00466EBE /* Protocols */,
-				839BC3712172943C00466EBE /* Rendering */,
-			);
-			path = Core;
-			sourceTree = "<group>";
-		};
-		839BC36B2172943C00466EBE /* Player */ = {
-			isa = PBXGroup;
-			children = (
-				839BC36C2172943C00466EBE /* VPlayer.swift */,
-				839BC36D2172943C00466EBE /* VPlayerItem.swift */,
-			);
-			path = Player;
-			sourceTree = "<group>";
-		};
-		839BC36E2172943C00466EBE /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				839BC36F2172943C00466EBE /* VersaPlayerExtension.swift */,
-				839BC3702172943C00466EBE /* VersaPlayerPlaybackDelegate.swift */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		839BC3712172943C00466EBE /* Rendering */ = {
-			isa = PBXGroup;
-			children = (
-				839BC3722172943C00466EBE /* VPlayerLayer.swift */,
-				839BC3732172943C00466EBE /* VPlayerRenderingView.swift */,
-			);
-			path = Rendering;
 			sourceTree = "<group>";
 		};
 		B59EFE7B76CA994F1D5E31F89DB4CC3F /* Pods-VersaPlayer_Example */ = {
@@ -1206,7 +1208,7 @@
 				LastUpgradeCheck = 0930;
 				TargetAttributes = {
 					06B4898010C4935C8F5E0A7508262F6A = {
-						LastSwiftMigration = 0920;
+						LastSwiftMigration = 0940;
 					};
 				};
 			};
@@ -1355,23 +1357,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				839BC3812172943C00466EBE /* VersaPlayerPlaybackDelegate.swift in Sources */,
-				839BC37C2172943C00466EBE /* VersaPlayerControls.swift in Sources */,
-				839BC37B2172943C00466EBE /* VersaPlayerControlsExtension.swift in Sources */,
-				839BC3792172943C00466EBE /* VersaPlayerGestureRecieverView.swift in Sources */,
-				839BC37E2172943C00466EBE /* VPlayer.swift in Sources */,
-				839BC3742172943C00466EBE /* VersaPlayer.swift in Sources */,
-				839BC3772172943C00466EBE /* VersaTimeLabel.swift in Sources */,
-				839BC3782172943C00466EBE /* VersaPlayerControlsBehaviour.swift in Sources */,
-				839BC3762172943C00466EBE /* VersaStatefulButton.swift in Sources */,
-				839BC37F2172943C00466EBE /* VPlayerItem.swift in Sources */,
+				1192B02B2172F09B0054CD0F /* VersaPlayerControlsExtension.swift in Sources */,
+				1192B0292172F09B0054CD0F /* VersaPlayerGestureRecieverView.swift in Sources */,
+				1192B0232172F09B0054CD0F /* VersaPlayerPlaybackDelegate.swift in Sources */,
 				9F27021C1367E95DA1B4E98C4605CD34 /* VersaPlayer-dummy.m in Sources */,
-				839BC3802172943C00466EBE /* VersaPlayerExtension.swift in Sources */,
-				839BC37D2172943C00466EBE /* VersaPlayerControlsCoordinator.swift in Sources */,
-				839BC3822172943C00466EBE /* VPlayerLayer.swift in Sources */,
-				839BC3752172943C00466EBE /* VersaSeekbarSlider.swift in Sources */,
-				839BC37A2172943C00466EBE /* VersaPlayerGestureRecieverViewDelegate.swift in Sources */,
-				839BC3832172943C00466EBE /* VPlayerRenderingView.swift in Sources */,
+				1192B0272172F09B0054CD0F /* VersaPlayer.swift in Sources */,
+				1192B02C2172F09B0054CD0F /* VersaTimeLabel.swift in Sources */,
+				1192B02F2172F09B0054CD0F /* VersaPlayerControls.swift in Sources */,
+				1192B0262172F09B0054CD0F /* VPlayer.swift in Sources */,
+				1192B0302172F09B0054CD0F /* VersaPlayerControlsCoordinator.swift in Sources */,
+				1192B02D2172F09B0054CD0F /* VersaStatefulButton.swift in Sources */,
+				1192B02E2172F09B0054CD0F /* VersaSeekbarSlider.swift in Sources */,
+				1192B02A2172F09B0054CD0F /* VersaPlayerGestureRecieverViewDelegate.swift in Sources */,
+				1192B0242172F09B0054CD0F /* VersaPlayerExtension.swift in Sources */,
+				1192B0212172F09B0054CD0F /* VPlayerLayer.swift in Sources */,
+				1192B0252172F09B0054CD0F /* VPlayerItem.swift in Sources */,
+				1192B0222172F09B0054CD0F /* VPlayerRenderingView.swift in Sources */,
+				1192B0282172F09B0054CD0F /* VersaPlayerControlsBehaviour.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
