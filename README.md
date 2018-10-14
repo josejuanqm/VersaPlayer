@@ -31,6 +31,17 @@
     <li>
       <a href="#extensions">Extensions</a>
     </li>
+    <ol>
+      <li>
+        <a href="#extensions">Airplay Extension</a>
+      </li>
+      <li>
+        <a href="#extensions">Ads Extension</a>
+      </li>
+      <li>
+        <a href="#extensions">Overlay Content Extension</a>
+      </li>
+    </ol>
     <li>
       <a href="#documentation">Documentation</a>
     </li>
@@ -88,11 +99,11 @@ To add an extension use the add(extension ext:) method found in https://josejuan
 
 Here are some extensions for VersaPlayer that may be useful for you.
 
-[AirPlay Extension](https://github.com/josejuanqm/VersaPlayerAirplayExtension)
+1. [AirPlay Extension](https://github.com/josejuanqm/VersaPlayerAirplayExtension)
 
-[Ads Extension](https://github.com/josejuanqm/VersaPlayerAdsExtension)
+2. [Ads Extension](https://github.com/josejuanqm/VersaPlayerAdsExtension)
 
-[Overlay Content Extension](https://github.com/josejuanqm/VersaPlayerOverlayContentExtension)
+3. [Overlay Content Extension](https://github.com/josejuanqm/VersaPlayerOverlayContentExtension)
 
 
 ## Documentation
