@@ -53,6 +53,8 @@ To add controls for your player use the VersaPlayerControls class, which comes p
 
 ## Documentation
 
+Full documentation avilable https://josejuanqm.github.io/Libraries-Documentation/VersaPlayerCore/
+
 ## Author
 
 Jose Quintero - jose.juan.qm@gmail.com
