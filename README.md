@@ -9,6 +9,45 @@
   </p>
 </div>
 
+<div>
+  <ol>
+    <li>
+      <a href="#example">Example</a>
+    </li>
+    <li>
+      <a href="#installation">Installation</a>
+    </li>
+    <li>
+      <a href="#usage">Usage</a>
+    </li>
+    <ol>
+      <li>
+        <a href="#basic-usage">Basic Usage</a>
+      </li>
+      <li>
+        <a href="#adding-controls">Adding Controls</a>
+      </li>
+    </ol>
+    <li>
+      <a href="#extensions">Extensions</a>
+    </li>
+    <ol>
+      <li>
+        <a href="#extensions">Airplay Extension</a>
+      </li>
+      <li>
+        <a href="#extensions">Ads Extension</a>
+      </li>
+      <li>
+        <a href="#extensions">Overlay Content Extension</a>
+      </li>
+    </ol>
+    <li>
+      <a href="#documentation">Documentation</a>
+    </li>
+  </ol>
+</div>
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
@@ -50,6 +89,22 @@ To add controls for your player use the VersaPlayerControls class, which comes p
     <img src="https://github.com/josejuanqm/VersaPlayer/blob/master/controls_example.png" />
   </p>
 </div>
+
+## Extensions
+
+Versa is aimed to be versatile, and that's why it comes with an extensions feature, that lets you customize any aspect of the player by inheriting from VersaPlayerExtension.
+
+This class comes with a player attribute that points to the player instance from which is being used.
+To add an extension use the add(extension ext:) method found in https://josejuanqm.github.io/Libraries-Documentation/VersaPlayerCore/Classes/VersaPlayer.html.
+
+Here are some extensions for VersaPlayer that may be useful for you.
+
+1. [AirPlay Extension](https://github.com/josejuanqm/VersaPlayerAirplayExtension)
+
+2. [Ads Extension](https://github.com/josejuanqm/VersaPlayerAdsExtension)
+
+3. [Overlay Content Extension](https://github.com/josejuanqm/VersaPlayerOverlayContentExtension)
+
 
 ## Documentation
 
