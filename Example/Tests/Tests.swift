@@ -5,44 +5,29 @@ import Nimble
 import VersaPlayer
 
 class TableOfContentsSpec: QuickSpec {
+    
+    var player: VersaPlayer = VersaPlayer(frame: .zero)
+    var container: UIView = UIView(frame: CGRect.init(x: 0, y: 0, width: 100, height: 100))
+    
     override func spec() {
-        describe("these will fail") {
-
-            it("can do maths") {
-                expect(1) == 2
-            }
-
-            it("can read") {
-                expect("number") == "string"
-            }
-
-            it("will eventually fail") {
-                expect("time").toEventually( equal("done") )
+        describe("VersaPlayer set item") {
+            it("item can be set") {
+                if let url = URL.init(string: "http://rmcdn.2mdn.net/Demo/html5/output.mp4") {
+                    let item = VPlayerItem(url: url)
+                    self.player.set(item: item)
+                    expect(self.player.player.currentItem).notTo(beNil())
+                }
             }
             
-            context("these will pass") {
-
-                it("can do maths") {
-                    expect(23) == 23
-                }
-
-                it("can read") {
-                    expect("🐮") == "🐮"
-                }
-
-                it("will eventually pass") {
-                    var time = "passing"
-
-                    DispatchQueue.main.async {
-                        time = "done"
-                    }
-
-                    waitUntil { done in
-                        Thread.sleep(forTimeInterval: 0.5)
-                        expect(time) == "done"
-
-                        done()
-                    }
+            it("can be played") {
+                self.player.play()
+                expect(self.player.isPlaying) == true
+            }
+            
+            it("can be paused") {
+                if self.player.isPlaying {
+                    self.player.pause()
+                    expect(self.player.isPlaying).notTo(be(true))
                 }
             }
         }
