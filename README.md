@@ -45,6 +45,9 @@
     <li>
       <a href="#documentation">Documentation</a>
     </li>
+    <li>
+      <a href="#donation">Donation</a>
+    </li>
   </ol>
 </div>
 
