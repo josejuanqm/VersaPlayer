@@ -88,19 +88,19 @@ VersaPlayer aims to be simple to use but also flexible, to start using VersaPlay
 
 To add controls for your player use the VersaPlayerControls class, which comes packed with outlets to control your player, you can also add as many as you like by making a custom implementation.
 
-Outlet Name             |  Action
-:-------------------------:|:-------------------------:
-playPauseButton | VersaStatefullButton to toggle playback
-fullscreenButton | VersaStatefullButton to toggle fullscreen mode
-pipButton | VersaStatefullButton to toggle pip mode in supported devices
-rewindButton | VersaStatefullButton to rewind time
-forwardButton | VersaStatefullButton to fast forward in time
-skipForwardButton | VersaStatefullButton to skip forward the time specified in second at skipSize (found in VersaPlayerControls)
-skipBackwardButton | VersaStatefullButton to skip backward the time specified in second at skipSize (found in VersaPlayerControls)
-seekbarSlider | VersaSeekbarSlider to seek through playback
-currentTimeLabel | VersaTimeLabel to indicate the current time
-totalTimeLabel | VersaTimeLabel to indicate the total time
-bufferingView | UIView to be shown when player is buffering
+Outlet Name             | Type             |  Action
+------------------------- | ------------------------- | -------------------------
+playPauseButton | VersaStatefullButton | Toggle playback
+fullscreenButton | VersaStatefullButton | Toggle fullscreen mode
+pipButton | VersaStatefullButton | Toggle PIP mode in supported devices
+rewindButton | VersaStatefullButton | Rewind playback
+forwardButton | VersaStatefullButton | Fast forward playback
+skipForwardButton | VersaStatefullButton | Skip forward the time specified in second at skipSize (found in VersaPlayerControls)
+skipBackwardButton | VersaStatefullButton | Skip backward the time specified in second at skipSize (found in VersaPlayerControls)
+seekbarSlider | VersaSeekbarSlider | Seek through playback
+currentTimeLabel | VersaTimeLabel | Indicate the current time
+totalTimeLabel | VersaTimeLabel | Indicate the total time
+bufferingView | UIView | Shown when player is buffering
 
 <div>
   <p align="center">
