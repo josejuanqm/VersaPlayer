@@ -88,6 +88,8 @@ VersaPlayer aims to be simple to use but also flexible, to start using VersaPlay
 
 To add controls for your player use the VersaPlayerControls class, which comes packed with outlets to control your player, you can also add as many as you like by making a custom implementation.
 
+VersaPlayerControls class include the following outlets:
+
 Outlet Name             | Type             |  Action
 ------------------------- | ------------------------- | -------------------------
 playPauseButton | VersaStatefullButton | Toggle playback
