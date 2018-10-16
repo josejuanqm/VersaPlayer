@@ -52,6 +52,10 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+iPad PIP mode             |  iPhone normal mode
+:-------------------------:|:-------------------------:
+![](https://github.com/josejuanqm/VersaPlayer/blob/master/Simulator%20Screen%20Shot%20-%20iPad%20Pro%20(9.7-inch)%20-%202018-10-15%20at%2013.34.10.png)  |  ![](https://github.com/josejuanqm/VersaPlayer/blob/master/Simulator%20Screen%20Shot%20-%20iPhone%208%20Plus%20-%202018-10-15%20at%2013.33.03.png)
+
 ## Installation
 
 [CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects.
