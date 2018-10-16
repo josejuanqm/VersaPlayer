@@ -5,7 +5,7 @@
 
 <div>
   <p align="center">
-    <img src="https://github.com/josejuanqm/VersaPlayer/blob/master/Image.png" />
+    <img src="https://github.com/josejuanqm/VersaPlayer/blob/master/RepoAssets/Image.png" />
   </p>
 </div>
 
@@ -54,7 +54,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 iPad PIP mode             |  iPhone normal mode
 :-------------------------:|:-------------------------:
-![](https://github.com/josejuanqm/VersaPlayer/blob/master/Simulator%20Screen%20Shot%20-%20iPad%20Pro%20(9.7-inch)%20-%202018-10-15%20at%2013.34.10.png)  |  ![](https://github.com/josejuanqm/VersaPlayer/blob/master/Simulator%20Screen%20Shot%20-%20iPhone%208%20Plus%20-%202018-10-15%20at%2013.33.03.png)
+![](https://github.com/josejuanqm/VersaPlayer/blob/master/RepoAssets/Simulator%20Screen%20Shot%20-%20iPad%20Pro%20(9.7-inch)%20-%202018-10-15%20at%2013.34.10.png)  |  ![](https://github.com/josejuanqm/VersaPlayer/blob/master/RepoAssets/Simulator%20Screen%20Shot%20-%20iPhone%208%20Plus%20-%202018-10-15%20at%2013.33.03.png)
 
 ## Installation
 
@@ -80,7 +80,7 @@ VersaPlayer aims to be simple to use but also flexible, to start using VersaPlay
 
 <div>
   <p align="center">
-    <img src="https://github.com/josejuanqm/VersaPlayer/blob/master/simple_example.png" />
+    <img src="https://github.com/josejuanqm/VersaPlayer/blob/master/RepoAssets/simple_example.png" />
   </p>
 </div>
 
@@ -106,7 +106,7 @@ bufferingView | UIView | Shown when player is buffering
 
 <div>
   <p align="center">
-    <img src="https://github.com/josejuanqm/VersaPlayer/blob/master/controls_example.png" />
+    <img src="https://github.com/josejuanqm/VersaPlayer/blob/master/RepoAssets/controls_example.png" />
   </p>
 </div>
 
