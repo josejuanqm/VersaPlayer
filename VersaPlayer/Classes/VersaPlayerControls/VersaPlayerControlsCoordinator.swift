@@ -16,10 +16,10 @@ open class VersaPlayerControlsCoordinator: UIView, VersaPlayerGestureRecieverVie
     var player: VersaPlayer!
     
     /// VersaPlayerControls instance being used
-    var controls: VersaPlayerControls!
+    public var controls: VersaPlayerControls!
     
     /// VersaPlayerGestureRecieverView instance being used
-    var gestureReciever: VersaPlayerGestureRecieverView!
+    public var gestureReciever: VersaPlayerGestureRecieverView!
     
     override open func didMoveToSuperview() {
         super.didMoveToSuperview()
