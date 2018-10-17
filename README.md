@@ -51,7 +51,7 @@
   </ol>
 </div>
 
-## tvOS Information
+## :warning: tvOS Information
 
 If you are looking for the tvOS player, head over to https://github.com/josejuanqm/TVersaPlayer
 
