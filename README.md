@@ -5,7 +5,7 @@
 
 <div>
   <p align="center">
-    <img src="https://github.com/josejuanqm/VersaPlayer/blob/master/RepoAssets/Image.png" />
+    <img src="https://github.com/josejuanqm/VersaPlayer/blob/master/Image.png" />
   </p>
 </div>
 
@@ -45,8 +45,15 @@
     <li>
       <a href="#documentation">Documentation</a>
     </li>
+    <li>
+      <a href="#donation">Donation</a>
+    </li>
   </ol>
 </div>
+
+## :warning: tvOS Information
+
+If you are looking for the tvOS player, head over to https://github.com/josejuanqm/TVersaPlayer
 
 ## Example
 
@@ -133,6 +140,13 @@ Full documentation avilable https://josejuanqm.github.io/Libraries-Documentation
 ## Author
 
 Jose Quintero - jose.juan.qm@gmail.com
+
+## Donation
+
+If you like this project or has been helpful to you, you can buy me a cup of coffe :)
+Appreciate it!
+
+[![paypal](https://github.com/josejuanqm/VersaPlayer/blob/master/RepoAssets/Artboard.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=KGX5UDWNHBRNY)
 
 ## License
 
