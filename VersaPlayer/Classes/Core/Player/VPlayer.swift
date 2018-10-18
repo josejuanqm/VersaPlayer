@@ -108,7 +108,7 @@ extension VPlayer {
             if item.duration.isValid && !item.duration.isIndefinite {
                 return item.duration
             }else {
-                return CMTime(seconds: 0, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
+                return item.currentTime()
             }
         }
     }
