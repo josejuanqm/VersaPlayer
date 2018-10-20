@@ -82,7 +82,7 @@ extension VPlayer {
     /// Start time
     ///
     /// - Returns: Player's current item start time as CMTime
-    public func startTime() -> CMTime {
+    open func startTime() -> CMTime {
         guard let item = currentItem else {
             return CMTime(seconds: 0, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
         }
@@ -97,7 +97,7 @@ extension VPlayer {
     /// End time
     ///
     /// - Returns: Player's current item end time as CMTime
-    public func endTime() -> CMTime {
+    open func endTime() -> CMTime {
         guard let item = currentItem else {
             return CMTime(seconds: 0, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
         }
@@ -114,7 +114,7 @@ extension VPlayer {
     }
     
     /// Prepare players playback delegate observers
-    public func preparePlayerPlaybackDelegate() {
+    open func preparePlayerPlaybackDelegate() {
         NotificationCenter.default.addObserver(forName: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: self, queue: OperationQueue.main) { (notification) in
             NotificationCenter.default.post(name: VPlayer.VPlayerNotificationName.didEnd.notification, object: self, userInfo: nil)
             self.handler.playbackDelegate?.playbackDidEnd(forPlayer: self)

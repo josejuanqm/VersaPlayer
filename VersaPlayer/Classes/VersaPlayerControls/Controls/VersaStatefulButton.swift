@@ -18,7 +18,7 @@ open class VersaStatefulButton: UIButton {
         }
     }
     
-    public func set(active: Bool) {
+    open func set(active: Bool) {
         if active {
             setImage(activeImage, for: .normal)
         }else {

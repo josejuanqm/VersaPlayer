@@ -74,7 +74,7 @@ open class VersaPlayer: UIView, AVPictureInPictureControllerDelegate {
     /// - Parameters:
     ///     - ext: The instance of the extension.
     ///     - name: The name of the extension.
-    public func addExtension(extension ext: VersaPlayerExtension, with name: String) {
+    open func addExtension(extension ext: VersaPlayerExtension, with name: String) {
         ext.player = self
         ext.prepare()
         extensions[name] = ext
@@ -84,12 +84,12 @@ open class VersaPlayer: UIView, AVPictureInPictureControllerDelegate {
     ///
     /// - Parameters:
     ///     - name: The name of the extension.
-    public func getExtension(with name: String) -> VersaPlayerExtension? {
+    open func getExtension(with name: String) -> VersaPlayerExtension? {
         return extensions[name]
     }
     
     /// Prepares the player to play
-    public func prepare() {
+    open func prepare() {
         ready = true
         player = VPlayer()
         player.handler = self
@@ -103,7 +103,7 @@ open class VersaPlayer: UIView, AVPictureInPictureControllerDelegate {
     /// - Parameters:
     ///     - view: The view to layout.
     ///     - into: The container view.
-    public func layout(view: UIView, into: UIView) {
+    open func layout(view: UIView, into: UIView) {
         into.addSubview(view)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.topAnchor.constraint(equalTo: into.topAnchor).isActive = true
@@ -116,7 +116,7 @@ open class VersaPlayer: UIView, AVPictureInPictureControllerDelegate {
     ///
     /// - Parameters:
     ///     - enabled: Whether or not to enable
-    public func setNativePip(enabled: Bool) {
+    open func setNativePip(enabled: Bool) {
         if enabled {
             pipController?.startPictureInPicture()
         }else {
@@ -128,7 +128,7 @@ open class VersaPlayer: UIView, AVPictureInPictureControllerDelegate {
     ///
     /// - Parameters:
     ///     - enabled: Whether or not to enable
-    public func setFullscreen(enabled: Bool) {
+    open func setFullscreen(enabled: Bool) {
         if enabled {
             if let window = UIApplication.shared.keyWindow {
                 nonFullscreenContainer = superview
@@ -153,7 +153,7 @@ open class VersaPlayer: UIView, AVPictureInPictureControllerDelegate {
     ///
     /// - Parameters:
     ///     - item: The VPlayerItem instance to add to player.
-    public func set(item: VPlayerItem?) {
+    open func set(item: VPlayerItem?) {
         if !ready {
             prepare()
         }
@@ -165,7 +165,7 @@ open class VersaPlayer: UIView, AVPictureInPictureControllerDelegate {
     }
     
     /// Play
-    @IBAction public func play() {
+    @IBAction open func play() {
         if playbackDelegate?.playbackShouldBegin(forPlayer: player) ?? true {
             player.play()
             isPlaying = true
@@ -173,13 +173,13 @@ open class VersaPlayer: UIView, AVPictureInPictureControllerDelegate {
     }
     
     /// Pause
-    @IBAction public func pause() {
+    @IBAction open func pause() {
         player.pause()
         isPlaying = false
     }
     
     /// Toggle Playback
-    @IBAction public func togglePlayback() {
+    @IBAction open func togglePlayback() {
         if isPlaying {
             pause()
         }else {
@@ -187,20 +187,20 @@ open class VersaPlayer: UIView, AVPictureInPictureControllerDelegate {
         }
     }
     
-    public func pictureInPictureControllerDidStopPictureInPicture(_ pictureInPictureController: AVPictureInPictureController) {
+    open func pictureInPictureControllerDidStopPictureInPicture(_ pictureInPictureController: AVPictureInPictureController) {
         //hide fallback
     }
     
-    public func pictureInPictureControllerDidStartPictureInPicture(_ pictureInPictureController: AVPictureInPictureController) {
+    open func pictureInPictureControllerDidStartPictureInPicture(_ pictureInPictureController: AVPictureInPictureController) {
         //show fallback
     }
     
-    public func pictureInPictureControllerWillStopPictureInPicture(_ pictureInPictureController: AVPictureInPictureController) {
+    open func pictureInPictureControllerWillStopPictureInPicture(_ pictureInPictureController: AVPictureInPictureController) {
         isPipModeEnabled = false
         controls?.controlsCoordinator.isHidden = false
     }
     
-    public func pictureInPictureControllerWillStartPictureInPicture(_ pictureInPictureController: AVPictureInPictureController) {
+    open func pictureInPictureControllerWillStartPictureInPicture(_ pictureInPictureController: AVPictureInPictureController) {
         controls?.controlsCoordinator.isHidden = true
         isPipModeEnabled = true
     }

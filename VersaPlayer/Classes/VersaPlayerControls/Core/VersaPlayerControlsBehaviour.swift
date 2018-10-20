@@ -50,7 +50,7 @@ open class VersaPlayerControlsBehaviour {
     ///
     /// - Parameters:
     ///     - time: TimeInterval to check whether to update controls.
-    public func update(with time: TimeInterval) {
+    open func update(with time: TimeInterval) {
         elapsedTime = time
         if showingControls && shouldHideControls && !controls.handler.player.isBuffering && !controls.handler.isSeeking {
             let timediff = elapsedTime - activationTime
@@ -61,7 +61,7 @@ open class VersaPlayerControlsBehaviour {
     }
     
     /// Default activation block
-    public func defaultActivationBlock() {
+    open func defaultActivationBlock() {
         controls.isHidden = false
         UIView.animate(withDuration: 0.3, animations: {
             self.controls.alpha = 1
@@ -69,7 +69,7 @@ open class VersaPlayerControlsBehaviour {
     }
     
     /// Default deactivation block
-    public func defaultDeactivationBlock() {
+    open func defaultDeactivationBlock() {
         UIView.animate(withDuration: 0.3, animations: {
             self.controls.alpha = 0
         }, completion: {
@@ -80,7 +80,7 @@ open class VersaPlayerControlsBehaviour {
     }
     
     /// Hide the controls
-    public func hide() {
+    open func hide() {
         if deactivationBlock != nil {
             deactivationBlock!(controls)
         }else {
@@ -90,7 +90,7 @@ open class VersaPlayerControlsBehaviour {
     }
     
     /// Show the controls
-    public func show() {
+    open func show() {
         if !shouldShowControls {
             return
         }

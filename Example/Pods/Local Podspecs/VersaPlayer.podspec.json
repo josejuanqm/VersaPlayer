@@ -1,22 +1,24 @@
 {
   "name": "VersaPlayer",
-  "version": "0.1.0",
-  "summary": "A short description of VersaPlayer.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/jose.juan.qm@gmail.com/VersaPlayer",
+  "version": "0.1.6",
+  "summary": "Versatile AVPlayer implementation for iOS",
+  "description": "Versatile AVPlayer implementation for iOS.",
+  "homepage": "https://github.com/josejuanqm/VersaPlayer",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "jose.juan.qm@gmail.com": "jose.quintero@fox.com"
+    "Jose Quintero": "jose.juan.qm@gmail.com"
   },
   "source": {
-    "git": "https://github.com/jose.juan.qm@gmail.com/VersaPlayer.git",
-    "tag": "0.1.0"
+    "git": "https://github.com/josejuanqm/VersaPlayer.git",
+    "tag": "0.1.6"
   },
+  "social_media_url": "https://twitter.com/josejuanqm",
   "platforms": {
-    "ios": "8.0"
+    "ios": "9.0"
   },
+  "swift_version": "4",
   "source_files": "VersaPlayer/Classes/**/*"
 }

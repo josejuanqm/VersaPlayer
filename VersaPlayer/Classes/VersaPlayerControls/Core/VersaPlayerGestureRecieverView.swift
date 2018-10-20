@@ -43,7 +43,7 @@ open class VersaPlayerGestureRecieverView: UIView {
     }
     
     /// Prepare the view gesture recognizers
-    public func prepare() {
+    open func prepare() {
         ready = true
         isUserInteractionEnabled = true
         tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapHandler(with:)))
@@ -58,17 +58,17 @@ open class VersaPlayerGestureRecieverView: UIView {
     }
     
     
-    @objc public func tapHandler(with sender: UITapGestureRecognizer) {
+    @objc open func tapHandler(with sender: UITapGestureRecognizer) {
         delegate?.didTap(at: sender.location(in: self))
     }
     
-    @objc public func pinchHandler(with sender: UIPinchGestureRecognizer) {
+    @objc open func pinchHandler(with sender: UIPinchGestureRecognizer) {
         if sender.state == .ended {
             delegate?.didPinch(with: sender.scale)
         }
     }
     
-    @objc public func panHandler(with sender: UIPanGestureRecognizer) {
+    @objc open func panHandler(with sender: UIPanGestureRecognizer) {
         if sender.state == .began {
             panGestureInitialPoint = sender.location(in: self)
         }

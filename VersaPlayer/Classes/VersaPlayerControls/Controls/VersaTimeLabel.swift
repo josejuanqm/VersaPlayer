@@ -12,7 +12,7 @@ open class VersaTimeLabel: UILabel {
     
     public var timeFormat: String = "HH:mm:ss"
 
-    public func update(toTime: TimeInterval) {
+    open func update(toTime: TimeInterval) {
         let date = Date(timeIntervalSince1970: toTime)
         let formatter = DateFormatter()
         formatter.timeZone = TimeZone.init(secondsFromGMT: 0)

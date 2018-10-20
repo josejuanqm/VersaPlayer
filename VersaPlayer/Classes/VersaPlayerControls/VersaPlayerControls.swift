@@ -88,7 +88,7 @@ open class VersaPlayerControls: UIView {
     ///
     /// - Parameters:
     ///     - time: CMTime representation of the current playback time
-    public func timeDidChange(toTime time: CMTime) {
+    open func timeDidChange(toTime time: CMTime) {
         currentTimeLabel?.update(toTime: time.seconds)
         totalTimeLabel?.update(toTime: handler.player.endTime().seconds)
         seekbarSlider?.minimumValue = Float(handler.player.startTime().seconds)
@@ -101,12 +101,12 @@ open class VersaPlayerControls: UIView {
     }
     
     /// Remove coordinator from player
-    public func removeFromPlayer() {
+    open func removeFromPlayer() {
         controlsCoordinator.removeFromSuperview()
     }
     
     /// Prepare controls targets and notification listeners
-    public func prepare() {
+    open func prepare() {
         layout()
         
         playPauseButton?.addTarget(self, action: #selector(togglePlayback), for: .touchUpInside)
@@ -137,7 +137,7 @@ open class VersaPlayerControls: UIView {
     }
     
     /// Layout in parent view
-    public func layout() {
+    open func layout() {
         translatesAutoresizingMaskIntoConstraints = false
         if let parent = superview {
             topAnchor.constraint(equalTo: parent.topAnchor).isActive = true
@@ -148,7 +148,7 @@ open class VersaPlayerControls: UIView {
     }
     
     /// Prepares the notification observers/listeners
-    public func prepareNotificationListener() {
+    open func prepareNotificationListener() {
         NotificationCenter.default.addObserver(forName: VPlayer.VPlayerNotificationName.timeChanged.notification, object: nil, queue: OperationQueue.main) { (notification) in
             if let time = notification.userInfo?[VPlayer.VPlayerNotificationInfoKey.time.rawValue] as? CMTime {
                 self.timeDidChange(toTime: time)
@@ -172,36 +172,36 @@ open class VersaPlayerControls: UIView {
     }
     
     /// Prepare the seekbar values
-    public func prepareSeekbar() {
+    open func prepareSeekbar() {
         seekbarSlider?.value = Float(handler.player.currentTime().seconds)
         seekbarSlider?.minimumValue = Float(handler.player.startTime().seconds)
         seekbarSlider?.maximumValue = Float(handler.player.endTime().seconds)
     }
     
     /// Show buffering view
-    public func showBuffering() {
+    open func showBuffering() {
         bufferingView?.isHidden = false
     }
     
     /// Hide buffering view
-    public func hideBuffering() {
+    open func hideBuffering() {
         bufferingView?.isHidden = true
     }
     
     /// Skip forward (n) seconds in time
-    @IBAction public func skipForward() {
+    @IBAction open func skipForward() {
         let time = handler.player.currentTime() + CMTime(seconds: skipSize, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
         handler.player.seek(to: time)
     }
     
     /// Skip backward (n) seconds in time
-    @IBAction public func skipBackward() {
+    @IBAction open func skipBackward() {
         let time = handler.player.currentTime() - CMTime(seconds: skipSize, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
         handler.player.seek(to: time)
     }
     
     /// End seeking
-    @IBAction public func seekingEnd() {
+    @IBAction open func seekingEnd() {
         handler.isSeeking = false
         if wasPlayingBeforeSeeking {
             handler.play()
@@ -209,7 +209,7 @@ open class VersaPlayerControls: UIView {
     }
     
     /// Start Seeking
-    @IBAction public func seekingStart() {
+    @IBAction open func seekingStart() {
         wasPlayingBeforeSeeking = handler.isPlaying
         handler.isSeeking = true
         handler.pause()
@@ -219,7 +219,7 @@ open class VersaPlayerControls: UIView {
     ///
     /// - Parameters:
     ///     - sender: UISlider that updated
-    @IBAction public func playheadChanged(with sender: UISlider) {
+    @IBAction open func playheadChanged(with sender: UISlider) {
         let value = Double(sender.value)
         let time = CMTime(seconds: value, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
         handler.player.seek(to: time)
@@ -227,18 +227,18 @@ open class VersaPlayerControls: UIView {
     }
     
     /// Toggle PIP mode
-    @IBAction public func togglePip() {
+    @IBAction open func togglePip() {
         handler.setNativePip(enabled: !handler.isPipModeEnabled)
     }
     
     /// Toggle fullscreen mode
-    @IBAction public func toggleFullscreen() {
+    @IBAction open func toggleFullscreen() {
         fullscreenButton?.set(active: !handler.isFullscreenModeEnabled)
         handler.setFullscreen(enabled: !handler.isFullscreenModeEnabled)
     }
     
     /// Toggle playback
-    @IBAction public func togglePlayback() {
+    @IBAction open func togglePlayback() {
         if handler.isRewinding || handler.isForwarding {
             handler.player.rate = 1
             playPauseButton?.set(active: true)
@@ -256,7 +256,7 @@ open class VersaPlayerControls: UIView {
     }
     
     /// Toggle rewind
-    @IBAction public func rewindToggle() {
+    @IBAction open func rewindToggle() {
         if handler.player.currentItem?.canPlayFastReverse ?? false {
             if handler.isRewinding {
                 rewindButton?.set(active: false)
@@ -279,7 +279,7 @@ open class VersaPlayerControls: UIView {
     }
     
     /// Forward toggle
-    @IBAction public func forwardToggle() {
+    @IBAction open func forwardToggle() {
         if handler.player.currentItem?.canPlayFastForward ?? false {
             if handler.isForwarding {
                 forwardButton?.set(active: false)

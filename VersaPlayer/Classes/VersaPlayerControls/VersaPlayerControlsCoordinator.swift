@@ -38,7 +38,7 @@ open class VersaPlayerControlsCoordinator: UIView, VersaPlayerGestureRecieverVie
         }
     }
     
-    public func layout() {
+    open func layout() {
         translatesAutoresizingMaskIntoConstraints = false
         if let parent = superview {
             topAnchor.constraint(equalTo: parent.topAnchor).isActive = true
@@ -52,7 +52,7 @@ open class VersaPlayerControlsCoordinator: UIView, VersaPlayerGestureRecieverVie
     ///
     /// - Parameters:
     ///     - scale: CGFloat value
-    public func didPinch(with scale: CGFloat) {
+    open func didPinch(with scale: CGFloat) {
         if player.renderingView.renderingLayer.playerLayer.videoGravity == AVLayerVideoGravity.resizeAspect {
             player.renderingView.renderingLayer.playerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
         }else {
@@ -64,7 +64,7 @@ open class VersaPlayerControlsCoordinator: UIView, VersaPlayerGestureRecieverVie
     ///
     /// - Parameters:
     ///     - point: CGPoint at which tap was recognized
-    public func didTap(at point: CGPoint) {
+    open func didTap(at point: CGPoint) {
         if controls.behaviour.showingControls {
             controls.behaviour.hide()
         }else {
@@ -77,7 +77,7 @@ open class VersaPlayerControlsCoordinator: UIView, VersaPlayerGestureRecieverVie
     /// - Parameters:
     ///     - translation: translation of pan in CGPoint representation
     ///     - at: initial point recognized
-    public func didPan(with translation: CGPoint, initially at: CGPoint) {
+    open func didPan(with translation: CGPoint, initially at: CGPoint) {
         let percentageTranslation: Double = Double(translation.x / gestureReciever.bounds.width)
         player.player.seek(to:
             CMTime.init(

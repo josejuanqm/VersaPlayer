@@ -1,6 +1,0 @@
-framework module Pods_VersaPlayer_Tests {
-  umbrella header "Pods-VersaPlayer_Tests-umbrella.h"
-
-  export *
-  module * { export * }
-}
