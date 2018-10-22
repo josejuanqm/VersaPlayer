@@ -129,6 +129,9 @@ open class VersaPlayer: UIView, AVPictureInPictureControllerDelegate {
     /// - Parameters:
     ///     - enabled: Whether or not to enable
     open func setFullscreen(enabled: Bool) {
+        if enabled == isFullscreenModeEnabled {
+            return
+        }
         if enabled {
             if let window = UIApplication.shared.keyWindow {
                 nonFullscreenContainer = superview
