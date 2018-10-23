@@ -8,7 +8,10 @@
 
 import AVFoundation
 
-open class VPlayer: AVPlayer {
+open class VPlayer: AVPlayer, AVAssetResourceLoaderDelegate {
+    
+    /// Dispatch queue for resource loader
+    private let queue = DispatchQueue(label: "quasar.studio.versaplayer")
     
     /// Notification key to extract info
     public enum VPlayerNotificationInfoKey: String {
@@ -66,6 +69,9 @@ open class VPlayer: AVPlayer {
     /// - Parameters:
     ///     - item: AVPlayer item instance to be added
     override open func replaceCurrentItem(with item: AVPlayerItem?) {
+        if let asset = item?.asset as? AVURLAsset, let vitem = item as? VPlayerItem, vitem.isEncrypted {
+            asset.resourceLoader.setDelegate(self, queue: queue)
+        }
         super.replaceCurrentItem(with: item)
         NotificationCenter.default.post(name: VPlayer.VPlayerNotificationName.assetLoaded.notification, object: self, userInfo: nil)
         if item != nil {
@@ -202,6 +208,56 @@ extension VPlayer {
                 break;
             }
         }
+    }
+    
+    public func resourceLoader(_ resourceLoader: AVAssetResourceLoader, shouldWaitForLoadingOfRequestedResource loadingRequest: AVAssetResourceLoadingRequest) -> Bool {
+        guard let url = loadingRequest.request.url else {
+            print("VersaPlayerResourceLoadingError", #function, "Unable to read the url/host data.")
+            loadingRequest.finishLoading(with: NSError(domain: "quasar.studio.error", code: -1, userInfo: nil))
+            return false
+        }
+        
+        print("VersaPlayerResourceLoading: \(url)")
+        
+        guard
+            let certificateURL = handler.decryptionDelegate?.urlFor(player: self),
+            let certificateData = try? Data(contentsOf: certificateURL) else {
+                print("VersaPlayerResourceLoadingError", #function, "Unable to read the certificate data.")
+                loadingRequest.finishLoading(with: NSError(domain: "quasar.studio.error", code: -2, userInfo: nil))
+                return false
+        }
+        
+        let contentId = handler.decryptionDelegate?.contentIdFor(player: self) ?? ""
+        guard
+            let contentIdData = contentId.data(using: String.Encoding.utf8),
+            let spcData = try? loadingRequest.streamingContentKeyRequestData(forApp: certificateData, contentIdentifier: contentIdData, options: nil),
+            let dataRequest = loadingRequest.dataRequest else {
+                loadingRequest.finishLoading(with: NSError(domain: "quasar.studio.error", code: -3, userInfo: nil))
+                print("VersaPlayerResourceLoadingError", #function, "Unable to read the SPC data.")
+                return false
+        }
+        
+        guard let ckcURL = handler.decryptionDelegate?.contentKeyContextURLFor(player: self) else {
+            loadingRequest.finishLoading(with: NSError(domain: "quasar.studio.error", code: -4, userInfo: nil))
+            print("VersaPlayerResourceLoadingError", #function, "Unable to read the ckcURL.")
+            return false
+        }
+        var request = URLRequest(url: ckcURL)
+        request.httpMethod = "POST"
+        request.httpBody = spcData
+        let session = URLSession(configuration: URLSessionConfiguration.default)
+        let task = session.dataTask(with: request) { data, response, error in
+            if let data = data {
+                dataRequest.respond(with: data)
+                loadingRequest.finishLoading()
+            } else {
+                print("VersaPlayerResourceLoadingError", #function, "Unable to fetch the CKC.")
+                loadingRequest.finishLoading(with: NSError(domain: "quasar.studio.error", code: -5, userInfo: nil))
+            }
+        }
+        task.resume()
+        
+        return true
     }
     
 }

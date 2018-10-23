@@ -10,4 +10,7 @@ import AVFoundation
 
 open class VPlayerItem: AVPlayerItem {
     
+    /// whether content passed through the asset is encrypted and should be decrypted
+    public var isEncrypted: Bool = false
+    
 }
