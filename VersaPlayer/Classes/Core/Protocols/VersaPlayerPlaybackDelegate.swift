@@ -16,7 +16,7 @@ public protocol VersaPlayerPlaybackDelegate {
     /// - Parameters:
     ///     - player: VPlayer being used
     ///     - time: Current time
-    func timeDidChange(forPlayer player: VPlayer, to time: CMTime)
+    func timeDidChange(player: VPlayer, to time: CMTime)
     
     /// Whether if playback should begin on specified player
     ///
@@ -24,55 +24,49 @@ public protocol VersaPlayerPlaybackDelegate {
     ///     - player: VPlayer being used
     ///
     /// - Returns: Boolean to validate if should play
-    func playbackShouldBegin(forPlayer player: VPlayer) -> Bool
+    func playbackShouldBegin(player: VPlayer) -> Bool
     
     /// Whether if playback is skipping frames
     ///
     /// - Parameters:
     ///     - player: VPlayer being used
-    func playbackDidJump(forPlayer player: VPlayer)
+    func playbackDidJump(player: VPlayer)
     
     /// Notifies when player will begin playback
     ///
     /// - Parameters:
     ///     - player: VPlayer being used
-    func playbackWillBegin(forPlayer player: VPlayer)
+    func playbackWillBegin(player: VPlayer)
     
     /// Notifies when playback is ready to play
     ///
     /// - Parameters:
     ///     - player: VPlayer being used
-    func playbackReady(forPlayer player: VPlayer)
+    func playbackReady(player: VPlayer)
     
     /// Notifies when playback did begin
     ///
     /// - Parameters:
     ///     - player: VPlayer being used
-    func playbackDidBegin(forPlayer player: VPlayer)
+    func playbackDidBegin(player: VPlayer)
     
     /// Notifies when player ended playback
     ///
     /// - Parameters:
     ///     - player: VPlayer being used
-    func playbackDidEnd(forPlayer player: VPlayer)
-    
-    /// Notifies when player failed to start playback
-    ///
-    /// - Parameters:
-    ///     - player: VPlayer being used
-    func playerDidFailToStart(forPlayer player: VPlayer)
+    func playbackDidEnd(player: VPlayer)
     
     /// Notifies when player starts buffering
     ///
     /// - Parameters:
     ///     - player: VPlayer being used
-    func startBuffering(forPlayer: VPlayer)
+    func startBuffering(layer: VPlayer)
     
     /// Notifies when player ends buffering
     ///
     /// - Parameters:
     ///     - player: VPlayer being used
-    func endBuffering(forPlayer: VPlayer)
+    func endBuffering(player: VPlayer)
     
     /// Notifies when playback fails with an error
     ///

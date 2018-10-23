@@ -166,7 +166,7 @@ open class VersaPlayer: UIView, AVPictureInPictureControllerDelegate {
     
     /// Play
     @IBAction open func play() {
-        if playbackDelegate?.playbackShouldBegin(forPlayer: player) ?? true {
+        if playbackDelegate?.playbackShouldBegin(player: player) ?? true {
             player.play()
             isPlaying = true
         }

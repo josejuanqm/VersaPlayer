@@ -248,7 +248,7 @@ open class VersaPlayerControls: UIView {
             playPauseButton?.set(active: false)
             handler.pause()
         }else {
-            if handler.playbackDelegate?.playbackShouldBegin(forPlayer: handler.player) ?? true {
+            if handler.playbackDelegate?.playbackShouldBegin(player: handler.player) ?? true {
                 playPauseButton?.set(active: true)
                 handler.play()
             }

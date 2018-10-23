@@ -48,14 +48,14 @@ open class VPlayer: AVPlayer, AVAssetResourceLoaderDelegate {
     
     /// Play content
     override open func play() {
-        handler.playbackDelegate?.playbackWillBegin(forPlayer: self)
+        handler.playbackDelegate?.playbackWillBegin(player: self)
         NotificationCenter.default.post(name: VPlayer.VPlayerNotificationName.willPlay.notification, object: self, userInfo: nil)
-        if !(handler.playbackDelegate?.playbackShouldBegin(forPlayer: self) ?? true) {
+        if !(handler.playbackDelegate?.playbackShouldBegin(player: self) ?? true) {
             return
         }
         NotificationCenter.default.post(name: VPlayer.VPlayerNotificationName.play.notification, object: self, userInfo: nil)
         super.play()
-        handler.playbackDelegate?.playbackDidBegin(forPlayer: self)
+        handler.playbackDelegate?.playbackDidBegin(player: self)
     }
     
     /// Pause content
@@ -124,10 +124,10 @@ extension VPlayer {
     open func preparePlayerPlaybackDelegate() {
         NotificationCenter.default.addObserver(forName: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: self, queue: OperationQueue.main) { (notification) in
             NotificationCenter.default.post(name: VPlayer.VPlayerNotificationName.didEnd.notification, object: self, userInfo: nil)
-            self.handler.playbackDelegate?.playbackDidEnd(forPlayer: self)
+            self.handler.playbackDelegate?.playbackDidEnd(player: self)
         }
         NotificationCenter.default.addObserver(forName: NSNotification.Name.AVPlayerItemTimeJumped, object: self, queue: OperationQueue.main) { (notification) in
-            self.handler.playbackDelegate?.playbackDidJump(forPlayer: self)
+            self.handler.playbackDelegate?.playbackDidJump(player: self)
         }
         addPeriodicTimeObserver(
             forInterval: CMTime(
@@ -136,7 +136,7 @@ extension VPlayer {
             ),
             queue: DispatchQueue.main) { (time) in
                 NotificationCenter.default.post(name: VPlayer.VPlayerNotificationName.timeChanged.notification, object: self, userInfo: [VPlayerNotificationInfoKey.time.rawValue: time])
-                self.handler.playbackDelegate?.timeDidChange(forPlayer: self, to: time)
+                self.handler.playbackDelegate?.timeDidChange(player: self, to: time)
                 
         }
         addObserver(self, forKeyPath: "status", options: NSKeyValueObservingOptions.new, context: nil)
@@ -148,9 +148,9 @@ extension VPlayer {
             if keyPath == "status" {
                 switch status {
                 case AVPlayerStatus.readyToPlay:
-                    handler.playbackDelegate?.playbackReady(forPlayer: self)
+                    handler.playbackDelegate?.playbackReady(player: self)
                 case AVPlayerStatus.failed:
-                    handler.playbackDelegate?.playerDidFailToStart(forPlayer: self)
+                    handler.playbackDelegate?.playbackDidFailed(with: VersaPlayerPlaybackError.unknown)
                 default:
                     break;
                 }
@@ -195,15 +195,15 @@ extension VPlayer {
             case "playbackBufferEmpty":
                 isBuffering = true
                 NotificationCenter.default.post(name: VPlayer.VPlayerNotificationName.buffering.notification, object: self, userInfo: nil)
-                handler.playbackDelegate?.startBuffering(forPlayer: self)
+                handler.playbackDelegate?.startBuffering(layer: self)
             case "playbackLikelyToKeepUp":
                 isBuffering = false
                 NotificationCenter.default.post(name: VPlayer.VPlayerNotificationName.endBuffering.notification, object: self, userInfo: nil)
-                handler.playbackDelegate?.endBuffering(forPlayer: self)
+                handler.playbackDelegate?.endBuffering(player: self)
             case "playbackBufferFull":
                 isBuffering = false
                 NotificationCenter.default.post(name: VPlayer.VPlayerNotificationName.endBuffering.notification, object: self, userInfo: nil)
-                handler.playbackDelegate?.endBuffering(forPlayer: self)
+                handler.playbackDelegate?.endBuffering(player: self)
             default:
                 break;
             }
