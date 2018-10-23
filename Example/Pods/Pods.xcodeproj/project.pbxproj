@@ -11,6 +11,7 @@
 		051A816D6DD0CAE13496DDCFE0829167 /* UIImage+Diff.h in Headers */ = {isa = PBXBuildFile; fileRef = 85E250EF19C5B5671AEC10BEB508D087 /* UIImage+Diff.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		094973D2D2F1E3B2E772F93C8147C6B9 /* UIApplication+StrictKeyWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EECE81A9AEC1ED1057A9C3C88DBCEBE /* UIApplication+StrictKeyWindow.m */; };
 		0B65113A5A8F87EF4DED3128466ACC27 /* VersaPlayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE9E3DBF42B59B0FB65BA011C00FD0C /* VersaPlayerExtension.swift */; };
+		110EF425217F9760000C59E2 /* VersaPlayerPlaybackError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110EF424217F9760000C59E2 /* VersaPlayerPlaybackError.swift */; };
 		18EA4E0D8B74F2B2BBF8F39B49F49BF9 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7843C520ED7D11392D872D57034A1BC /* XCTest.framework */; };
 		1AB7934C16CE49DE196FFC7BE7278287 /* SwiftSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97545C39C4A5EE2631DD9FFECE76A40 /* SwiftSupport.swift */; };
 		2E687AF651FC8E7F72A43137DBEF1628 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1A94602875A48A997AD3F08A33E6EAA /* Foundation.framework */; };
@@ -88,6 +89,7 @@
 		0B161931541BFE46DFEA2092EDDDA815 /* UIImage+Snapshot.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+Snapshot.h"; path = "FBSnapshotTestCase/Categories/UIImage+Snapshot.h"; sourceTree = "<group>"; };
 		0D8C8C3EE629E4DE987A1AE606D3A309 /* VersaPlayer-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "VersaPlayer-prefix.pch"; sourceTree = "<group>"; };
 		0DD62652C824A954A4404CE2E6CE972B /* VersaPlayerGestureRecieverViewDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = VersaPlayerGestureRecieverViewDelegate.swift; sourceTree = "<group>"; };
+		110EF424217F9760000C59E2 /* VersaPlayerPlaybackError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersaPlayerPlaybackError.swift; sourceTree = "<group>"; };
 		1374B79237CAC07693E99442FBED1F15 /* FBSnapshotTestController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSnapshotTestController.h; path = FBSnapshotTestCase/FBSnapshotTestController.h; sourceTree = "<group>"; };
 		1A99ED0DF2BB42BA42A0CE1731CE3C2A /* VersaTimeLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = VersaTimeLabel.swift; sourceTree = "<group>"; };
 		1CEF264B7FB20EB086F46B3D21D0ADA9 /* Pods-VersaPlayer_ExampleTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VersaPlayer_ExampleTests-umbrella.h"; sourceTree = "<group>"; };
@@ -209,6 +211,14 @@
 			path = ../..;
 			sourceTree = "<group>";
 		};
+		110EF420217F9362000C59E2 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				110EF424217F9760000C59E2 /* VersaPlayerPlaybackError.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 		14B8B9B15ECBE87983FF987239AB2D7B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -298,6 +308,7 @@
 		5D17A800A09A89533993F42DAA8F23D0 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				110EF420217F9362000C59E2 /* Enums */,
 				C2A8BD88E145D679CBAA026AEFEA84D1 /* Player */,
 				50769C57DB28816ED794267226537DF4 /* Protocols */,
 				A05FBD6A6ADEA3EA9FF293222AF34804 /* Rendering */,
@@ -638,6 +649,7 @@
 				97DD4E07B4470008CA2D4E9B00D299B7 /* VersaPlayer.swift in Sources */,
 				B92ABF2C4E5C137C083C624C2F79D933 /* VersaPlayerControls.swift in Sources */,
 				44F28837166A15AD6827D5C142838D2A /* VersaPlayerControlsBehaviour.swift in Sources */,
+				110EF425217F9760000C59E2 /* VersaPlayerPlaybackError.swift in Sources */,
 				ACC361C50A7787FDBFEE66F3F5C4D2D1 /* VersaPlayerControlsCoordinator.swift in Sources */,
 				9AF762BCF7EFB441B7A46FED4B574418 /* VersaPlayerControlsExtension.swift in Sources */,
 				0B65113A5A8F87EF4DED3128466ACC27 /* VersaPlayerExtension.swift in Sources */,

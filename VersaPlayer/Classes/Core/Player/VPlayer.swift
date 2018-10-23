@@ -72,6 +72,7 @@ open class VPlayer: AVPlayer {
             currentItem!.addObserver(self, forKeyPath: "playbackBufferEmpty", options: .new, context: nil)
             currentItem!.addObserver(self, forKeyPath: "playbackLikelyToKeepUp", options: .new, context: nil)
             currentItem!.addObserver(self, forKeyPath: "playbackBufferFull", options: .new, context: nil)
+            currentItem!.addObserver(self, forKeyPath: "status", options: .new, context: nil)
         }
     }
     
@@ -150,6 +151,41 @@ extension VPlayer {
             }
         }else {
             switch keyPath ?? "" {
+            case "status":
+                if let value = change?[.newKey] as? Int, let status = AVPlayerItem.Status(rawValue: value), let item = object as? AVPlayerItem {
+                    if status == .failed, let error = item.error as NSError?, let underlyingError = error.userInfo[NSUnderlyingErrorKey] as? NSError {
+                        var playbackError = VersaPlayerPlaybackError.unknown
+                        switch underlyingError.code {
+                        case -12937:
+                            playbackError = .authenticationError
+                        case -16840:
+                            playbackError = .unauthorized
+                        case -12660:
+                            playbackError = .forbidden
+                        case -12938:
+                            playbackError = .notFound
+                        case -12661:
+                            playbackError = .unavailable
+                        case -12645, -12889:
+                            playbackError = .mediaFileError
+                        case -12318:
+                            playbackError = .bandwidthExceeded
+                        case -12642:
+                            playbackError = .playlistUnchanged
+                        case -1004:
+                            playbackError = .wrongHostIP
+                        case -1003:
+                            playbackError = .wrongHostDNS
+                        case -1000:
+                            playbackError = .badURL
+                        case -1202:
+                            playbackError = .invalidRequest
+                        default:
+                            playbackError = .unknown
+                        }
+                        handler.playbackDelegate?.playbackDidFailed(with: playbackError)
+                    }
+                }
             case "playbackBufferEmpty":
                 isBuffering = true
                 NotificationCenter.default.post(name: VPlayer.VPlayerNotificationName.buffering.notification, object: self, userInfo: nil)

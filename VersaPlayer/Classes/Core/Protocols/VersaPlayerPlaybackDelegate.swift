@@ -74,4 +74,10 @@ public protocol VersaPlayerPlaybackDelegate {
     ///     - player: VPlayer being used
     func endBuffering(forPlayer: VPlayer)
     
+    /// Notifies when playback fails with an error
+    ///
+    /// - Parameters:
+    ///     - error: playback error
+    func playbackDidFailed(with error: VersaPlayerPlaybackError)
+    
 }
