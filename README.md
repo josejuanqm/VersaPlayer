@@ -27,6 +27,14 @@
       <li>
         <a href="#adding-controls">Adding Controls</a>
       </li>
+      <li>
+        <a href="#advanced-usage">Advanced Usage</a>
+      </li>
+      <ol>
+        <li>
+          <a href="#drm">Encrypted Content (Digital Rights Management)</a>
+        </li>
+      </ol>
     </ol>
     <li>
       <a href="#extensions">Extensions</a>
@@ -116,6 +124,16 @@ bufferingView | UIView | Shown when player is buffering
     <img src="https://github.com/josejuanqm/VersaPlayer/blob/master/RepoAssets/controls_example.png" />
   </p>
 </div>
+
+### Advanced Usage
+
+#### DRM
+
+VersaPlayer also brings support for encrypted content, to make use of this funcionality you must implement VersaPlayerDecryptionDelegate and assign it to VersaPlayer's decryptionDelegate property.
+
+To read more about this topic go to:
+
+https://josejuanqm.github.io/Libraries-Documentation/VersaPlayerCore/Protocols/VersaPlayerDecryptionDelegate.html
 
 ## Extensions
 
