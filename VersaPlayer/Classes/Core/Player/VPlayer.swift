@@ -122,7 +122,7 @@ extension VPlayer {
     
     /// Prepare players playback delegate observers
     open func preparePlayerPlaybackDelegate() {
-        NotificationCenter.default.addObserver(forName: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: self, queue: OperationQueue.main) { (notification) in
+        NotificationCenter.default.addObserver(forName: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil, queue: OperationQueue.main) { (notification) in
             NotificationCenter.default.post(name: VPlayer.VPlayerNotificationName.didEnd.notification, object: self, userInfo: nil)
             self.handler.playbackDelegate?.playbackDidEnd(player: self)
         }
