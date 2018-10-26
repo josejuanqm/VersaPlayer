@@ -54,6 +54,9 @@
       <a href="#documentation">Documentation</a>
     </li>
     <li>
+      <a href="#contributors">Awesome People (Contributors)</a>
+    </li>
+    <li>
       <a href="#donation">Donation</a>
     </li>
   </ol>
@@ -158,6 +161,13 @@ Full documentation avilable https://josejuanqm.github.io/Libraries-Documentation
 ## Author
 
 Jose Quintero - jose.juan.qm@gmail.com
+
+## Contributors
+
+People that make VersaPlayer possible, Thank you!
+
+<span><a href="https://github.com/josejuanqm"><img src="https://github.com/josejuanqm.png" alt="josejuanqm" width="50px"></a></span>
+<span><a href="https://github.com/pbeast"><img src="https://github.com/pbeast.png" alt="pbeast" width="50px"></a></span>
 
 ## Donation
 
