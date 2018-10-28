@@ -32,7 +32,6 @@ open class VPlayerLayer: CALayer {
         controller?.delegate = player
         player.pipController = controller
         
-        self.backgroundColor = UIColor.red.cgColor
         addSublayer(playerLayer)
     }
     
