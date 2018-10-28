@@ -22,7 +22,8 @@ public protocol VersaPlayerGestureRecieverViewDelegate {
     /// - Parameters:
     ///     - scale: CGPoin at wich touch was recognized
     func didTap(at point: CGPoint)
-    
+    func doubleTap(at point: CGPoint)
+
     /// Pan was recognized
     ///
     /// - Parameters:

@@ -31,6 +31,8 @@ open class VPlayerLayer: CALayer {
         let controller = AVPictureInPictureController(playerLayer: playerLayer)
         controller?.delegate = player
         player.pipController = controller
+        
+        self.backgroundColor = UIColor.red.cgColor
         addSublayer(playerLayer)
     }
     

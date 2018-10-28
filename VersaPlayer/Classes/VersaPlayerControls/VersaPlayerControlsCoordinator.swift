@@ -72,6 +72,10 @@ open class VersaPlayerControlsCoordinator: UIView, VersaPlayerGestureRecieverVie
         }
     }
     
+    open func doubleTap(at point: CGPoint) {
+        player.toggleFullscreen()
+    }
+    
     /// Notifies when pan was recognized
     ///
     /// - Parameters:

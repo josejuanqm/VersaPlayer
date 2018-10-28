@@ -149,6 +149,10 @@ open class VersaPlayer: UIView, AVPictureInPictureControllerDelegate {
         isFullscreenModeEnabled = enabled
     }
     
+    open func toggleFullscreen(){
+        setFullscreen(enabled: !isFullscreenModeEnabled)
+    }
+    
     /// Sets the item to be played
     ///
     /// - Parameters:
