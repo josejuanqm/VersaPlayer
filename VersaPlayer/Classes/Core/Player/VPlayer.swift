@@ -72,6 +72,14 @@ open class VPlayer: AVPlayer, AVAssetResourceLoaderDelegate {
         if let asset = item?.asset as? AVURLAsset, let vitem = item as? VPlayerItem, vitem.isEncrypted {
             asset.resourceLoader.setDelegate(self, queue: queue)
         }
+        
+        if currentItem != nil {
+            currentItem!.removeObserver(self, forKeyPath: "playbackBufferEmpty")
+            currentItem!.removeObserver(self, forKeyPath: "playbackLikelyToKeepUp")
+            currentItem!.removeObserver(self, forKeyPath: "playbackBufferFull")
+            currentItem!.removeObserver(self, forKeyPath: "status")
+        }
+        
         super.replaceCurrentItem(with: item)
         NotificationCenter.default.post(name: VPlayer.VPlayerNotificationName.assetLoaded.notification, object: self, userInfo: nil)
         if item != nil {
