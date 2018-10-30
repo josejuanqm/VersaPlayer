@@ -53,11 +53,7 @@ open class VersaPlayerControlsCoordinator: UIView, VersaPlayerGestureRecieverVie
     /// - Parameters:
     ///     - scale: CGFloat value
     open func didPinch(with scale: CGFloat) {
-        if player.renderingView.renderingLayer.playerLayer.videoGravity == AVLayerVideoGravity.resizeAspect {
-            player.renderingView.renderingLayer.playerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
-        }else {
-            player.renderingView.renderingLayer.playerLayer.videoGravity = AVLayerVideoGravity.resizeAspect
-        }
+        
     }
     
     /// Notifies when tap was recognized
@@ -72,8 +68,16 @@ open class VersaPlayerControlsCoordinator: UIView, VersaPlayerGestureRecieverVie
         }
     }
     
-    open func doubleTap(at point: CGPoint) {
-        player.toggleFullscreen()
+    /// Notifies when tap was recognized
+    ///
+    /// - Parameters:
+    ///     - point: CGPoint at which tap was recognized
+    open func didDoubleTap(at point: CGPoint) {
+        if player.renderingView.renderingLayer.playerLayer.videoGravity == AVLayerVideoGravity.resizeAspect {
+            player.renderingView.renderingLayer.playerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        }else {
+            player.renderingView.renderingLayer.playerLayer.videoGravity = AVLayerVideoGravity.resizeAspect
+        }
     }
     
     /// Notifies when pan was recognized

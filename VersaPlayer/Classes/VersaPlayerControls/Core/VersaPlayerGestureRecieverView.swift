@@ -13,8 +13,10 @@ open class VersaPlayerGestureRecieverView: UIView {
     /// VersaPlayerGestureRecieverViewDelegate instance
     public var delegate: VersaPlayerGestureRecieverViewDelegate? = nil
     
-    /// UITapGestureRecognizer
+    /// Single tap UITapGestureRecognizer
     public var tapGesture: UITapGestureRecognizer? = nil
+    
+    /// Double tap UITapGestureRecognizer
     public var doubleTapGesture: UITapGestureRecognizer? = nil
 
     /// UIPanGestureRecognizer
@@ -71,7 +73,7 @@ open class VersaPlayerGestureRecieverView: UIView {
     }
     
     @objc open func doubleTapHandler(with sender: UITapGestureRecognizer) {
-        delegate?.doubleTap(at: sender.location(in: self))
+        delegate?.didDoubleTap(at: sender.location(in: self))
     }
     
     @objc open func pinchHandler(with sender: UIPinchGestureRecognizer) {
