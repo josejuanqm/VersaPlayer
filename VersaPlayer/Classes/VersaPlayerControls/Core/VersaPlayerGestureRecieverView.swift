@@ -15,7 +15,8 @@ open class VersaPlayerGestureRecieverView: UIView {
     
     /// UITapGestureRecognizer
     public var tapGesture: UITapGestureRecognizer? = nil
-    
+    public var doubleTapGesture: UITapGestureRecognizer? = nil
+
     /// UIPanGestureRecognizer
     public var panGesture: UIPanGestureRecognizer? = nil
     
@@ -48,11 +49,18 @@ open class VersaPlayerGestureRecieverView: UIView {
         isUserInteractionEnabled = true
         tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapHandler(with:)))
         tapGesture?.numberOfTapsRequired = 1
+        
+        doubleTapGesture = UITapGestureRecognizer(target: self, action: #selector(doubleTapHandler(with:)))
+        doubleTapGesture?.numberOfTapsRequired = 2
+
+        tapGesture?.require(toFail: doubleTapGesture!)
+        
         pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(pinchHandler(with:)))
         panGesture = UIPanGestureRecognizer(target: self, action: #selector(panHandler(with:)))
         panGesture?.minimumNumberOfTouches = 1
         
         addGestureRecognizer(tapGesture!)
+        addGestureRecognizer(doubleTapGesture!)
         addGestureRecognizer(panGesture!)
         addGestureRecognizer(pinchGesture!)
     }
@@ -60,6 +68,10 @@ open class VersaPlayerGestureRecieverView: UIView {
     
     @objc open func tapHandler(with sender: UITapGestureRecognizer) {
         delegate?.didTap(at: sender.location(in: self))
+    }
+    
+    @objc open func doubleTapHandler(with sender: UITapGestureRecognizer) {
+        delegate?.doubleTap(at: sender.location(in: self))
     }
     
     @objc open func pinchHandler(with sender: UIPinchGestureRecognizer) {
