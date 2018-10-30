@@ -31,6 +31,7 @@ open class VPlayerLayer: CALayer {
         let controller = AVPictureInPictureController(playerLayer: playerLayer)
         controller?.delegate = player
         player.pipController = controller
+        
         addSublayer(playerLayer)
     }
     
