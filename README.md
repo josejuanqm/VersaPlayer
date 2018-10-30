@@ -96,11 +96,17 @@ pod 'VersaPlayer'
 
 VersaPlayer aims to be simple to use but also flexible, to start using VersaPlayer first create a view programatically or via storyboard. Then add this few lines of code to start playing your video.
 
-<div>
-  <p align="center">
-    <img src="https://github.com/josejuanqm/VersaPlayer/blob/master/RepoAssets/simple_example.png" />
-  </p>
-</div>
+```swift
+    @IBOutlet weak var player: VersaPlayer!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        if let url = URL.init(string: "http://rmcdn.2mdn.net/Demo/html5/output.mp4") {
+            let item = VPlayerItem(url: url)
+            player.set(item: item)
+        }
+    }
+```
 
 ### Adding Controls
 
@@ -122,11 +128,19 @@ currentTimeLabel | VersaTimeLabel | Indicate the current time
 totalTimeLabel | VersaTimeLabel | Indicate the total time
 bufferingView | UIView | Shown when player is buffering
 
-<div>
-  <p align="center">
-    <img src="https://github.com/josejuanqm/VersaPlayer/blob/master/RepoAssets/controls_example.png" />
-  </p>
-</div>
+```swift
+    @IBOutlet weak var player: VersaPlayer!
+    @IBOutlet weak var controls: VersaPlayerControls!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        player.use(controls: controls)
+        if let url = URL.init(string: "http://rmcdn.2mdn.net/Demo/html5/output.mp4") {
+            let item = VPlayerItem(url: url)
+            player.set(item: item)
+        }
+    }
+```
 
 ### Advanced Usage
 
