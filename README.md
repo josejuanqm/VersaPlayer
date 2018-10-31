@@ -34,6 +34,25 @@
         <li>
           <a href="#drm">Encrypted Content (Digital Rights Management)</a>
         </li>
+        <li>
+          <a href="#tracks">Track Selection</a>
+        </li>
+        <ol>
+          <li>
+            <a href="#audio-tracks">Audio Tracks</a>
+          </li>
+          <li>
+            <a href="#video-tracks">Video Tracks</a>
+          </li>
+          <li>
+            <a href="#caption-tracks">Caption Tracks</a>
+          </li>
+          <ol>
+            <li>
+              <a href="#caption-styling">Caption Styling</a>
+            </li>
+          </ol>
+        </ol>
       </ol>
     </ol>
     <li>
@@ -70,9 +89,11 @@ If you are looking for the tvOS player, head over to https://github.com/josejuan
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-iPad PIP mode             |  iPhone normal mode
-:-------------------------:|:-------------------------:
-![](https://github.com/josejuanqm/VersaPlayer/blob/master/RepoAssets/Simulator%20Screen%20Shot%20-%20iPad%20Pro%20(9.7-inch)%20-%202018-10-15%20at%2013.34.10.png)  |  ![](https://github.com/josejuanqm/VersaPlayer/blob/master/RepoAssets/Simulator%20Screen%20Shot%20-%20iPhone%208%20Plus%20-%202018-10-15%20at%2013.33.03.png)
+<div>
+  <p align="center">
+    <img src="https://github.com/josejuanqm/VersaPlayer/blob/master/RepoAssets/iphone.png" />
+  </p>
+</div>
 
 ## Installation
 
@@ -97,13 +118,13 @@ pod 'VersaPlayer'
 VersaPlayer aims to be simple to use but also flexible, to start using VersaPlayer first create a view programatically or via storyboard. Then add this few lines of code to start playing your video.
 
 ```swift
-    @IBOutlet weak var player: VersaPlayer!
+    @IBOutlet weak var playerView: VersaPlayerView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         if let url = URL.init(string: "http://rmcdn.2mdn.net/Demo/html5/output.mp4") {
-            let item = VPlayerItem(url: url)
-            player.set(item: item)
+            let item = VersaPlayerItem(url: url)
+            playerView.set(item: item)
         }
     }
 ```
@@ -129,15 +150,15 @@ totalTimeLabel | VersaTimeLabel | Indicate the total time
 bufferingView | UIView | Shown when player is buffering
 
 ```swift
-    @IBOutlet weak var player: VersaPlayer!
+    @IBOutlet weak var playerView: VersaPlayerView!
     @IBOutlet weak var controls: VersaPlayerControls!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        player.use(controls: controls)
+        playerView.use(controls: controls)
         if let url = URL.init(string: "http://rmcdn.2mdn.net/Demo/html5/output.mp4") {
-            let item = VPlayerItem(url: url)
-            player.set(item: item)
+            let item = VersaPlayerItem(url: url)
+            playerView.set(item: item)
         }
     }
 ```
@@ -151,6 +172,80 @@ VersaPlayer also brings support for encrypted content, to make use of this funci
 To read more about this topic go to:
 
 https://josejuanqm.github.io/Libraries-Documentation/VersaPlayerCore/Protocols/VersaPlayerDecryptionDelegate.html
+
+#### Tracks
+
+To make use of different media tracks, such as audio, video, or captioning, use VersaPlayerMediaTracks, found in VersaPlayer class.
+
+to learn more about this properties go to:
+
+https://josejuanqm.github.io/Libraries-Documentation/VersaPlayerCore/Classes/VersaPlayerMediaTrack.html
+
+##### Audio Tracks
+
+Audio tracks are specially helpfull when dealing with different languages, for example for a movie playback. 
+
+To select an audio track simply fetch available tracks with VersaPlayer's audioTracks property.
+
+```swift
+    @IBOutlet weak var playerView: VersaPlayer!
+
+    ...
+    
+    let tracks: [VersaPlayerMediaTrack] = playerView.player.currentItem?.audioTracks
+    /// the name of the track
+    let name = tracks.first?.name
+    /// the language of the track
+    let name = tracks.first?.language
+    /// selecting the first one
+    tracks.first?.select(for: playerView.player)
+```
+
+##### Video Tracks
+
+Video tracks are most helpfull when dealing with different renditions or different streams per video quality. 
+
+To select an video track simply follow the same principles as an audio track.
+
+```swift
+    @IBOutlet weak var playerView: VersaPlayer!
+
+    ...
+    
+    let tracks: [VersaPlayerMediaTrack] = playerView.player.currentItem?.videoTracks
+    /// the name of the track
+    let name = tracks.first?.name
+    /// selecting the first one
+    tracks.first?.select(for: playerView.player)
+```
+
+##### Caption Tracks
+
+Caption tracks are almost always helpfull. This can be used from a movie playback all the way to assitive content. 
+
+To select an video track simply follow the same principles as video and audio tracks.
+
+```swift
+    @IBOutlet weak var playerView: VersaPlayer!
+
+    ...
+    
+    let tracks: [VersaPlayerMediaTrack] = playerView.player.currentItem?.captionTracks
+    /// the name of the track
+    let name = tracks.first?.name
+    /// the language of the track
+    let name = tracks.first?.language
+    /// selecting the first one
+    tracks.first?.select(for: playerView.player)
+```
+
+###### Caption Styling
+
+Caption styling are not usually managed by the user, but when necessary, captionStyling property from VersaPlayer comes in handy.
+
+Explore all the available attributes that can be changed here:
+
+https://josejuanqm.github.io/Libraries-Documentation/VersaPlayerCore/Classes/VersaPlayerCaptionStyling.html
 
 ## Extensions
 
