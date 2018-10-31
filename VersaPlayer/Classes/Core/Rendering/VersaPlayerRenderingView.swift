@@ -9,19 +9,19 @@
 import UIKit
 import AVKit
 
-open class VPlayerRenderingView: UIView {
+open class VersaPlayerRenderingView: UIView {
     
     /// VPlayerLayer instance used to render player content
-    public var renderingLayer: VPlayerLayer!
+    public var renderingLayer: VersaPlayerLayer!
     
     /// VersaPlayer instance being rendered by renderingLayer
-    public var player: VersaPlayer!
+    public var player: VersaPlayerView!
     
     /// Constructor
     ///
     /// - Parameters:
     ///     - player: VersaPlayer instance to render.
-    public init(with player: VersaPlayer) {
+    public init(with player: VersaPlayerView) {
         super.init(frame: CGRect.zero)
         self.player = player
     }
@@ -33,7 +33,7 @@ open class VPlayerRenderingView: UIView {
     override open func layoutSubviews() {
         super.layoutSubviews()
         if renderingLayer == nil {
-            renderingLayer = VPlayerLayer.init(with: player)
+            renderingLayer = VersaPlayerLayer.init(with: player)
             layer.addSublayer(renderingLayer.playerLayer)
         }
         

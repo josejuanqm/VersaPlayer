@@ -1,5 +1,5 @@
 //
-//  VPlayer.swift
+//  VersaPlayer.swift
 //  VersaPlayer Demo
 //
 //  Created by Jose Quintero on 10/11/18.
@@ -8,7 +8,7 @@
 
 import AVFoundation
 
-open class VPlayer: AVPlayer, AVAssetResourceLoaderDelegate {
+open class VersaPlayer: AVPlayer, AVAssetResourceLoaderDelegate {
     
     /// Dispatch queue for resource loader
     private let queue = DispatchQueue(label: "quasar.studio.versaplayer")
@@ -36,7 +36,12 @@ open class VPlayer: AVPlayer, AVAssetResourceLoaderDelegate {
     }
     
     /// VersaPlayer instance
-    public var handler: VersaPlayer!
+    public var handler: VersaPlayerView!
+    
+    /// Caption text style rules
+    lazy public var captionStyling: VersaPlayerCaptionStyling = {
+        return VersaPlayerCaptionStyling(with: self)
+    }()
     
     /// Whether player is buffering
     public var isBuffering: Bool = false
@@ -49,18 +54,18 @@ open class VPlayer: AVPlayer, AVAssetResourceLoaderDelegate {
     /// Play content
     override open func play() {
         handler.playbackDelegate?.playbackWillBegin(player: self)
-        NotificationCenter.default.post(name: VPlayer.VPlayerNotificationName.willPlay.notification, object: self, userInfo: nil)
+        NotificationCenter.default.post(name: VersaPlayer.VPlayerNotificationName.willPlay.notification, object: self, userInfo: nil)
         if !(handler.playbackDelegate?.playbackShouldBegin(player: self) ?? true) {
             return
         }
-        NotificationCenter.default.post(name: VPlayer.VPlayerNotificationName.play.notification, object: self, userInfo: nil)
+        NotificationCenter.default.post(name: VersaPlayer.VPlayerNotificationName.play.notification, object: self, userInfo: nil)
         super.play()
         handler.playbackDelegate?.playbackDidBegin(player: self)
     }
     
     /// Pause content
     override open func pause() {
-        NotificationCenter.default.post(name: VPlayer.VPlayerNotificationName.pause.notification, object: self, userInfo: nil)
+        NotificationCenter.default.post(name: VersaPlayer.VPlayerNotificationName.pause.notification, object: self, userInfo: nil)
         super.pause()
     }
     
@@ -69,7 +74,7 @@ open class VPlayer: AVPlayer, AVAssetResourceLoaderDelegate {
     /// - Parameters:
     ///     - item: AVPlayer item instance to be added
     override open func replaceCurrentItem(with item: AVPlayerItem?) {
-        if let asset = item?.asset as? AVURLAsset, let vitem = item as? VPlayerItem, vitem.isEncrypted {
+        if let asset = item?.asset as? AVURLAsset, let vitem = item as? VersaPlayerItem, vitem.isEncrypted {
             asset.resourceLoader.setDelegate(self, queue: queue)
         }
         
@@ -81,7 +86,7 @@ open class VPlayer: AVPlayer, AVAssetResourceLoaderDelegate {
         }
         
         super.replaceCurrentItem(with: item)
-        NotificationCenter.default.post(name: VPlayer.VPlayerNotificationName.assetLoaded.notification, object: self, userInfo: nil)
+        NotificationCenter.default.post(name: VersaPlayer.VPlayerNotificationName.assetLoaded.notification, object: self, userInfo: nil)
         if item != nil {
             currentItem!.addObserver(self, forKeyPath: "playbackBufferEmpty", options: .new, context: nil)
             currentItem!.addObserver(self, forKeyPath: "playbackLikelyToKeepUp", options: .new, context: nil)
@@ -92,7 +97,7 @@ open class VPlayer: AVPlayer, AVAssetResourceLoaderDelegate {
     
 }
 
-extension VPlayer {
+extension VersaPlayer {
     
     /// Start time
     ///
@@ -131,7 +136,7 @@ extension VPlayer {
     /// Prepare players playback delegate observers
     open func preparePlayerPlaybackDelegate() {
         NotificationCenter.default.addObserver(forName: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil, queue: OperationQueue.main) { (notification) in
-            NotificationCenter.default.post(name: VPlayer.VPlayerNotificationName.didEnd.notification, object: self, userInfo: nil)
+            NotificationCenter.default.post(name: VersaPlayer.VPlayerNotificationName.didEnd.notification, object: self, userInfo: nil)
             self.handler.playbackDelegate?.playbackDidEnd(player: self)
         }
         NotificationCenter.default.addObserver(forName: NSNotification.Name.AVPlayerItemTimeJumped, object: self, queue: OperationQueue.main) { (notification) in
@@ -143,7 +148,7 @@ extension VPlayer {
                 preferredTimescale: CMTimeScale(NSEC_PER_SEC)
             ),
             queue: DispatchQueue.main) { (time) in
-                NotificationCenter.default.post(name: VPlayer.VPlayerNotificationName.timeChanged.notification, object: self, userInfo: [VPlayerNotificationInfoKey.time.rawValue: time])
+                NotificationCenter.default.post(name: VersaPlayer.VPlayerNotificationName.timeChanged.notification, object: self, userInfo: [VPlayerNotificationInfoKey.time.rawValue: time])
                 self.handler.playbackDelegate?.timeDidChange(player: self, to: time)
                 
         }
@@ -152,7 +157,7 @@ extension VPlayer {
     
     /// Value observer
     override open func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if let obj = object as? VPlayer, obj == self {
+        if let obj = object as? VersaPlayer, obj == self {
             if keyPath == "status" {
                 switch status {
                 case AVPlayerStatus.readyToPlay:
@@ -202,15 +207,15 @@ extension VPlayer {
                 }
             case "playbackBufferEmpty":
                 isBuffering = true
-                NotificationCenter.default.post(name: VPlayer.VPlayerNotificationName.buffering.notification, object: self, userInfo: nil)
+                NotificationCenter.default.post(name: VersaPlayer.VPlayerNotificationName.buffering.notification, object: self, userInfo: nil)
                 handler.playbackDelegate?.startBuffering(layer: self)
             case "playbackLikelyToKeepUp":
                 isBuffering = false
-                NotificationCenter.default.post(name: VPlayer.VPlayerNotificationName.endBuffering.notification, object: self, userInfo: nil)
+                NotificationCenter.default.post(name: VersaPlayer.VPlayerNotificationName.endBuffering.notification, object: self, userInfo: nil)
                 handler.playbackDelegate?.endBuffering(player: self)
             case "playbackBufferFull":
                 isBuffering = false
-                NotificationCenter.default.post(name: VPlayer.VPlayerNotificationName.endBuffering.notification, object: self, userInfo: nil)
+                NotificationCenter.default.post(name: VersaPlayer.VPlayerNotificationName.endBuffering.notification, object: self, userInfo: nil)
                 handler.playbackDelegate?.endBuffering(player: self)
             default:
                 break;

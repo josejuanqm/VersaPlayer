@@ -11,9 +11,9 @@ import Foundation
 open class VersaPlayerExtension: NSObject {
     
     /// VersaPlayer instance being used
-    open var player: VersaPlayer
+    open var player: VersaPlayerView
     
-    public init(with player: VersaPlayer) {
+    public init(with player: VersaPlayerView) {
         self.player = player
     }
     

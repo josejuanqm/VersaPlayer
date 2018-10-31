@@ -1,6 +1,6 @@
 //
-//  VersaPlayer.swift
-//  VersaPlayer Demo
+//  VersaPlayerView.swift
+//  VersaPlayerView Demo
 //
 //  Created by Jose Quintero on 10/11/18.
 //  Copyright © 2018 Quasar. All rights reserved.
@@ -11,16 +11,16 @@ import CoreMedia
 import AVFoundation
 import AVKit
 
-open class VersaPlayer: UIView, AVPictureInPictureControllerDelegate {
+open class VersaPlayerView: UIView, AVPictureInPictureControllerDelegate {
 
     /// VersaPlayer extension dictionary
     public var extensions: [String: VersaPlayerExtension] = [:]
     
     /// AVPlayer used in VersaPlayer implementation
-    public var player: VPlayer!
+    public var player: VersaPlayer!
     
     /// VPlayerRenderingView instance
-    public var renderingView: VPlayerRenderingView!
+    public var renderingView: VersaPlayerRenderingView!
     
     /// VersaPlayerPlaybackDelegate instance
     public var playbackDelegate: VersaPlayerPlaybackDelegate? = nil
@@ -94,10 +94,10 @@ open class VersaPlayer: UIView, AVPictureInPictureControllerDelegate {
     /// Prepares the player to play
     open func prepare() {
         ready = true
-        player = VPlayer()
+        player = VersaPlayer()
         player.handler = self
         player.preparePlayerPlaybackDelegate()
-        renderingView = VPlayerRenderingView(with: self)
+        renderingView = VersaPlayerRenderingView(with: self)
         layout(view: renderingView, into: self)
     }
     
@@ -153,7 +153,7 @@ open class VersaPlayer: UIView, AVPictureInPictureControllerDelegate {
     ///
     /// - Parameters:
     ///     - item: The VPlayerItem instance to add to player.
-    open func set(item: VPlayerItem?) {
+    open func set(item: VersaPlayerItem?) {
         if !ready {
             prepare()
         }

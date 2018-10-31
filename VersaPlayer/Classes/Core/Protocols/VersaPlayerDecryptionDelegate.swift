@@ -8,7 +8,7 @@
 import Foundation
 
 public protocol VersaPlayerDecryptionDelegate {
-    func urlFor(player: VPlayer) -> URL
-    func contentIdFor(player: VPlayer) -> String
-    func contentKeyContextURLFor(player: VPlayer) -> URL
+    func urlFor(player: VersaPlayer) -> URL
+    func contentIdFor(player: VersaPlayer) -> String
+    func contentKeyContextURLFor(player: VersaPlayer) -> URL
 }

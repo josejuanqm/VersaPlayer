@@ -13,7 +13,7 @@ import AVFoundation
 open class VersaPlayerControlsCoordinator: UIView, VersaPlayerGestureRecieverViewDelegate {
 
     /// VersaPlayer instance being used
-    var player: VersaPlayer!
+    var player: VersaPlayerView!
     
     /// VersaPlayerControls instance being used
     public var controls: VersaPlayerControls!
@@ -23,7 +23,7 @@ open class VersaPlayerControlsCoordinator: UIView, VersaPlayerGestureRecieverVie
     
     override open func didMoveToSuperview() {
         super.didMoveToSuperview()
-        if let h = superview as? VersaPlayer {
+        if let h = superview as? VersaPlayerView {
             player = h
             if controls != nil {
                 addSubview(controls)

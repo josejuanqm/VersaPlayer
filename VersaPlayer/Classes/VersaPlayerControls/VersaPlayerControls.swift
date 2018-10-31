@@ -13,7 +13,7 @@ import AVKit
 open class VersaPlayerControls: UIView {
     
     /// VersaPlayer intance being controlled
-    public var handler: VersaPlayer!
+    public var handler: VersaPlayerView!
     
     /// VersaPlayerControlsBehaviour being used to validate ui
     public var behaviour: VersaPlayerControlsBehaviour!
@@ -62,11 +62,11 @@ open class VersaPlayerControls: UIView {
     public var skipSize: Double = 30
     
     deinit {
-        NotificationCenter.default.removeObserver(self, name: VPlayer.VPlayerNotificationName.timeChanged.notification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: VPlayer.VPlayerNotificationName.play.notification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: VPlayer.VPlayerNotificationName.pause.notification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: VPlayer.VPlayerNotificationName.buffering.notification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: VPlayer.VPlayerNotificationName.endBuffering.notification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: VersaPlayer.VPlayerNotificationName.timeChanged.notification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: VersaPlayer.VPlayerNotificationName.play.notification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: VersaPlayer.VPlayerNotificationName.pause.notification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: VersaPlayer.VPlayerNotificationName.buffering.notification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: VersaPlayer.VPlayerNotificationName.endBuffering.notification, object: nil)
     }
     
     override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -149,24 +149,24 @@ open class VersaPlayerControls: UIView {
     
     /// Prepares the notification observers/listeners
     open func prepareNotificationListener() {
-        NotificationCenter.default.addObserver(forName: VPlayer.VPlayerNotificationName.timeChanged.notification, object: nil, queue: OperationQueue.main) { (notification) in
-            if let time = notification.userInfo?[VPlayer.VPlayerNotificationInfoKey.time.rawValue] as? CMTime {
+        NotificationCenter.default.addObserver(forName: VersaPlayer.VPlayerNotificationName.timeChanged.notification, object: nil, queue: OperationQueue.main) { (notification) in
+            if let time = notification.userInfo?[VersaPlayer.VPlayerNotificationInfoKey.time.rawValue] as? CMTime {
                 self.timeDidChange(toTime: time)
             }
         }
-        NotificationCenter.default.addObserver(forName: VPlayer.VPlayerNotificationName.didEnd.notification, object: nil, queue: OperationQueue.main) { (notification) in
+        NotificationCenter.default.addObserver(forName: VersaPlayer.VPlayerNotificationName.didEnd.notification, object: nil, queue: OperationQueue.main) { (notification) in
             self.playPauseButton?.set(active: false)
         }
-        NotificationCenter.default.addObserver(forName: VPlayer.VPlayerNotificationName.play.notification, object: nil, queue: OperationQueue.main) { (notification) in
+        NotificationCenter.default.addObserver(forName: VersaPlayer.VPlayerNotificationName.play.notification, object: nil, queue: OperationQueue.main) { (notification) in
             self.playPauseButton?.set(active: true)
         }
-        NotificationCenter.default.addObserver(forName: VPlayer.VPlayerNotificationName.pause.notification, object: nil, queue: OperationQueue.main) { (notification) in
+        NotificationCenter.default.addObserver(forName: VersaPlayer.VPlayerNotificationName.pause.notification, object: nil, queue: OperationQueue.main) { (notification) in
             self.playPauseButton?.set(active: false)
         }
-        NotificationCenter.default.addObserver(forName: VPlayer.VPlayerNotificationName.endBuffering.notification, object: nil, queue: OperationQueue.main) { (notification) in
+        NotificationCenter.default.addObserver(forName: VersaPlayer.VPlayerNotificationName.endBuffering.notification, object: nil, queue: OperationQueue.main) { (notification) in
             self.hideBuffering()
         }
-        NotificationCenter.default.addObserver(forName: VPlayer.VPlayerNotificationName.buffering.notification, object: nil, queue: OperationQueue.main) { (notification) in
+        NotificationCenter.default.addObserver(forName: VersaPlayer.VPlayerNotificationName.buffering.notification, object: nil, queue: OperationQueue.main) { (notification) in
             self.showBuffering()
         }
     }

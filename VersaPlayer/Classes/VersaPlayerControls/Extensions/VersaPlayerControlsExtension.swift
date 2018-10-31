@@ -9,7 +9,7 @@
 import Foundation
 import CoreMedia
 
-public extension VersaPlayer {
+public extension VersaPlayerView {
     
     private var versaPlayerControlsTag: Int { return 2000 }
     

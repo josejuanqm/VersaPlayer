@@ -9,13 +9,13 @@
 import AVFoundation
 import AVKit
 
-open class VPlayerLayer: CALayer {
+open class VersaPlayerLayer: CALayer {
     
     /// Player Layer to be used
     public var playerLayer: AVPlayerLayer!
     
     /// VersaPlayer instance being rendered
-    public var handler: VersaPlayer!
+    public var handler: VersaPlayerView!
     
     override public init(layer: Any) {
         super.init(layer: layer)
@@ -25,7 +25,7 @@ open class VPlayerLayer: CALayer {
         super.init()
     }
     
-    public convenience init(with player: VersaPlayer) {
+    public convenience init(with player: VersaPlayerView) {
         self.init()
         playerLayer = AVPlayerLayer.init(player: player.player)
         let controller = AVPictureInPictureController(playerLayer: playerLayer)
