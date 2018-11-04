@@ -85,6 +85,10 @@
 
 If you are looking for the tvOS player, head over to https://github.com/josejuanqm/TVersaPlayer
 
+## Community
+
+If you have any doubts or need help with anything, head over to [Gitter](https://gitter.im/VersaPlayer/Lobby) and ask it there!
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
