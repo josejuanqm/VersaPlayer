@@ -1,0 +1,800 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0111121154FC5C5C38D85BCB /* Pods_VersaPlayerTest_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF66C775C8FF37ECC2A48E79 /* Pods_VersaPlayerTest_macOS.framework */; };
+		0E12C0EBB932EFA50C22D2A1 /* Pods_VersaPlayerTest_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07B70CAE23E36CCC7131A726 /* Pods_VersaPlayerTest_tvOS.framework */; };
+		11C1C12421912DB200A4F7D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C1C12321912DB200A4F7D5 /* AppDelegate.swift */; };
+		11C1C12621912DB200A4F7D5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C1C12521912DB200A4F7D5 /* ViewController.swift */; };
+		11C1C12821912DB300A4F7D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11C1C12721912DB300A4F7D5 /* Assets.xcassets */; };
+		11C1C12B21912DB300A4F7D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11C1C12921912DB300A4F7D5 /* Main.storyboard */; };
+		11C1C16C219146CF00A4F7D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C1C16B219146CF00A4F7D5 /* AppDelegate.swift */; };
+		11C1C16E219146CF00A4F7D5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C1C16D219146CF00A4F7D5 /* ViewController.swift */; };
+		11C1C171219146CF00A4F7D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11C1C16F219146CF00A4F7D5 /* Main.storyboard */; };
+		11C1C173219146D000A4F7D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11C1C172219146D000A4F7D5 /* Assets.xcassets */; };
+		11C1C176219146D000A4F7D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11C1C174219146D000A4F7D5 /* LaunchScreen.storyboard */; };
+		11C1C1952191550D00A4F7D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C1C1942191550D00A4F7D5 /* AppDelegate.swift */; };
+		11C1C1972191550D00A4F7D5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C1C1962191550D00A4F7D5 /* ViewController.swift */; };
+		11C1C19A2191550D00A4F7D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11C1C1982191550D00A4F7D5 /* Main.storyboard */; };
+		11C1C19C2191550F00A4F7D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11C1C19B2191550F00A4F7D5 /* Assets.xcassets */; };
+		95B73928BF5761E87B64429C /* Pods_VersaPlayerTest_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E00691A79E2D954E582531F /* Pods_VersaPlayerTest_iOS.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		07B70CAE23E36CCC7131A726 /* Pods_VersaPlayerTest_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VersaPlayerTest_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		11C1C12021912DB200A4F7D5 /* VersaPlayerTest_macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VersaPlayerTest_macOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		11C1C12321912DB200A4F7D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		11C1C12521912DB200A4F7D5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		11C1C12721912DB300A4F7D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		11C1C12A21912DB300A4F7D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		11C1C12C21912DB300A4F7D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11C1C12D21912DB300A4F7D5 /* VersaPlayerTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VersaPlayerTest.entitlements; sourceTree = "<group>"; };
+		11C1C169219146CF00A4F7D5 /* VersaPlayerTest_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VersaPlayerTest_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		11C1C16B219146CF00A4F7D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		11C1C16D219146CF00A4F7D5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		11C1C170219146CF00A4F7D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		11C1C172219146D000A4F7D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		11C1C175219146D000A4F7D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		11C1C177219146D000A4F7D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11C1C1922191550D00A4F7D5 /* VersaPlayerTest_tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VersaPlayerTest_tvOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		11C1C1942191550D00A4F7D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		11C1C1962191550D00A4F7D5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		11C1C1992191550D00A4F7D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		11C1C19B2191550F00A4F7D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		11C1C19D2191550F00A4F7D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2FFE1673769B2B47DCD4E8E6 /* Pods-VersaPlayerTest_macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VersaPlayerTest_macOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-VersaPlayerTest_macOS/Pods-VersaPlayerTest_macOS.release.xcconfig"; sourceTree = "<group>"; };
+		32F71FE5298C24E4B80EDF06 /* Pods-VersaPlayerTest_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VersaPlayerTest_iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-VersaPlayerTest_iOS/Pods-VersaPlayerTest_iOS.release.xcconfig"; sourceTree = "<group>"; };
+		6E00691A79E2D954E582531F /* Pods_VersaPlayerTest_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VersaPlayerTest_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A283B97A087CE29BBF21C985 /* Pods-VersaPlayerTest_tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VersaPlayerTest_tvOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VersaPlayerTest_tvOS/Pods-VersaPlayerTest_tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		B16666E571659532CAD4D771 /* Pods-VersaPlayerTest_macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VersaPlayerTest_macOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VersaPlayerTest_macOS/Pods-VersaPlayerTest_macOS.debug.xcconfig"; sourceTree = "<group>"; };
+		CEA797323E9823B6181321D1 /* Pods-VersaPlayerTest_tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VersaPlayerTest_tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-VersaPlayerTest_tvOS/Pods-VersaPlayerTest_tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		EF66C775C8FF37ECC2A48E79 /* Pods_VersaPlayerTest_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VersaPlayerTest_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7C891DDAB1A8029CA349FCA /* Pods-VersaPlayerTest_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VersaPlayerTest_iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VersaPlayerTest_iOS/Pods-VersaPlayerTest_iOS.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		11C1C11D21912DB200A4F7D5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0111121154FC5C5C38D85BCB /* Pods_VersaPlayerTest_macOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11C1C166219146CF00A4F7D5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95B73928BF5761E87B64429C /* Pods_VersaPlayerTest_iOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11C1C18F2191550D00A4F7D5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E12C0EBB932EFA50C22D2A1 /* Pods_VersaPlayerTest_tvOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		11C1C11721912DB200A4F7D5 = {
+			isa = PBXGroup;
+			children = (
+				11C1C12221912DB200A4F7D5 /* VersaPlayerTest */,
+				11C1C16A219146CF00A4F7D5 /* VersaPlayerTest_iOS */,
+				11C1C1932191550D00A4F7D5 /* VersaPlayerTest_tvOS */,
+				11C1C12121912DB200A4F7D5 /* Products */,
+				A7FBCA3A635E05A7FC92317E /* Pods */,
+				1646735634FC095C8EC1A193 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		11C1C12121912DB200A4F7D5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				11C1C12021912DB200A4F7D5 /* VersaPlayerTest_macOS.app */,
+				11C1C169219146CF00A4F7D5 /* VersaPlayerTest_iOS.app */,
+				11C1C1922191550D00A4F7D5 /* VersaPlayerTest_tvOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		11C1C12221912DB200A4F7D5 /* VersaPlayerTest */ = {
+			isa = PBXGroup;
+			children = (
+				11C1C12321912DB200A4F7D5 /* AppDelegate.swift */,
+				11C1C12521912DB200A4F7D5 /* ViewController.swift */,
+				11C1C12721912DB300A4F7D5 /* Assets.xcassets */,
+				11C1C12921912DB300A4F7D5 /* Main.storyboard */,
+				11C1C12C21912DB300A4F7D5 /* Info.plist */,
+				11C1C12D21912DB300A4F7D5 /* VersaPlayerTest.entitlements */,
+			);
+			path = VersaPlayerTest;
+			sourceTree = "<group>";
+		};
+		11C1C16A219146CF00A4F7D5 /* VersaPlayerTest_iOS */ = {
+			isa = PBXGroup;
+			children = (
+				11C1C16B219146CF00A4F7D5 /* AppDelegate.swift */,
+				11C1C16D219146CF00A4F7D5 /* ViewController.swift */,
+				11C1C16F219146CF00A4F7D5 /* Main.storyboard */,
+				11C1C172219146D000A4F7D5 /* Assets.xcassets */,
+				11C1C174219146D000A4F7D5 /* LaunchScreen.storyboard */,
+				11C1C177219146D000A4F7D5 /* Info.plist */,
+			);
+			path = VersaPlayerTest_iOS;
+			sourceTree = "<group>";
+		};
+		11C1C1932191550D00A4F7D5 /* VersaPlayerTest_tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				11C1C1942191550D00A4F7D5 /* AppDelegate.swift */,
+				11C1C1962191550D00A4F7D5 /* ViewController.swift */,
+				11C1C1982191550D00A4F7D5 /* Main.storyboard */,
+				11C1C19B2191550F00A4F7D5 /* Assets.xcassets */,
+				11C1C19D2191550F00A4F7D5 /* Info.plist */,
+			);
+			path = VersaPlayerTest_tvOS;
+			sourceTree = "<group>";
+		};
+		1646735634FC095C8EC1A193 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6E00691A79E2D954E582531F /* Pods_VersaPlayerTest_iOS.framework */,
+				EF66C775C8FF37ECC2A48E79 /* Pods_VersaPlayerTest_macOS.framework */,
+				07B70CAE23E36CCC7131A726 /* Pods_VersaPlayerTest_tvOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A7FBCA3A635E05A7FC92317E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F7C891DDAB1A8029CA349FCA /* Pods-VersaPlayerTest_iOS.debug.xcconfig */,
+				32F71FE5298C24E4B80EDF06 /* Pods-VersaPlayerTest_iOS.release.xcconfig */,
+				B16666E571659532CAD4D771 /* Pods-VersaPlayerTest_macOS.debug.xcconfig */,
+				2FFE1673769B2B47DCD4E8E6 /* Pods-VersaPlayerTest_macOS.release.xcconfig */,
+				A283B97A087CE29BBF21C985 /* Pods-VersaPlayerTest_tvOS.debug.xcconfig */,
+				CEA797323E9823B6181321D1 /* Pods-VersaPlayerTest_tvOS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		11C1C11F21912DB200A4F7D5 /* VersaPlayerTest_macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11C1C13021912DB300A4F7D5 /* Build configuration list for PBXNativeTarget "VersaPlayerTest_macOS" */;
+			buildPhases = (
+				4B64A8EAF3A4FD20BC84731D /* [CP] Check Pods Manifest.lock */,
+				11C1C11C21912DB200A4F7D5 /* Sources */,
+				11C1C11D21912DB200A4F7D5 /* Frameworks */,
+				11C1C11E21912DB200A4F7D5 /* Resources */,
+				0503B6461BAF0097FF96FA8E /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VersaPlayerTest_macOS;
+			productName = VersaPlayerTest;
+			productReference = 11C1C12021912DB200A4F7D5 /* VersaPlayerTest_macOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		11C1C168219146CF00A4F7D5 /* VersaPlayerTest_iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11C1C178219146D000A4F7D5 /* Build configuration list for PBXNativeTarget "VersaPlayerTest_iOS" */;
+			buildPhases = (
+				07A06C432F6A0D5553B52180 /* [CP] Check Pods Manifest.lock */,
+				11C1C165219146CF00A4F7D5 /* Sources */,
+				11C1C166219146CF00A4F7D5 /* Frameworks */,
+				11C1C167219146CF00A4F7D5 /* Resources */,
+				02C86FACD585D1812875B128 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VersaPlayerTest_iOS;
+			productName = VersaPlayerTest_ios;
+			productReference = 11C1C169219146CF00A4F7D5 /* VersaPlayerTest_iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		11C1C1912191550D00A4F7D5 /* VersaPlayerTest_tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11C1C19E2191550F00A4F7D5 /* Build configuration list for PBXNativeTarget "VersaPlayerTest_tvOS" */;
+			buildPhases = (
+				0DB0D9630F6B772BA42A8C01 /* [CP] Check Pods Manifest.lock */,
+				11C1C18E2191550D00A4F7D5 /* Sources */,
+				11C1C18F2191550D00A4F7D5 /* Frameworks */,
+				11C1C1902191550D00A4F7D5 /* Resources */,
+				74CC87A2B39CC2CC11581A66 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VersaPlayerTest_tvOS;
+			productName = VersaPlayerTest_tvOS;
+			productReference = 11C1C1922191550D00A4F7D5 /* VersaPlayerTest_tvOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		11C1C11821912DB200A4F7D5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1000;
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = "Quasar Studio";
+				TargetAttributes = {
+					11C1C11F21912DB200A4F7D5 = {
+						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
+					};
+					11C1C168219146CF00A4F7D5 = {
+						CreatedOnToolsVersion = 10.0;
+					};
+					11C1C1912191550D00A4F7D5 = {
+						CreatedOnToolsVersion = 10.0;
+					};
+				};
+			};
+			buildConfigurationList = 11C1C11B21912DB200A4F7D5 /* Build configuration list for PBXProject "VersaPlayerTest" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 11C1C11721912DB200A4F7D5;
+			productRefGroup = 11C1C12121912DB200A4F7D5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				11C1C11F21912DB200A4F7D5 /* VersaPlayerTest_macOS */,
+				11C1C168219146CF00A4F7D5 /* VersaPlayerTest_iOS */,
+				11C1C1912191550D00A4F7D5 /* VersaPlayerTest_tvOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		11C1C11E21912DB200A4F7D5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11C1C12821912DB300A4F7D5 /* Assets.xcassets in Resources */,
+				11C1C12B21912DB300A4F7D5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11C1C167219146CF00A4F7D5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11C1C176219146D000A4F7D5 /* LaunchScreen.storyboard in Resources */,
+				11C1C173219146D000A4F7D5 /* Assets.xcassets in Resources */,
+				11C1C171219146CF00A4F7D5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11C1C1902191550D00A4F7D5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11C1C19C2191550F00A4F7D5 /* Assets.xcassets in Resources */,
+				11C1C19A2191550D00A4F7D5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		02C86FACD585D1812875B128 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-VersaPlayerTest_iOS/Pods-VersaPlayerTest_iOS-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/VersaPlayer-iOS/VersaPlayer.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VersaPlayer.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VersaPlayerTest_iOS/Pods-VersaPlayerTest_iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0503B6461BAF0097FF96FA8E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-VersaPlayerTest_macOS/Pods-VersaPlayerTest_macOS-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/VersaPlayer-macOS/VersaPlayer.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VersaPlayer.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VersaPlayerTest_macOS/Pods-VersaPlayerTest_macOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		07A06C432F6A0D5553B52180 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VersaPlayerTest_iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0DB0D9630F6B772BA42A8C01 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VersaPlayerTest_tvOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4B64A8EAF3A4FD20BC84731D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VersaPlayerTest_macOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		74CC87A2B39CC2CC11581A66 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-VersaPlayerTest_tvOS/Pods-VersaPlayerTest_tvOS-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/VersaPlayer-tvOS/VersaPlayer.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VersaPlayer.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VersaPlayerTest_tvOS/Pods-VersaPlayerTest_tvOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		11C1C11C21912DB200A4F7D5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11C1C12621912DB200A4F7D5 /* ViewController.swift in Sources */,
+				11C1C12421912DB200A4F7D5 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11C1C165219146CF00A4F7D5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11C1C16E219146CF00A4F7D5 /* ViewController.swift in Sources */,
+				11C1C16C219146CF00A4F7D5 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11C1C18E2191550D00A4F7D5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11C1C1972191550D00A4F7D5 /* ViewController.swift in Sources */,
+				11C1C1952191550D00A4F7D5 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		11C1C12921912DB300A4F7D5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				11C1C12A21912DB300A4F7D5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		11C1C16F219146CF00A4F7D5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				11C1C170219146CF00A4F7D5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		11C1C174219146D000A4F7D5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				11C1C175219146D000A4F7D5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		11C1C1982191550D00A4F7D5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				11C1C1992191550D00A4F7D5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		11C1C12E21912DB300A4F7D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		11C1C12F21912DB300A4F7D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		11C1C13121912DB300A4F7D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B16666E571659532CAD4D771 /* Pods-VersaPlayerTest_macOS.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = VersaPlayerTest/VersaPlayerTest.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = VZ7659A4W3;
+				EXPANDED_CODE_SIGN_IDENTITY = "-";
+				EXPANDED_CODE_SIGN_IDENTITY_NAME = "-";
+				INFOPLIST_FILE = VersaPlayerTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = studio.quasar.VersaPlayerTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		11C1C13221912DB300A4F7D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2FFE1673769B2B47DCD4E8E6 /* Pods-VersaPlayerTest_macOS.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = VersaPlayerTest/VersaPlayerTest.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = VZ7659A4W3;
+				EXPANDED_CODE_SIGN_IDENTITY = "-";
+				EXPANDED_CODE_SIGN_IDENTITY_NAME = "-";
+				INFOPLIST_FILE = VersaPlayerTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = studio.quasar.VersaPlayerTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
+		11C1C179219146D000A4F7D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F7C891DDAB1A8029CA349FCA /* Pods-VersaPlayerTest_iOS.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VZ7659A4W3;
+				INFOPLIST_FILE = VersaPlayerTest_ios/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "studio.quasar.VersaPlayerTest-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		11C1C17A219146D000A4F7D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32F71FE5298C24E4B80EDF06 /* Pods-VersaPlayerTest_iOS.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VZ7659A4W3;
+				INFOPLIST_FILE = VersaPlayerTest_ios/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "studio.quasar.VersaPlayerTest-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		11C1C19F2191550F00A4F7D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A283B97A087CE29BBF21C985 /* Pods-VersaPlayerTest_tvOS.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VZ7659A4W3;
+				INFOPLIST_FILE = VersaPlayerTest_tvOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "studio.quasar.VersaPlayerTest-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
+			};
+			name = Debug;
+		};
+		11C1C1A02191550F00A4F7D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CEA797323E9823B6181321D1 /* Pods-VersaPlayerTest_tvOS.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VZ7659A4W3;
+				INFOPLIST_FILE = VersaPlayerTest_tvOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "studio.quasar.VersaPlayerTest-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		11C1C11B21912DB200A4F7D5 /* Build configuration list for PBXProject "VersaPlayerTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11C1C12E21912DB300A4F7D5 /* Debug */,
+				11C1C12F21912DB300A4F7D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11C1C13021912DB300A4F7D5 /* Build configuration list for PBXNativeTarget "VersaPlayerTest_macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11C1C13121912DB300A4F7D5 /* Debug */,
+				11C1C13221912DB300A4F7D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11C1C178219146D000A4F7D5 /* Build configuration list for PBXNativeTarget "VersaPlayerTest_iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11C1C179219146D000A4F7D5 /* Debug */,
+				11C1C17A219146D000A4F7D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11C1C19E2191550F00A4F7D5 /* Build configuration list for PBXNativeTarget "VersaPlayerTest_tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11C1C19F2191550F00A4F7D5 /* Debug */,
+				11C1C1A02191550F00A4F7D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 11C1C11821912DB200A4F7D5 /* Project object */;
+}

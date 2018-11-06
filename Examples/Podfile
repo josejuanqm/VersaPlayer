@@ -1,0 +1,21 @@
+use_frameworks!
+
+target 'VersaPlayerTest_macOS' do
+  pod 'VersaPlayer', :path => '../'
+end
+
+target 'VersaPlayerTest_iOS' do
+    pod 'VersaPlayer', :path => '../'
+end
+
+target 'VersaPlayerTest_tvOS' do
+    pod 'VersaPlayer', :path => '../'
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+      target.build_configurations.each do |config|
+          config.build_settings['SWIFT_VERSION'] = '4.1.2'
+      end
+  end
+end
