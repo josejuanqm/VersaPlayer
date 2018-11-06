@@ -3,6 +3,11 @@
 [![License](https://img.shields.io/cocoapods/l/VersaPlayer.svg?style=flat)](https://cocoapods.org/pods/VersaPlayer)
 [![Platform](https://img.shields.io/cocoapods/p/VersaPlayer.svg?style=flat)](https://cocoapods.org/pods/VersaPlayer)
 
+### News
+##### :tada: - Since 2.1.3 VersaPlayer is Universal. Now supporting iOS, macOS, and tvOS
+
+---
+
 <div>
   <p align="center">
     <img src="https://github.com/josejuanqm/VersaPlayer/blob/master/Image.png" />
