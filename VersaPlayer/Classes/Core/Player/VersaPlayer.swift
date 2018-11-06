@@ -160,9 +160,9 @@ extension VersaPlayer {
         if let obj = object as? VersaPlayer, obj == self {
             if keyPath == "status" {
                 switch status {
-                case AVPlayerStatus.readyToPlay:
+                case AVPlayer.Status.readyToPlay:
                     handler.playbackDelegate?.playbackReady(player: self)
-                case AVPlayerStatus.failed:
+                case AVPlayer.Status.failed:
                     handler.playbackDelegate?.playbackDidFailed(with: VersaPlayerPlaybackError.unknown)
                 default:
                     break;

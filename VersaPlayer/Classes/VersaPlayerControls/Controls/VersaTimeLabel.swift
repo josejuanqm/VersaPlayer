@@ -6,9 +6,19 @@
 //  Copyright © 2018 Quasar. All rights reserved.
 //
 
+#if os(macOS)
+import Cocoa
+#else
 import UIKit
+#endif
 
-open class VersaTimeLabel: UILabel {
+#if os(macOS)
+public typealias TextField = NSTextField
+#else
+public typealias TextField = UITextField
+#endif
+
+open class VersaTimeLabel: TextField {
     
     public var timeFormat: String = "HH:mm:ss"
 
@@ -17,7 +27,12 @@ open class VersaTimeLabel: UILabel {
         let formatter = DateFormatter()
         formatter.timeZone = TimeZone.init(secondsFromGMT: 0)
         formatter.dateFormat = timeFormat
+        
+        #if os(macOS)
+        stringValue = formatter.string(from: date)
+        #else
         text = formatter.string(from: date)
+        #endif
     }
 
 }

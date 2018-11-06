@@ -6,8 +6,12 @@
 //  Copyright © 2018 Quasar. All rights reserved.
 //
 
-import Foundation
+#if os(macOS)
+import Cocoa
+#else
 import UIKit
+#endif
+import Foundation
 
 public protocol VersaPlayerGestureRecieverViewDelegate {
     
@@ -35,4 +39,12 @@ public protocol VersaPlayerGestureRecieverViewDelegate {
     ///     - translation: translation in view
     ///     - at: initial point recognized
     func didPan(with translation: CGPoint, initially at: CGPoint)
+    
+    #if os(tvOS)
+    /// Swipe was recognized
+    ///
+    /// - Parameters:
+    ///     - direction: gestureDirection
+    func didSwipe(with direction: UISwipeGestureRecognizer.Direction)
+    #endif
 }

@@ -6,12 +6,33 @@
 //  Copyright © 2018 Quasar. All rights reserved.
 //
 
+#if os(macOS)
+import Cocoa
+#else
 import UIKit
+#endif
 import CoreMedia
 import AVFoundation
 import AVKit
 
-open class VersaPlayerView: UIView, AVPictureInPictureControllerDelegate {
+
+#if os(macOS)
+public typealias View = NSView
+#else
+public typealias View = UIView
+#endif
+
+#if os(iOS)
+public typealias PIPProtocol = AVPictureInPictureControllerDelegate
+#else
+public protocol PIPProtocol {}
+#endif
+
+open class VersaPlayerView: View, PIPProtocol {
+    
+    deinit {
+        player.replaceCurrentItem(with: nil)
+    }
 
     /// VersaPlayer extension dictionary
     public var extensions: [String: VersaPlayerExtension] = [:]
@@ -22,7 +43,7 @@ open class VersaPlayerView: UIView, AVPictureInPictureControllerDelegate {
     /// VersaPlayerControls instance being used to display controls
     public var controls: VersaPlayerControls? = nil
     
-    /// VPlayerRenderingView instance
+    /// VersaPlayerRenderingView instance
     public var renderingView: VersaPlayerRenderingView!
     
     /// VersaPlayerPlaybackDelegate instance
@@ -32,10 +53,12 @@ open class VersaPlayerView: UIView, AVPictureInPictureControllerDelegate {
     public var decryptionDelegate: VersaPlayerDecryptionDelegate? = nil
     
     /// VersaPlayer initial container
-    private var nonFullscreenContainer: UIView!
+    private var nonFullscreenContainer: View!
     
+    #if os(iOS)
     /// AVPictureInPictureController instance
     public var pipController: AVPictureInPictureController? = nil
+    #endif
 
     /// Whether player is prepared
     public var ready: Bool = false
@@ -55,6 +78,12 @@ open class VersaPlayerView: UIView, AVPictureInPictureControllerDelegate {
     /// Whether PIP Mode is enabled via pipController
     public var isPipModeEnabled: Bool = false
     
+    #if os(macOS)
+    open override var wantsLayer: Bool {
+        get { return true } set { }
+    }
+    #endif
+    
     /// Whether Player is Fast Forwarding
     public var isForwarding: Bool {
         return player.rate > 1
@@ -73,6 +102,34 @@ open class VersaPlayerView: UIView, AVPictureInPictureControllerDelegate {
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         prepare()
+    }
+    
+    /// VersaPlayerControls instance to display controls in player, using VersaPlayerGestureRecieverView instance
+    /// to handle gestures
+    ///
+    /// - Parameters:
+    ///     - controls: VersaPlayerControls instance used to display controls
+    ///     - gestureReciever: Optional gesture reciever view to be used to recieve gestures
+    public func use(controls: VersaPlayerControls, with gestureReciever: VersaPlayerGestureRecieverView? = nil) {
+        let coordinator = VersaPlayerControlsCoordinator()
+        coordinator.player = self
+        coordinator.controls = controls
+        coordinator.gestureReciever = gestureReciever
+        controls.controlsCoordinator = coordinator
+        #if os(macOS)
+        addSubview(coordinator, positioned: NSWindow.OrderingMode.above, relativeTo: renderingView)
+        #else
+        addSubview(coordinator)
+        bringSubviewToFront(coordinator)
+        #endif
+    }
+    
+    /// Update controls to specified time
+    ///
+    /// - Parameters:
+    ///     - time: Time to be updated to
+    public func updateControls(toTime time: CMTime) {
+        controls?.timeDidChange(toTime: time)
     }
     
     /// Add a VersaPlayerExtension instance to the current player
@@ -109,7 +166,10 @@ open class VersaPlayerView: UIView, AVPictureInPictureControllerDelegate {
     /// - Parameters:
     ///     - view: The view to layout.
     ///     - into: The container view.
-    open func layout(view: UIView, into: UIView) {
+    open func layout(view: View, into: View? = nil) {
+        guard let into = into else {
+            return
+        }
         into.addSubview(view)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.topAnchor.constraint(equalTo: into.topAnchor).isActive = true
@@ -118,6 +178,7 @@ open class VersaPlayerView: UIView, AVPictureInPictureControllerDelegate {
         view.bottomAnchor.constraint(equalTo: into.bottomAnchor).isActive = true
     }
     
+    #if os(iOS)
     /// Enables or disables PIP when available (when device is supported)
     ///
     /// - Parameters:
@@ -129,6 +190,7 @@ open class VersaPlayerView: UIView, AVPictureInPictureControllerDelegate {
             pipController?.stopPictureInPicture()
         }
     }
+    #endif
     
     /// Enables or disables fullscreen
     ///
@@ -139,11 +201,19 @@ open class VersaPlayerView: UIView, AVPictureInPictureControllerDelegate {
             return
         }
         if enabled {
+            #if os(macOS)
+            if let window = NSApplication.shared.keyWindow {
+                nonFullscreenContainer = superview
+                removeFromSuperview()
+                layout(view: self, into: window.contentView)
+            }
+            #else
             if let window = UIApplication.shared.keyWindow {
                 nonFullscreenContainer = superview
                 removeFromSuperview()
                 layout(view: self, into: window)
             }
+            #endif
         }else {
             removeFromSuperview()
             layout(view: self, into: nonFullscreenContainer)
@@ -167,34 +237,8 @@ open class VersaPlayerView: UIView, AVPictureInPictureControllerDelegate {
         }
     }
     
-    /// VersaPlayerControls instance to display controls in player, using VersaPlayerGestureRecieverView instance
-    /// to handle gestures
-    ///
-    /// - Parameters:
-    ///     - controls: VersaPlayerControls instance used to display controls
-    ///     - gestureReciever: Optional gesture reciever view to be used to recieve gestures
-    public func use(controls: VersaPlayerControls, with gestureReciever: VersaPlayerGestureRecieverView? = nil) {
-        let coordinator = VersaPlayerControlsCoordinator()
-        coordinator.player = self
-        coordinator.controls = controls
-        coordinator.gestureReciever = gestureReciever
-        controls.controlsCoordinator = coordinator
-        addSubview(coordinator)
-        bringSubview(toFront: controls)
-        
-        self.controls = controls
-    }
-    
-    /// Update controls to specified time
-    ///
-    /// - Parameters:
-    ///     - time: Time to be updated to
-    public func updateControls(toTime time: CMTime) {
-        controls?.timeDidChange(toTime: time)
-    }
-    
     /// Play
-    @IBAction open func play() {
+    @IBAction open func play(sender: Any? = nil) {
         if playbackDelegate?.playbackShouldBegin(player: player) ?? true {
             player.play()
             isPlaying = true
@@ -202,13 +246,13 @@ open class VersaPlayerView: UIView, AVPictureInPictureControllerDelegate {
     }
     
     /// Pause
-    @IBAction open func pause() {
+    @IBAction open func pause(sender: Any? = nil) {
         player.pause()
         isPlaying = false
     }
     
     /// Toggle Playback
-    @IBAction open func togglePlayback() {
+    @IBAction open func togglePlayback(sender: Any? = nil) {
         if isPlaying {
             pause()
         }else {
@@ -216,6 +260,7 @@ open class VersaPlayerView: UIView, AVPictureInPictureControllerDelegate {
         }
     }
     
+    #if os(iOS)
     open func pictureInPictureControllerDidStopPictureInPicture(_ pictureInPictureController: AVPictureInPictureController) {
         //hide fallback
     }
@@ -233,5 +278,6 @@ open class VersaPlayerView: UIView, AVPictureInPictureControllerDelegate {
         controls?.controlsCoordinator.isHidden = true
         isPipModeEnabled = true
     }
+    #endif
     
 }

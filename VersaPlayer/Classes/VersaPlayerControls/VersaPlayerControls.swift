@@ -6,11 +6,15 @@
 //  Copyright © 2018 Quasar. All rights reserved.
 //
 
+#if os(macOS)
+import Cocoa
+#else
 import UIKit
+#endif
 import AVFoundation
 import AVKit
 
-open class VersaPlayerControls: UIView {
+open class VersaPlayerControls: View {
     
     /// VersaPlayer intance being controlled
     public var handler: VersaPlayerView!
@@ -27,8 +31,10 @@ open class VersaPlayerControls: UIView {
     /// VersaStatefulButton instance to represent the fullscreen toggle button
     @IBOutlet public weak var fullscreenButton: VersaStatefulButton? = nil
     
+    #if os(iOS)
     /// VersaStatefulButton instance to represent the PIP button
     @IBOutlet public weak var pipButton: VersaStatefulButton? = nil
+    #endif
     
     /// VersaStatefulButton instance to represent the rewind button
     @IBOutlet public weak var rewindButton: VersaStatefulButton? = nil
@@ -52,7 +58,7 @@ open class VersaPlayerControls: UIView {
     @IBOutlet public weak var totalTimeLabel: VersaTimeLabel? = nil
     
     /// UIView to be shown when buffering
-    @IBOutlet public weak var bufferingView: UIView? = nil
+    @IBOutlet public weak var bufferingView: View? = nil
     
     private var wasPlayingBeforeRewinding: Bool = false
     private var wasPlayingBeforeForwarding: Bool = false
@@ -69,12 +75,31 @@ open class VersaPlayerControls: UIView {
         NotificationCenter.default.removeObserver(self, name: VersaPlayer.VPlayerNotificationName.endBuffering.notification, object: nil)
     }
     
-    override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    #if os(macOS)
+    
+    open override func touchesBegan(with event: NSEvent) {
         behaviour.hide()
     }
-
-    override open func didMoveToSuperview() {
+    
+    override open func viewDidMoveToSuperview() {
+        super.viewDidMoveToSuperview()
+        layoutInSuperview()
+    }
+    
+    #else
+    
+    open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        behaviour.hide()
+    }
+    
+    open override func didMoveToSuperview() {
         super.didMoveToSuperview()
+        layoutInSuperview()
+    }
+    
+    #endif
+    
+    public func layoutInSuperview() {
         if let h = superview as? VersaPlayerControlsCoordinator {
             handler = h.player
             if behaviour == nil {
@@ -91,13 +116,25 @@ open class VersaPlayerControls: UIView {
     open func timeDidChange(toTime time: CMTime) {
         currentTimeLabel?.update(toTime: time.seconds)
         totalTimeLabel?.update(toTime: handler.player.endTime().seconds)
-        seekbarSlider?.minimumValue = Float(handler.player.startTime().seconds)
-        seekbarSlider?.maximumValue = Float(handler.player.endTime().seconds)
-        seekbarSlider?.value = Float(time.seconds)
+        setSeekbarSlider(start: handler.player.startTime().seconds, end: handler.player.endTime().seconds, at: time.seconds)
         
         if !(handler.isSeeking || handler.isRewinding || handler.isForwarding) {
             behaviour.update(with: time.seconds)
         }
+    }
+    
+    public func setSeekbarSlider(start startValue: Double, end endValue: Double, at time: Double) {
+        #if os(macOS)
+        seekbarSlider?.minValue = startValue
+        seekbarSlider?.maxValue = endValue
+        seekbarSlider?.doubleValue = time
+        #elseif os(iOS)
+        seekbarSlider?.minimumValue = Float(startValue)
+        seekbarSlider?.maximumValue = Float(endValue)
+        seekbarSlider?.value = Float(time)
+        #else
+        seekbarSlider?.progress = Float(time) / Float(endValue)
+        #endif
     }
     
     /// Remove coordinator from player
@@ -107,18 +144,37 @@ open class VersaPlayerControls: UIView {
     
     /// Prepare controls targets and notification listeners
     open func prepare() {
-        layout()
+        stretchToEdges()
+        
+        #if os(macOS)
+        
+        playPauseButton?.target = self
+        playPauseButton?.action = #selector(togglePlayback(sender:))
+        
+        fullscreenButton?.target = self
+        fullscreenButton?.action = #selector(toggleFullscreen(sender:))
+        
+        rewindButton?.target = self
+        rewindButton?.action = #selector(rewindToggle(sender:))
+        
+        forwardButton?.target = self
+        forwardButton?.action = #selector(forwardToggle(sender:))
+        
+        skipForwardButton?.target = self
+        skipForwardButton?.action = #selector(skipForward(sender:))
+        
+        skipBackwardButton?.target = self
+        skipBackwardButton?.action = #selector(skipBackward(sender:))
+        
+        prepareSeekbar()
+        seekbarSlider?.target = self
+        seekbarSlider?.action = #selector(playheadChanged(with:))
+        
+        #else
         
         playPauseButton?.addTarget(self, action: #selector(togglePlayback), for: .touchUpInside)
         
         fullscreenButton?.addTarget(self, action: #selector(toggleFullscreen), for: .touchUpInside)
-        
-        if !AVPictureInPictureController.isPictureInPictureSupported() {
-            pipButton?.alpha = 0.3
-            pipButton?.isUserInteractionEnabled = false
-        }else {
-            pipButton?.addTarget(self, action: #selector(togglePip), for: .touchUpInside)
-        }
         
         rewindButton?.addTarget(self, action: #selector(rewindToggle), for: .touchUpInside)
         
@@ -128,16 +184,46 @@ open class VersaPlayerControls: UIView {
         skipBackwardButton?.addTarget(self, action: #selector(skipBackward), for: .touchUpInside)
         
         prepareSeekbar()
+        
+        #if os(iOS)
+        
+        if !AVPictureInPictureController.isPictureInPictureSupported() {
+            pipButton?.alpha = 0.3
+            pipButton?.isUserInteractionEnabled = false
+        }else {
+            pipButton?.addTarget(self, action: #selector(togglePip), for: .touchUpInside)
+        }
+        
         seekbarSlider?.addTarget(self, action: #selector(playheadChanged(with:)), for: .valueChanged)
         seekbarSlider?.addTarget(self, action: #selector(seekingEnd), for: .touchUpInside)
         seekbarSlider?.addTarget(self, action: #selector(seekingEnd), for: .touchUpOutside)
         seekbarSlider?.addTarget(self, action: #selector(seekingStart), for: .touchDown)
         
+        #endif
+        
+        #endif
+        
         prepareNotificationListener()
     }
     
+    #if os(macOS)
+    
     /// Layout in parent view
-    open func layout() {
+    open override func layout() {
+        super.layout()
+        stretchToEdges()
+    }
+    
+    #else
+    
+    open override func layoutSubviews() {
+        super.layoutSubviews()
+        stretchToEdges()
+    }
+    
+    #endif
+    
+    public func stretchToEdges() {
         translatesAutoresizingMaskIntoConstraints = false
         if let parent = superview {
             topAnchor.constraint(equalTo: parent.topAnchor).isActive = true
@@ -173,9 +259,7 @@ open class VersaPlayerControls: UIView {
     
     /// Prepare the seekbar values
     open func prepareSeekbar() {
-        seekbarSlider?.value = Float(handler.player.currentTime().seconds)
-        seekbarSlider?.minimumValue = Float(handler.player.startTime().seconds)
-        seekbarSlider?.maximumValue = Float(handler.player.endTime().seconds)
+        setSeekbarSlider(start: handler.player.startTime().seconds, end: handler.player.endTime().seconds, at: handler.player.currentTime().seconds)
     }
     
     /// Show buffering view
@@ -189,19 +273,19 @@ open class VersaPlayerControls: UIView {
     }
     
     /// Skip forward (n) seconds in time
-    @IBAction open func skipForward() {
+    @IBAction open func skipForward(sender: Any? = nil) {
         let time = handler.player.currentTime() + CMTime(seconds: skipSize, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
         handler.player.seek(to: time)
     }
     
     /// Skip backward (n) seconds in time
-    @IBAction open func skipBackward() {
+    @IBAction open func skipBackward(sender: Any? = nil) {
         let time = handler.player.currentTime() - CMTime(seconds: skipSize, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
         handler.player.seek(to: time)
     }
     
     /// End seeking
-    @IBAction open func seekingEnd() {
+    @IBAction open func seekingEnd(sender: Any? = nil) {
         handler.isSeeking = false
         if wasPlayingBeforeSeeking {
             handler.play()
@@ -209,11 +293,27 @@ open class VersaPlayerControls: UIView {
     }
     
     /// Start Seeking
-    @IBAction open func seekingStart() {
+    @IBAction open func seekingStart(sender: Any? = nil) {
         wasPlayingBeforeSeeking = handler.isPlaying
         handler.isSeeking = true
         handler.pause()
     }
+    
+    
+    #if os(macOS)
+    
+    /// Playhead changed in NSSlider
+    ///
+    /// - Parameters:
+    ///     - sender: NSSlider that updated
+    @IBAction open func playheadChanged(with sender: NSSlider) {
+        let value = sender.doubleValue
+        let time = CMTime(seconds: value, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
+        handler.player.seek(to: time)
+        behaviour.update(with: time.seconds)
+    }
+    
+    #elseif os(iOS)
     
     /// Playhead changed in UISlider
     ///
@@ -231,14 +331,16 @@ open class VersaPlayerControls: UIView {
         handler.setNativePip(enabled: !handler.isPipModeEnabled)
     }
     
+    #endif
+    
     /// Toggle fullscreen mode
-    @IBAction open func toggleFullscreen() {
+    @IBAction open func toggleFullscreen(sender: Any? = nil) {
         fullscreenButton?.set(active: !handler.isFullscreenModeEnabled)
         handler.setFullscreen(enabled: !handler.isFullscreenModeEnabled)
     }
     
     /// Toggle playback
-    @IBAction open func togglePlayback() {
+    @IBAction open func togglePlayback(sender: Any? = nil) {
         if handler.isRewinding || handler.isForwarding {
             handler.player.rate = 1
             playPauseButton?.set(active: true)
@@ -256,7 +358,7 @@ open class VersaPlayerControls: UIView {
     }
     
     /// Toggle rewind
-    @IBAction open func rewindToggle() {
+    @IBAction open func rewindToggle(sender: Any? = nil) {
         if handler.player.currentItem?.canPlayFastReverse ?? false {
             if handler.isRewinding {
                 rewindButton?.set(active: false)
@@ -279,7 +381,7 @@ open class VersaPlayerControls: UIView {
     }
     
     /// Forward toggle
-    @IBAction open func forwardToggle() {
+    @IBAction open func forwardToggle(sender: Any? = nil) {
         if handler.player.currentItem?.canPlayFastForward ?? false {
             if handler.isForwarding {
                 forwardButton?.set(active: false)

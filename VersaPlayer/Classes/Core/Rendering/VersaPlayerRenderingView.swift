@@ -6,10 +6,14 @@
 //  Copyright © 2018 Quasar. All rights reserved.
 //
 
+#if os(macOS)
+import Cocoa
+#else
 import UIKit
+#endif
 import AVKit
 
-open class VersaPlayerRenderingView: UIView {
+open class VersaPlayerRenderingView: View {
     
     /// VPlayerLayer instance used to render player content
     public var renderingLayer: VersaPlayerLayer!
@@ -30,7 +34,21 @@ open class VersaPlayerRenderingView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override open func layoutSubviews() {
+    #if os(macOS)
+    
+    open override func layout() {
+        super.layout()
+        if renderingLayer == nil {
+            renderingLayer = VersaPlayerLayer.init(with: player)
+            layer = renderingLayer.playerLayer
+        }
+        
+        renderingLayer.playerLayer.frame = bounds
+    }
+    
+    #else
+    
+    open override func layoutSubviews() {
         super.layoutSubviews()
         if renderingLayer == nil {
             renderingLayer = VersaPlayerLayer.init(with: player)
@@ -39,5 +57,7 @@ open class VersaPlayerRenderingView: UIView {
         
         renderingLayer.playerLayer.frame = bounds
     }
-
+    
+    #endif
+    
 }

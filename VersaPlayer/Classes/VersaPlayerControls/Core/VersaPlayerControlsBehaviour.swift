@@ -6,8 +6,12 @@
 //  Copyright © 2018 Quasar. All rights reserved.
 //
 
-import Foundation
+#if os(macOS)
+import Cocoa
+#else
 import UIKit
+#endif
+import Foundation
 
 open class VersaPlayerControlsBehaviour {
     
@@ -63,20 +67,21 @@ open class VersaPlayerControlsBehaviour {
     /// Default activation block
     open func defaultActivationBlock() {
         controls.isHidden = false
-        UIView.animate(withDuration: 0.3, animations: {
-            self.controls.alpha = 1
-        })
+        #if os(macOS)
+        controls.alphaValue = 1
+        #else
+        controls.alpha = 1
+        #endif
     }
     
     /// Default deactivation block
     open func defaultDeactivationBlock() {
-        UIView.animate(withDuration: 0.3, animations: {
-            self.controls.alpha = 0
-        }, completion: {
-            if $0 {
-                self.controls.isHidden = true
-            }
-        })
+        controls.isHidden = true
+        #if os(macOS)
+        controls.alphaValue = 0
+        #else
+        controls.alpha = 0
+        #endif
     }
     
     /// Hide the controls

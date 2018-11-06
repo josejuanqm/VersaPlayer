@@ -6,15 +6,17 @@
 //  Copyright © 2018 Quasar. All rights reserved.
 //
 
+#if os(macOS)
+import Cocoa
+public typealias Slider = NSSlider
+#elseif os(iOS)
 import UIKit
+public typealias Slider = UISlider
+#else
+import UIKit
+public typealias Slider = UIProgressView
+#endif
 
-@IBDesignable
-open class VersaSeekbarSlider: UISlider {
-
-    @IBInspectable public var thumbImage: UIImage? = nil {
-        didSet {
-            setThumbImage(thumbImage, for: .normal)
-        }
-    }
+open class VersaSeekbarSlider: Slider {
 
 }
