@@ -13,7 +13,7 @@ import UIKit
 #endif
 import Foundation
 
-public protocol VersaPlayerGestureRecieverViewDelegate {
+public protocol VersaPlayerGestureRecieverViewDelegate : class {
     
     /// Pinch was recognized
     ///

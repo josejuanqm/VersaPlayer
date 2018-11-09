@@ -101,7 +101,7 @@ open class VersaPlayerGestureRecieverView: View {
 open class VersaPlayerGestureRecieverView: UIView {
     
     /// VersaPlayerGestureRecieverViewDelegate instance
-    public var delegate: VersaPlayerGestureRecieverViewDelegate? = nil
+    public weak var delegate: VersaPlayerGestureRecieverViewDelegate? = nil
     
     /// Single tap UITapGestureRecognizer
     public var tapGesture: UITapGestureRecognizer? = nil
