@@ -47,7 +47,7 @@ open class VersaPlayerView: View, PIPProtocol {
     public var renderingView: VersaPlayerRenderingView!
     
     /// VersaPlayerPlaybackDelegate instance
-    public var playbackDelegate: VersaPlayerPlaybackDelegate? = nil
+    public weak var playbackDelegate: VersaPlayerPlaybackDelegate? = nil
     
     /// VersaPlayerDecryptionDelegate instance to be used only when a VPlayer item with isEncrypted = true is passed
     public var decryptionDelegate: VersaPlayerDecryptionDelegate? = nil
