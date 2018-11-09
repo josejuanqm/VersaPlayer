@@ -4,7 +4,7 @@
 [![Platform](https://img.shields.io/cocoapods/p/VersaPlayer.svg?style=flat)](https://cocoapods.org/pods/VersaPlayer)
 
 ### News
-##### :tada: - Since 2.1.3 VersaPlayer is Universal. Now supporting iOS, macOS, and tvOS
+##### :tada: - Since 2.1.3 VersaPlayer now supports iOS, macOS, and tvOS
 
 ---
 
