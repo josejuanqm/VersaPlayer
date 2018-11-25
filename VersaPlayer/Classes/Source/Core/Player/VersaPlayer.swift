@@ -87,11 +87,14 @@ open class VersaPlayer: AVPlayer, AVAssetResourceLoaderDelegate {
         
         super.replaceCurrentItem(with: item)
         NotificationCenter.default.post(name: VersaPlayer.VPlayerNotificationName.assetLoaded.notification, object: self, userInfo: nil)
-        if item != nil {
+        if item != nil && currentItem != nil {
             currentItem!.addObserver(self, forKeyPath: "playbackBufferEmpty", options: .new, context: nil)
             currentItem!.addObserver(self, forKeyPath: "playbackLikelyToKeepUp", options: .new, context: nil)
             currentItem!.addObserver(self, forKeyPath: "playbackBufferFull", options: .new, context: nil)
             currentItem!.addObserver(self, forKeyPath: "status", options: .new, context: nil)
+        }
+        else if (item != nil && currentItem == nil){
+            handler.playbackDelegate?.playbackDidFailed(with: VersaPlayerPlaybackError.unknown)
         }
     }
     
