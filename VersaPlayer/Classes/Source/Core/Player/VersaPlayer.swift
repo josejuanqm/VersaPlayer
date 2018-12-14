@@ -208,7 +208,7 @@ extension VersaPlayer {
             case "playbackBufferEmpty":
                 isBuffering = true
                 NotificationCenter.default.post(name: VersaPlayer.VPlayerNotificationName.buffering.notification, object: self, userInfo: nil)
-                handler.playbackDelegate?.startBuffering(layer: self)
+                handler.playbackDelegate?.startBuffering(player: self)
             case "playbackLikelyToKeepUp":
                 isBuffering = false
                 NotificationCenter.default.post(name: VersaPlayer.VPlayerNotificationName.endBuffering.notification, object: self, userInfo: nil)

@@ -60,7 +60,7 @@ public protocol VersaPlayerPlaybackDelegate {
     ///
     /// - Parameters:
     ///     - player: VersaPlayer being used
-    func startBuffering(layer: VersaPlayer)
+    func startBuffering(player: VersaPlayer)
     
     /// Notifies when player ends buffering
     ///
