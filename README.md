@@ -282,6 +282,7 @@ People that make VersaPlayer possible, Thank you!
 
 <span><a href="https://github.com/josejuanqm"><img src="https://github.com/josejuanqm.png" alt="josejuanqm" width="50px"></a></span>
 <span><a href="https://github.com/pbeast"><img src="https://github.com/pbeast.png" alt="pbeast" width="50px"></a></span>
+<span><a href="https://github.com/danibachar"><img src="https://github.com/danibachar.png" alt="danibachar" width="50px"></a></span>
 
 ## Donation
 
