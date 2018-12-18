@@ -232,29 +232,37 @@ open class VersaPlayerControls: View {
             bottomAnchor.constraint(equalTo: parent.bottomAnchor).isActive = true
         }
     }
-    
+
+    /// Detect the notfication listener
+    private func observersOwnerCheck(object: Any?,complated: @autoclosure ()->()?){
+      guard let ownerPlayer = object as? VersaPlayer else { return }
+      if ownerPlayer.isEqual(handler.player) {
+        complated()
+      }
+    }
+
     /// Prepares the notification observers/listeners
     open func prepareNotificationListener() {
-        NotificationCenter.default.addObserver(forName: VersaPlayer.VPlayerNotificationName.timeChanged.notification, object: nil, queue: OperationQueue.main) { (notification) in
-            if let time = notification.userInfo?[VersaPlayer.VPlayerNotificationInfoKey.time.rawValue] as? CMTime {
-                self.timeDidChange(toTime: time)
-            }
+      NotificationCenter.default.addObserver(forName: VersaPlayer.VPlayerNotificationName.timeChanged.notification, object: nil, queue: OperationQueue.main) { (notification) in
+        if let time = notification.userInfo?[VersaPlayer.VPlayerNotificationInfoKey.time.rawValue] as? CMTime {
+          self.observersOwnerCheck(object: notification.object, complated: self.timeDidChange(toTime: time))
         }
-        NotificationCenter.default.addObserver(forName: VersaPlayer.VPlayerNotificationName.didEnd.notification, object: nil, queue: OperationQueue.main) { (notification) in
-            self.playPauseButton?.set(active: false)
-        }
-        NotificationCenter.default.addObserver(forName: VersaPlayer.VPlayerNotificationName.play.notification, object: nil, queue: OperationQueue.main) { (notification) in
-            self.playPauseButton?.set(active: true)
-        }
-        NotificationCenter.default.addObserver(forName: VersaPlayer.VPlayerNotificationName.pause.notification, object: nil, queue: OperationQueue.main) { (notification) in
-            self.playPauseButton?.set(active: false)
-        }
-        NotificationCenter.default.addObserver(forName: VersaPlayer.VPlayerNotificationName.endBuffering.notification, object: nil, queue: OperationQueue.main) { (notification) in
-            self.hideBuffering()
-        }
-        NotificationCenter.default.addObserver(forName: VersaPlayer.VPlayerNotificationName.buffering.notification, object: nil, queue: OperationQueue.main) { (notification) in
-            self.showBuffering()
-        }
+      }
+      NotificationCenter.default.addObserver(forName: VersaPlayer.VPlayerNotificationName.didEnd.notification, object: nil, queue: OperationQueue.main) { (notification) in
+        self.observersOwnerCheck(object: notification.object, complated: self.playPauseButton?.set(active: false))
+      }
+      NotificationCenter.default.addObserver(forName: VersaPlayer.VPlayerNotificationName.play.notification, object: nil, queue: OperationQueue.main) { (notification) in
+        self.observersOwnerCheck(object: notification.object, complated: self.playPauseButton?.set(active: true))
+      }
+      NotificationCenter.default.addObserver(forName: VersaPlayer.VPlayerNotificationName.pause.notification, object: nil, queue: OperationQueue.main) { (notification) in
+        self.observersOwnerCheck(object: notification.object, complated: self.playPauseButton?.set(active: false))
+      }
+      NotificationCenter.default.addObserver(forName: VersaPlayer.VPlayerNotificationName.endBuffering.notification, object: nil, queue: OperationQueue.main) { (notification) in
+        self.observersOwnerCheck(object: notification.object, complated: self.hideBuffering())
+      }
+      NotificationCenter.default.addObserver(forName: VersaPlayer.VPlayerNotificationName.buffering.notification, object: nil, queue: OperationQueue.main) { (notification) in
+        self.observersOwnerCheck(object: notification.object, complated: self.showBuffering())
+      }
     }
     
     /// Prepare the seekbar values
