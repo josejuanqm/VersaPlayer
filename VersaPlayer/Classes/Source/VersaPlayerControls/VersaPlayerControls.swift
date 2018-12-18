@@ -234,10 +234,10 @@ open class VersaPlayerControls: View {
     }
 
     /// Detect the notfication listener
-    private func observersOwnerCheck(object: Any?,complated: @autoclosure ()->()?){
+    private func checkOwnershipOf(object: Any?, completion: @autoclosure ()->()?) {
       guard let ownerPlayer = object as? VersaPlayer else { return }
       if ownerPlayer.isEqual(handler.player) {
-        complated()
+        completion()
       }
     }
 
@@ -245,23 +245,23 @@ open class VersaPlayerControls: View {
     open func prepareNotificationListener() {
       NotificationCenter.default.addObserver(forName: VersaPlayer.VPlayerNotificationName.timeChanged.notification, object: nil, queue: OperationQueue.main) { (notification) in
         if let time = notification.userInfo?[VersaPlayer.VPlayerNotificationInfoKey.time.rawValue] as? CMTime {
-          self.observersOwnerCheck(object: notification.object, complated: self.timeDidChange(toTime: time))
+          self.checkOwnershipOf(object: notification.object, completion: self.timeDidChange(toTime: time))
         }
       }
       NotificationCenter.default.addObserver(forName: VersaPlayer.VPlayerNotificationName.didEnd.notification, object: nil, queue: OperationQueue.main) { (notification) in
-        self.observersOwnerCheck(object: notification.object, complated: self.playPauseButton?.set(active: false))
+        self.checkOwnershipOf(object: notification.object, completion: self.playPauseButton?.set(active: false))
       }
       NotificationCenter.default.addObserver(forName: VersaPlayer.VPlayerNotificationName.play.notification, object: nil, queue: OperationQueue.main) { (notification) in
-        self.observersOwnerCheck(object: notification.object, complated: self.playPauseButton?.set(active: true))
+        self.checkOwnershipOf(object: notification.object, completion: self.playPauseButton?.set(active: true))
       }
       NotificationCenter.default.addObserver(forName: VersaPlayer.VPlayerNotificationName.pause.notification, object: nil, queue: OperationQueue.main) { (notification) in
-        self.observersOwnerCheck(object: notification.object, complated: self.playPauseButton?.set(active: false))
+        self.checkOwnershipOf(object: notification.object, completion: self.playPauseButton?.set(active: false))
       }
       NotificationCenter.default.addObserver(forName: VersaPlayer.VPlayerNotificationName.endBuffering.notification, object: nil, queue: OperationQueue.main) { (notification) in
-        self.observersOwnerCheck(object: notification.object, complated: self.hideBuffering())
+        self.checkOwnershipOf(object: notification.object, completion: self.hideBuffering())
       }
       NotificationCenter.default.addObserver(forName: VersaPlayer.VPlayerNotificationName.buffering.notification, object: nil, queue: OperationQueue.main) { (notification) in
-        self.observersOwnerCheck(object: notification.object, complated: self.showBuffering())
+        self.checkOwnershipOf(object: notification.object, completion: self.showBuffering())
       }
     }
     
