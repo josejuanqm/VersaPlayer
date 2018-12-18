@@ -1,5 +1,5 @@
 PODS:
-  - VersaPlayer (2.1.3)
+  - VersaPlayer (2.1.4)
 
 DEPENDENCIES:
   - VersaPlayer (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  VersaPlayer: 90ca8e532ab6d3fd6070b57644c0835ee040b3e4
+  VersaPlayer: 3e2c02f968af1fb71f97e2f91d63e58f614a1ef2
 
-PODFILE CHECKSUM: 7f68bcf0b1791946158e8ef95849ba4ab6e9142a
+PODFILE CHECKSUM: 75ab86d9c2e6b12884fb790eca54ea46075a600f
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.5.2
