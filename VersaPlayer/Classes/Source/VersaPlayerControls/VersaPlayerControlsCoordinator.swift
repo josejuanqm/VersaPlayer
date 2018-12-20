@@ -64,7 +64,7 @@ open class VersaPlayerControlsCoordinator: View, VersaPlayerGestureRecieverViewD
                 addSubview(gestureReciever, positioned: NSWindow.OrderingMode.below, relativeTo: nil)
                 #else
                 addSubview(gestureReciever)
-                sendSubview(toBack: gestureReciever)
+                sendSubviewToBack(gestureReciever)
                 #endif
             }
             stretchToEdges()
