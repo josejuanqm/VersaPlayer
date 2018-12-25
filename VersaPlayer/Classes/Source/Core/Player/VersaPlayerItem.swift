@@ -24,7 +24,13 @@ open class VersaPlayerItem: AVPlayerItem {
     public var captionTracks: [VersaPlayerMediaTrack] {
         return tracks(for: .legible)
     }
-    
+
+    deinit {
+      #if DEBUG
+          print("8 \(String(describing: self))")
+      #endif
+    }
+
     private func tracks(for characteristic: AVMediaCharacteristic) -> [VersaPlayerMediaTrack] {
         guard let group = asset.mediaSelectionGroup(forMediaCharacteristic: characteristic) else {
             return []

@@ -10,13 +10,19 @@ import AVFoundation
 
 public class VersaPlayerCaptionStyling {
     
-    var player: VersaPlayer
+    weak var player: VersaPlayer!
     var rules: [AVTextStyleRule] = []
     
     init(with player: VersaPlayer) {
         self.player = player
     }
-    
+
+    deinit {
+      #if DEBUG
+          print("10 \(String(describing: self))")
+      #endif
+    }
+
     /// Set attribute
     public func set(attribute: CFString, value: Any, selector: String? = nil) {
         guard let style = AVTextStyleRule.init(textMarkupAttributes: [attribute as String : value], textSelector: selector) else {

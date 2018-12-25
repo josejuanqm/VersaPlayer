@@ -36,7 +36,7 @@ open class VersaPlayer: AVPlayer, AVAssetResourceLoaderDelegate {
     }
     
     /// VersaPlayer instance
-    public var handler: VersaPlayerView!
+    public weak var handler: VersaPlayerView!
     
     /// Caption text style rules
     lazy public var captionStyling: VersaPlayerCaptionStyling = {
@@ -49,6 +49,10 @@ open class VersaPlayer: AVPlayer, AVAssetResourceLoaderDelegate {
     deinit {
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.AVPlayerItemTimeJumped, object: self)
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: self)
+
+        #if DEBUG
+            print("9 \(String(describing: self))")
+        #endif
     }
     
     /// Play content
@@ -135,24 +139,27 @@ extension VersaPlayer {
     
     /// Prepare players playback delegate observers
     open func preparePlayerPlaybackDelegate() {
-        NotificationCenter.default.addObserver(forName: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil, queue: OperationQueue.main) { (notification) in
-            NotificationCenter.default.post(name: VersaPlayer.VPlayerNotificationName.didEnd.notification, object: self, userInfo: nil)
-            self.handler.playbackDelegate?.playbackDidEnd(player: self)
-        }
-        NotificationCenter.default.addObserver(forName: NSNotification.Name.AVPlayerItemTimeJumped, object: self, queue: OperationQueue.main) { (notification) in
-            self.handler.playbackDelegate?.playbackDidJump(player: self)
-        }
-        addPeriodicTimeObserver(
-            forInterval: CMTime(
-                seconds: 1,
-                preferredTimescale: CMTimeScale(NSEC_PER_SEC)
-            ),
-            queue: DispatchQueue.main) { (time) in
-                NotificationCenter.default.post(name: VersaPlayer.VPlayerNotificationName.timeChanged.notification, object: self, userInfo: [VPlayerNotificationInfoKey.time.rawValue: time])
-                self.handler.playbackDelegate?.timeDidChange(player: self, to: time)
-                
-        }
-        addObserver(self, forKeyPath: "status", options: NSKeyValueObservingOptions.new, context: nil)
+      NotificationCenter.default.addObserver(forName: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil, queue: OperationQueue.main) { [weak self] (notification) in
+        guard let self = self else { return }
+        NotificationCenter.default.post(name: VersaPlayer.VPlayerNotificationName.didEnd.notification, object: self, userInfo: nil)
+        self.handler?.playbackDelegate?.playbackDidEnd(player: self)
+      }
+      NotificationCenter.default.addObserver(forName: NSNotification.Name.AVPlayerItemTimeJumped, object: self, queue: OperationQueue.main) { [weak self] (notification) in
+        guard let self = self else { return }
+        self.handler?.playbackDelegate?.playbackDidJump(player: self)
+      }
+      addPeriodicTimeObserver(
+        forInterval: CMTime(
+          seconds: 1,
+          preferredTimescale: CMTimeScale(NSEC_PER_SEC)
+        ),
+        queue: DispatchQueue.main) { [weak self] (time) in
+          guard let self = self else { return }
+          NotificationCenter.default.post(name: VersaPlayer.VPlayerNotificationName.timeChanged.notification, object: self, userInfo: [VPlayerNotificationInfoKey.time.rawValue: time])
+          self.handler?.playbackDelegate?.timeDidChange(player: self, to: time)
+      }
+
+      addObserver(self, forKeyPath: "status", options: NSKeyValueObservingOptions.new, context: nil)
     }
     
     /// Value observer

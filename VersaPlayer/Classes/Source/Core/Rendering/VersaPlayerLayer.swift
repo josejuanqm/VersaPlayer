@@ -15,8 +15,14 @@ open class VersaPlayerLayer: CALayer {
     public var playerLayer: AVPlayerLayer!
     
     /// VersaPlayer instance being rendered
-    public var handler: VersaPlayerView!
-    
+    public weak var handler: VersaPlayerView!
+
+    deinit {
+      #if DEBUG
+          print("7 \(String(describing: self))")
+      #endif
+    }
+
     override public init(layer: Any) {
         super.init(layer: layer)
     }

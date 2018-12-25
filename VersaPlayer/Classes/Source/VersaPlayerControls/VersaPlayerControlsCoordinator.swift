@@ -17,14 +17,20 @@ import AVFoundation
 open class VersaPlayerControlsCoordinator: View, VersaPlayerGestureRecieverViewDelegate {
 
     /// VersaPlayer instance being used
-    var player: VersaPlayerView!
+    weak var player: VersaPlayerView!
     
     /// VersaPlayerControls instance being used
-    public var controls: VersaPlayerControls!
+    weak public var controls: VersaPlayerControls!
     
     /// VersaPlayerGestureRecieverView instance being used
     public var gestureReciever: VersaPlayerGestureRecieverView!
-    
+
+    deinit {
+      #if DEBUG
+          print("2 \(String(describing: self))")
+      #endif
+    }
+
     #if os(macOS)
     
     override open func viewDidMoveToSuperview() {
