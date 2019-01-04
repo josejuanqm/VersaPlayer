@@ -31,6 +31,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="uKX-um-jvv">
+                        <barButtonItem key="backBarButtonItem" title="Close" id="4So-z4-Uxr"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="controls" destination="ba5-ea-DPF" id="5eL-Ok-ev0"/>
                         <outlet property="playerView" destination="N3e-eD-wlf" id="VnU-ux-4Nb"/>
@@ -184,7 +187,54 @@
                 </view>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140" y="132.68365817091455"/>
+            <point key="canvasLocation" x="1079.2" y="132.68365817091455"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="HhR-eT-lFh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QWu-nh-ZH7" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jVG-06-Z6r">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5kL-zv-waj" kind="relationship" relationship="rootViewController" id="AsE-ec-XGe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cRW-8V-8qi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-572" y="133"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="h4j-1W-nLz">
+            <objects>
+                <viewController id="5kL-zv-waj" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oe5-Zj-K05">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dHh-J4-mOP">
+                                <rect key="frame" x="147" y="318.5" width="81" height="30"/>
+                                <state key="normal" title="Show Video"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="47c-57-EwR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dHh-J4-mOP" firstAttribute="centerX" secondItem="oe5-Zj-K05" secondAttribute="centerX" id="T6j-Sj-OLn"/>
+                            <constraint firstItem="dHh-J4-mOP" firstAttribute="centerY" secondItem="oe5-Zj-K05" secondAttribute="centerY" id="vdc-lt-CPt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rRj-Zb-Irs"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="YKC-e0-PbS"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aES-8P-NK9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="298" y="133"/>
         </scene>
     </scenes>
     <resources>

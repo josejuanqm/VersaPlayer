@@ -16,7 +16,7 @@ import Foundation
 open class VersaPlayerControlsBehaviour {
     
     /// VersaPlayerControls instance being controlled
-    public var controls: VersaPlayerControls
+    public weak var controls: VersaPlayerControls!
     
     /// Whether controls are bieng displayed
     public var showingControls: Bool = true
@@ -41,6 +41,12 @@ open class VersaPlayerControlsBehaviour {
     
     /// Custom activation block
     public var activationBlock: ((VersaPlayerControls) -> Void)? = nil
+
+    deinit {
+      #if DEBUG
+          print("5 \(String(describing: self))")
+      #endif
+    }
     
     /// Constructor
     ///

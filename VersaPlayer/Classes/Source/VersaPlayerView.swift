@@ -31,7 +31,11 @@ public protocol PIPProtocol {}
 open class VersaPlayerView: View, PIPProtocol {
     
     deinit {
-        player.replaceCurrentItem(with: nil)
+      player.replaceCurrentItem(with: nil)
+
+      #if DEBUG
+          print("1 \(String(describing: self))")
+      #endif
     }
 
     /// VersaPlayer extension dictionary
@@ -47,10 +51,10 @@ open class VersaPlayerView: View, PIPProtocol {
     public var renderingView: VersaPlayerRenderingView!
     
     /// VersaPlayerPlaybackDelegate instance
-    public var playbackDelegate: VersaPlayerPlaybackDelegate? = nil
+    public weak var playbackDelegate: VersaPlayerPlaybackDelegate? = nil
     
     /// VersaPlayerDecryptionDelegate instance to be used only when a VPlayer item with isEncrypted = true is passed
-    public var decryptionDelegate: VersaPlayerDecryptionDelegate? = nil
+    public weak var decryptionDelegate: VersaPlayerDecryptionDelegate? = nil
     
     /// VersaPlayer initial container
     private var nonFullscreenContainer: View!

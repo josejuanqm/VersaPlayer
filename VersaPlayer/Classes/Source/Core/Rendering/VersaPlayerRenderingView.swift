@@ -19,8 +19,14 @@ open class VersaPlayerRenderingView: View {
     public var renderingLayer: VersaPlayerLayer!
     
     /// VersaPlayer instance being rendered by renderingLayer
-    public var player: VersaPlayerView!
-    
+    public weak var player: VersaPlayerView!
+
+    deinit {
+      #if DEBUG
+          print("6 \(String(describing: self))")
+      #endif
+    }
+
     /// Constructor
     ///
     /// - Parameters:

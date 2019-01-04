@@ -17,7 +17,7 @@ import UIKit
 open class VersaPlayerGestureRecieverView: View {
     
     /// VersaPlayerGestureRecieverViewDelegate instance
-    public var delegate: VersaPlayerGestureRecieverViewDelegate? = nil
+    public weak var delegate: VersaPlayerGestureRecieverViewDelegate? = nil
     
     /// Single tap UITapGestureRecognizer
     public var tapGesture: NSClickGestureRecognizer? = nil
@@ -101,7 +101,7 @@ open class VersaPlayerGestureRecieverView: View {
 open class VersaPlayerGestureRecieverView: UIView {
     
     /// VersaPlayerGestureRecieverViewDelegate instance
-    public var delegate: VersaPlayerGestureRecieverViewDelegate? = nil
+    public weak var delegate: VersaPlayerGestureRecieverViewDelegate? = nil
     
     /// Single tap UITapGestureRecognizer
     public var tapGesture: UITapGestureRecognizer? = nil
@@ -120,7 +120,13 @@ open class VersaPlayerGestureRecieverView: UIView {
     
     /// Pan gesture initial point
     public var panGestureInitialPoint: CGPoint = CGPoint.zero
-    
+
+    deinit {
+      #if DEBUG
+          print("3 \(String(describing: self))")
+      #endif
+    }
+
     override open func didMoveToSuperview() {
         super.didMoveToSuperview()
         translatesAutoresizingMaskIntoConstraints = false
@@ -188,7 +194,7 @@ open class VersaPlayerGestureRecieverView: UIView {
     internal var handler: VersaPlayerView!
     
     /// VersaPlayerGestureRecieverViewDelegate instance
-    public var delegate: VersaPlayerGestureRecieverViewDelegate? = nil
+    public weak var delegate: VersaPlayerGestureRecieverViewDelegate? = nil
     
     /// UITapGestureRecognizer
     public var tapGesture: UITapGestureRecognizer? = nil
