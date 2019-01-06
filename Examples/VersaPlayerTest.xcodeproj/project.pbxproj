@@ -248,9 +248,19 @@
 					};
 					11C1C168219146CF00A4F7D5 = {
 						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					11C1C1912191550D00A4F7D5 = {
 						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.BackgroundModes.appletvos = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -314,7 +324,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-VersaPlayerTest_iOS/Pods-VersaPlayerTest_iOS-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-VersaPlayerTest_iOS/Pods-VersaPlayerTest_iOS-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/VersaPlayer-iOS/VersaPlayer.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -325,7 +335,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VersaPlayerTest_iOS/Pods-VersaPlayerTest_iOS-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VersaPlayerTest_iOS/Pods-VersaPlayerTest_iOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		0503B6461BAF0097FF96FA8E /* [CP] Embed Pods Frameworks */ = {
@@ -336,7 +346,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-VersaPlayerTest_macOS/Pods-VersaPlayerTest_macOS-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-VersaPlayerTest_macOS/Pods-VersaPlayerTest_macOS-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/VersaPlayer-macOS/VersaPlayer.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -347,7 +357,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VersaPlayerTest_macOS/Pods-VersaPlayerTest_macOS-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VersaPlayerTest_macOS/Pods-VersaPlayerTest_macOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		07A06C432F6A0D5553B52180 /* [CP] Check Pods Manifest.lock */ = {
@@ -424,7 +434,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-VersaPlayerTest_tvOS/Pods-VersaPlayerTest_tvOS-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-VersaPlayerTest_tvOS/Pods-VersaPlayerTest_tvOS-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/VersaPlayer-tvOS/VersaPlayer.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -435,7 +445,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VersaPlayerTest_tvOS/Pods-VersaPlayerTest_tvOS-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VersaPlayerTest_tvOS/Pods-VersaPlayerTest_tvOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

@@ -17,13 +17,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        playerView.layer.backgroundColor = UIColor.black.cgColor
+        playerView.use(controls: controls)
+        
         if let url = URL.init(string: "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8") {
             let item = VersaPlayerItem(url: url)
             playerView.set(item: item)
         }
-        
-        playerView.layer.backgroundColor = UIColor.black.cgColor
-        playerView.use(controls: controls)
     }
 
 
