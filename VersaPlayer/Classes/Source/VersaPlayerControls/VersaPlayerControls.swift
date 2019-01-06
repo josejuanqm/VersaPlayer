@@ -14,6 +14,10 @@ import UIKit
 import AVFoundation
 import AVKit
 
+#if os(iOS)
+import MediaPlayer
+#endif
+
 open class VersaPlayerControls: View {
     
     /// VersaPlayer intance being controlled
@@ -21,6 +25,10 @@ open class VersaPlayerControls: View {
     
     /// VersaPlayerControlsBehaviour being used to validate ui
     public var behaviour: VersaPlayerControlsBehaviour!
+    
+    #if os(iOS)
+    public var airplayButton: MPVolumeView? = nil
+    #endif
     
     /// VersaPlayerControlsCoordinator instance
     public weak var controlsCoordinator: VersaPlayerControlsCoordinator!
@@ -34,6 +42,9 @@ open class VersaPlayerControls: View {
     #if os(iOS)
     /// VersaStatefulButton instance to represent the PIP button
     @IBOutlet public weak var pipButton: VersaStatefulButton? = nil
+    
+    /// UIViewContainer to implement the airplay button
+    @IBOutlet public weak var airplayContainer: UIView? = nil
     #endif
     
     /// VersaStatefulButton instance to represent the rewind button
@@ -197,6 +208,12 @@ open class VersaPlayerControls: View {
         }else {
             pipButton?.addTarget(self, action: #selector(togglePip), for: .touchUpInside)
         }
+        
+        airplayButton = MPVolumeView()
+        airplayButton?.showsVolumeSlider = false
+        airplayContainer?.addSubview(airplayButton!)
+        airplayContainer?.clipsToBounds = false
+        airplayButton?.frame = airplayContainer?.bounds ?? CGRect.zero
         
         seekbarSlider?.addTarget(self, action: #selector(playheadChanged(with:)), for: .valueChanged)
         seekbarSlider?.addTarget(self, action: #selector(seekingEnd), for: .touchUpInside)

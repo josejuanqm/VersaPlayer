@@ -189,6 +189,12 @@ open class VersaPlayerView: View, PIPProtocol {
     /// - Parameters:
     ///     - enabled: Whether or not to enable
     open func setNativePip(enabled: Bool) {
+        if pipController == nil && renderingView != nil {
+            let controller = AVPictureInPictureController(playerLayer: renderingView!.renderingLayer.playerLayer)
+            controller?.delegate = self
+            pipController = controller
+        }
+        
         if enabled {
             pipController?.startPictureInPicture()
         }else {
@@ -246,6 +252,7 @@ open class VersaPlayerView: View, PIPProtocol {
     @IBAction open func play(sender: Any? = nil) {
         if playbackDelegate?.playbackShouldBegin(player: player) ?? true {
             player.play()
+            controls?.playPauseButton?.set(active: true)
             isPlaying = true
         }
     }
@@ -253,6 +260,7 @@ open class VersaPlayerView: View, PIPProtocol {
     /// Pause
     @IBAction open func pause(sender: Any? = nil) {
         player.pause()
+        controls?.playPauseButton?.set(active: false)
         isPlaying = false
     }
     
@@ -267,10 +275,12 @@ open class VersaPlayerView: View, PIPProtocol {
     
     #if os(iOS)
     open func pictureInPictureControllerDidStopPictureInPicture(_ pictureInPictureController: AVPictureInPictureController) {
+        print("stopped")
         //hide fallback
     }
     
     open func pictureInPictureControllerDidStartPictureInPicture(_ pictureInPictureController: AVPictureInPictureController) {
+        print("started")
         //show fallback
     }
     
@@ -282,6 +292,14 @@ open class VersaPlayerView: View, PIPProtocol {
     open func pictureInPictureControllerWillStartPictureInPicture(_ pictureInPictureController: AVPictureInPictureController) {
         controls?.controlsCoordinator.isHidden = true
         isPipModeEnabled = true
+    }
+    
+    public func pictureInPictureController(_ pictureInPictureController: AVPictureInPictureController, failedToStartPictureInPictureWithError error: Error) {
+        print(error.localizedDescription)
+    }
+    
+    public func pictureInPictureController(_ pictureInPictureController: AVPictureInPictureController, restoreUserInterfaceForPictureInPictureStopWithCompletionHandler completionHandler: @escaping (Bool) -> Void) {
+        
     }
     #endif
     

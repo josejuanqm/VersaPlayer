@@ -76,7 +76,9 @@ open class VersaPlayerControlsBehaviour {
         #if os(macOS)
         controls.alphaValue = 1
         #else
-        controls.alpha = 1
+        UIView.animate(withDuration: 0.3) {
+            self.controls.alpha = 1
+        }
         #endif
     }
     
@@ -86,7 +88,9 @@ open class VersaPlayerControlsBehaviour {
         #if os(macOS)
         controls.alphaValue = 0
         #else
-        controls.alpha = 0
+        UIView.animate(withDuration: 0.3) {
+            self.controls.alpha = 0
+        }
         #endif
     }
     

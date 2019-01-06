@@ -34,13 +34,6 @@ open class VersaPlayerLayer: CALayer {
     public convenience init(with player: VersaPlayerView) {
         self.init()
         playerLayer = AVPlayerLayer.init(player: player.player)
-        
-        #if os(iOS)
-        let controller = AVPictureInPictureController(playerLayer: playerLayer)
-        controller?.delegate = player
-        player.pipController = controller
-        #endif
-        
         addSublayer(playerLayer)
     }
     
