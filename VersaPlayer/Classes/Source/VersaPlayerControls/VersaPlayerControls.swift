@@ -342,6 +342,7 @@ open class VersaPlayerControls: View {
     /// - Parameters:
     ///     - sender: NSSlider that updated
     @IBAction open func playheadChanged(with sender: NSSlider) {
+        handler.isSeeking = true
         let value = sender.doubleValue
         let time = CMTime(seconds: value, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
         handler.player.seek(to: time)
@@ -355,6 +356,7 @@ open class VersaPlayerControls: View {
     /// - Parameters:
     ///     - sender: UISlider that updated
     @IBAction open func playheadChanged(with sender: UISlider) {
+        handler.isSeeking = true
         let value = Double(sender.value)
         let time = CMTime(seconds: value, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
         handler.player.seek(to: time)
