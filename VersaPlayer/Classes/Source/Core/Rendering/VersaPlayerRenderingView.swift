@@ -33,6 +33,7 @@ open class VersaPlayerRenderingView: View {
     ///     - player: VersaPlayer instance to render.
     public init(with player: VersaPlayerView) {
         super.init(frame: CGRect.zero)
+        initializeRenderingLayer(with: player)
         self.player = player
     }
     
@@ -42,25 +43,25 @@ open class VersaPlayerRenderingView: View {
     
     #if os(macOS)
     
+    private func initializeRenderingLayer(with player: VersaPlayerView) {
+        renderingLayer = VersaPlayerLayer.init(with: player)
+        layer = renderingLayer.playerLayer
+    }
+    
     open override func layout() {
         super.layout()
-        if renderingLayer == nil {
-            renderingLayer = VersaPlayerLayer.init(with: player)
-            layer = renderingLayer.playerLayer
-        }
-        
         renderingLayer.playerLayer.frame = bounds
     }
     
     #else
     
+    private func initializeRenderingLayer(with player: VersaPlayerView) {
+        renderingLayer = VersaPlayerLayer.init(with: player)
+        layer.addSublayer(renderingLayer.playerLayer)
+    }
+    
     open override func layoutSubviews() {
         super.layoutSubviews()
-        if renderingLayer == nil {
-            renderingLayer = VersaPlayerLayer.init(with: player)
-            layer.addSublayer(renderingLayer.playerLayer)
-        }
-        
         renderingLayer.playerLayer.frame = bounds
     }
     
