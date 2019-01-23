@@ -69,8 +69,10 @@ open class VersaPlayer: AVPlayer, AVAssetResourceLoaderDelegate {
     
     /// Pause content
     override open func pause() {
+        handler.playbackDelegate?.playbackWillPause(player: self)
         NotificationCenter.default.post(name: VersaPlayer.VPlayerNotificationName.pause.notification, object: self, userInfo: nil)
         super.pause()
+        handler.playbackDelegate?.playbackDidPause(player: self)
     }
     
     /// Replace current item with a new one
