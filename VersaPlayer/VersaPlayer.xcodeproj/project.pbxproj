@@ -1,0 +1,482 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		17328DAA2213261B0014E399 /* VersaPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 17328DA82213261B0014E399 /* VersaPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		17328E002213269B0014E399 /* VersaPlayerPlaybackError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17328DE72213269B0014E399 /* VersaPlayerPlaybackError.swift */; };
+		17328E012213269B0014E399 /* VersaPlayerLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17328DE92213269B0014E399 /* VersaPlayerLayer.swift */; };
+		17328E022213269B0014E399 /* VersaPlayerRenderingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17328DEA2213269B0014E399 /* VersaPlayerRenderingView.swift */; };
+		17328E032213269B0014E399 /* VersaPlayerDecryptionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17328DEC2213269B0014E399 /* VersaPlayerDecryptionDelegate.swift */; };
+		17328E042213269B0014E399 /* VersaPlayerPlaybackDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17328DED2213269B0014E399 /* VersaPlayerPlaybackDelegate.swift */; };
+		17328E052213269B0014E399 /* VersaPlayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17328DEE2213269B0014E399 /* VersaPlayerExtension.swift */; };
+		17328E062213269B0014E399 /* VersaPlayerMediaTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17328DF02213269B0014E399 /* VersaPlayerMediaTrack.swift */; };
+		17328E072213269B0014E399 /* VersaPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17328DF12213269B0014E399 /* VersaPlayer.swift */; };
+		17328E082213269B0014E399 /* VersaPlayerCaptionStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17328DF22213269B0014E399 /* VersaPlayerCaptionStyling.swift */; };
+		17328E092213269B0014E399 /* VersaPlayerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17328DF32213269B0014E399 /* VersaPlayerItem.swift */; };
+		17328E0A2213269B0014E399 /* VersaPlayerControlsBehaviour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17328DF62213269B0014E399 /* VersaPlayerControlsBehaviour.swift */; };
+		17328E0B2213269B0014E399 /* VersaPlayerGestureRecieverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17328DF72213269B0014E399 /* VersaPlayerGestureRecieverView.swift */; };
+		17328E0C2213269B0014E399 /* VersaPlayerGestureRecieverViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17328DF82213269B0014E399 /* VersaPlayerGestureRecieverViewDelegate.swift */; };
+		17328E0D2213269B0014E399 /* VersaTimeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17328DFA2213269B0014E399 /* VersaTimeLabel.swift */; };
+		17328E0E2213269B0014E399 /* VersaStatefulButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17328DFB2213269B0014E399 /* VersaStatefulButton.swift */; };
+		17328E0F2213269B0014E399 /* VersaSeekbarSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17328DFC2213269B0014E399 /* VersaSeekbarSlider.swift */; };
+		17328E102213269B0014E399 /* VersaPlayerControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17328DFD2213269B0014E399 /* VersaPlayerControls.swift */; };
+		17328E112213269B0014E399 /* VersaPlayerControlsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17328DFE2213269B0014E399 /* VersaPlayerControlsCoordinator.swift */; };
+		17328E122213269B0014E399 /* VersaPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17328DFF2213269B0014E399 /* VersaPlayerView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		17328DA52213261B0014E399 /* VersaPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VersaPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		17328DA82213261B0014E399 /* VersaPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VersaPlayer.h; sourceTree = "<group>"; };
+		17328DA92213261B0014E399 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17328DE72213269B0014E399 /* VersaPlayerPlaybackError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersaPlayerPlaybackError.swift; sourceTree = "<group>"; };
+		17328DE92213269B0014E399 /* VersaPlayerLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersaPlayerLayer.swift; sourceTree = "<group>"; };
+		17328DEA2213269B0014E399 /* VersaPlayerRenderingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersaPlayerRenderingView.swift; sourceTree = "<group>"; };
+		17328DEC2213269B0014E399 /* VersaPlayerDecryptionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersaPlayerDecryptionDelegate.swift; sourceTree = "<group>"; };
+		17328DED2213269B0014E399 /* VersaPlayerPlaybackDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersaPlayerPlaybackDelegate.swift; sourceTree = "<group>"; };
+		17328DEE2213269B0014E399 /* VersaPlayerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersaPlayerExtension.swift; sourceTree = "<group>"; };
+		17328DF02213269B0014E399 /* VersaPlayerMediaTrack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersaPlayerMediaTrack.swift; sourceTree = "<group>"; };
+		17328DF12213269B0014E399 /* VersaPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersaPlayer.swift; sourceTree = "<group>"; };
+		17328DF22213269B0014E399 /* VersaPlayerCaptionStyling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersaPlayerCaptionStyling.swift; sourceTree = "<group>"; };
+		17328DF32213269B0014E399 /* VersaPlayerItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersaPlayerItem.swift; sourceTree = "<group>"; };
+		17328DF62213269B0014E399 /* VersaPlayerControlsBehaviour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersaPlayerControlsBehaviour.swift; sourceTree = "<group>"; };
+		17328DF72213269B0014E399 /* VersaPlayerGestureRecieverView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersaPlayerGestureRecieverView.swift; sourceTree = "<group>"; };
+		17328DF82213269B0014E399 /* VersaPlayerGestureRecieverViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersaPlayerGestureRecieverViewDelegate.swift; sourceTree = "<group>"; };
+		17328DFA2213269B0014E399 /* VersaTimeLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersaTimeLabel.swift; sourceTree = "<group>"; };
+		17328DFB2213269B0014E399 /* VersaStatefulButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersaStatefulButton.swift; sourceTree = "<group>"; };
+		17328DFC2213269B0014E399 /* VersaSeekbarSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersaSeekbarSlider.swift; sourceTree = "<group>"; };
+		17328DFD2213269B0014E399 /* VersaPlayerControls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersaPlayerControls.swift; sourceTree = "<group>"; };
+		17328DFE2213269B0014E399 /* VersaPlayerControlsCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersaPlayerControlsCoordinator.swift; sourceTree = "<group>"; };
+		17328DFF2213269B0014E399 /* VersaPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersaPlayerView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		17328DA22213261B0014E399 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		17328D9B2213261B0014E399 = {
+			isa = PBXGroup;
+			children = (
+				17328DE42213269B0014E399 /* Source */,
+				17328DA72213261B0014E399 /* VersaPlayer */,
+				17328DA62213261B0014E399 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		17328DA62213261B0014E399 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				17328DA52213261B0014E399 /* VersaPlayer.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		17328DA72213261B0014E399 /* VersaPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				17328DA82213261B0014E399 /* VersaPlayer.h */,
+				17328DA92213261B0014E399 /* Info.plist */,
+			);
+			path = VersaPlayer;
+			sourceTree = "<group>";
+		};
+		17328DE42213269B0014E399 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				17328DE52213269B0014E399 /* Core */,
+				17328DF42213269B0014E399 /* VersaPlayerControls */,
+				17328DFF2213269B0014E399 /* VersaPlayerView.swift */,
+			);
+			name = Source;
+			path = Classes/Source;
+			sourceTree = "<group>";
+		};
+		17328DE52213269B0014E399 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				17328DE62213269B0014E399 /* Enums */,
+				17328DE82213269B0014E399 /* Rendering */,
+				17328DEB2213269B0014E399 /* Protocols */,
+				17328DEF2213269B0014E399 /* Player */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		17328DE62213269B0014E399 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				17328DE72213269B0014E399 /* VersaPlayerPlaybackError.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		17328DE82213269B0014E399 /* Rendering */ = {
+			isa = PBXGroup;
+			children = (
+				17328DE92213269B0014E399 /* VersaPlayerLayer.swift */,
+				17328DEA2213269B0014E399 /* VersaPlayerRenderingView.swift */,
+			);
+			path = Rendering;
+			sourceTree = "<group>";
+		};
+		17328DEB2213269B0014E399 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				17328DEC2213269B0014E399 /* VersaPlayerDecryptionDelegate.swift */,
+				17328DED2213269B0014E399 /* VersaPlayerPlaybackDelegate.swift */,
+				17328DEE2213269B0014E399 /* VersaPlayerExtension.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		17328DEF2213269B0014E399 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				17328DF02213269B0014E399 /* VersaPlayerMediaTrack.swift */,
+				17328DF12213269B0014E399 /* VersaPlayer.swift */,
+				17328DF22213269B0014E399 /* VersaPlayerCaptionStyling.swift */,
+				17328DF32213269B0014E399 /* VersaPlayerItem.swift */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		17328DF42213269B0014E399 /* VersaPlayerControls */ = {
+			isa = PBXGroup;
+			children = (
+				17328DF52213269B0014E399 /* Core */,
+				17328DF92213269B0014E399 /* Controls */,
+				17328DFD2213269B0014E399 /* VersaPlayerControls.swift */,
+				17328DFE2213269B0014E399 /* VersaPlayerControlsCoordinator.swift */,
+			);
+			path = VersaPlayerControls;
+			sourceTree = "<group>";
+		};
+		17328DF52213269B0014E399 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				17328DF62213269B0014E399 /* VersaPlayerControlsBehaviour.swift */,
+				17328DF72213269B0014E399 /* VersaPlayerGestureRecieverView.swift */,
+				17328DF82213269B0014E399 /* VersaPlayerGestureRecieverViewDelegate.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		17328DF92213269B0014E399 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				17328DFA2213269B0014E399 /* VersaTimeLabel.swift */,
+				17328DFB2213269B0014E399 /* VersaStatefulButton.swift */,
+				17328DFC2213269B0014E399 /* VersaSeekbarSlider.swift */,
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		17328DA02213261B0014E399 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17328DAA2213261B0014E399 /* VersaPlayer.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		17328DA42213261B0014E399 /* VersaPlayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 17328DAD2213261B0014E399 /* Build configuration list for PBXNativeTarget "VersaPlayer" */;
+			buildPhases = (
+				17328DA02213261B0014E399 /* Headers */,
+				17328DA12213261B0014E399 /* Sources */,
+				17328DA22213261B0014E399 /* Frameworks */,
+				17328DA32213261B0014E399 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VersaPlayer;
+			productName = VersaPlayer;
+			productReference = 17328DA52213261B0014E399 /* VersaPlayer.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		17328D9C2213261B0014E399 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Boards & More";
+				TargetAttributes = {
+					17328DA42213261B0014E399 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = 17328D9F2213261B0014E399 /* Build configuration list for PBXProject "VersaPlayer" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 17328D9B2213261B0014E399;
+			productRefGroup = 17328DA62213261B0014E399 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				17328DA42213261B0014E399 /* VersaPlayer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		17328DA32213261B0014E399 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		17328DA12213261B0014E399 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17328E0B2213269B0014E399 /* VersaPlayerGestureRecieverView.swift in Sources */,
+				17328E0D2213269B0014E399 /* VersaTimeLabel.swift in Sources */,
+				17328E0C2213269B0014E399 /* VersaPlayerGestureRecieverViewDelegate.swift in Sources */,
+				17328E052213269B0014E399 /* VersaPlayerExtension.swift in Sources */,
+				17328E0F2213269B0014E399 /* VersaSeekbarSlider.swift in Sources */,
+				17328E122213269B0014E399 /* VersaPlayerView.swift in Sources */,
+				17328E102213269B0014E399 /* VersaPlayerControls.swift in Sources */,
+				17328E042213269B0014E399 /* VersaPlayerPlaybackDelegate.swift in Sources */,
+				17328E072213269B0014E399 /* VersaPlayer.swift in Sources */,
+				17328E032213269B0014E399 /* VersaPlayerDecryptionDelegate.swift in Sources */,
+				17328E112213269B0014E399 /* VersaPlayerControlsCoordinator.swift in Sources */,
+				17328E022213269B0014E399 /* VersaPlayerRenderingView.swift in Sources */,
+				17328E012213269B0014E399 /* VersaPlayerLayer.swift in Sources */,
+				17328E062213269B0014E399 /* VersaPlayerMediaTrack.swift in Sources */,
+				17328E002213269B0014E399 /* VersaPlayerPlaybackError.swift in Sources */,
+				17328E082213269B0014E399 /* VersaPlayerCaptionStyling.swift in Sources */,
+				17328E0E2213269B0014E399 /* VersaStatefulButton.swift in Sources */,
+				17328E0A2213269B0014E399 /* VersaPlayerControlsBehaviour.swift in Sources */,
+				17328E092213269B0014E399 /* VersaPlayerItem.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		17328DAB2213261B0014E399 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		17328DAC2213261B0014E399 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		17328DAE2213261B0014E399 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = VersaPlayer/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.boards-and-more.VersaPlayer";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		17328DAF2213261B0014E399 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = VersaPlayer/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.boards-and-more.VersaPlayer";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		17328D9F2213261B0014E399 /* Build configuration list for PBXProject "VersaPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17328DAB2213261B0014E399 /* Debug */,
+				17328DAC2213261B0014E399 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		17328DAD2213261B0014E399 /* Build configuration list for PBXNativeTarget "VersaPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17328DAE2213261B0014E399 /* Debug */,
+				17328DAF2213261B0014E399 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 17328D9C2213261B0014E399 /* Project object */;
+}
