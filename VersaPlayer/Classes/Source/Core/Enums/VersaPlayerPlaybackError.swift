@@ -17,6 +17,8 @@ public enum VersaPlayerPlaybackError {
     case mediaFileError
     case bandwidthExceeded
     case playlistUnchanged
+    case decoderMalfunction
+    case decoderTemporarilyUnavailable
     case wrongHostIP
     case wrongHostDNS
     case badURL
