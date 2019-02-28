@@ -17,12 +17,12 @@ open class VersaPlayerRenderingView: View {
 
   #if os(iOS)
   override open class var layerClass: AnyClass {
-    return AVPlayerLayer.self
+      return AVPlayerLayer.self
   }
   #endif
 
   public var playerLayer: AVPlayerLayer {
-    return layer as! AVPlayerLayer
+      return layer as! AVPlayerLayer
   }
 
   /// VersaPlayer instance being rendered by renderingLayer
