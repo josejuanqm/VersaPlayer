@@ -213,6 +213,10 @@ extension VersaPlayer {
                         }
                         handler.playbackDelegate?.playbackDidFailed(with: playbackError)
                     }
+
+                    if status == .readyToPlay, let currentItem = self.currentItem as? VersaPlayerItem {
+                      handler.playbackDelegate?.playbackItemReady(player: self, item: currentItem)
+                    }
                 }
             case "playbackBufferEmpty":
                 isBuffering = true

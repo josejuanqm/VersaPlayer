@@ -85,6 +85,13 @@ public protocol VersaPlayerPlaybackDelegate: AnyObject {
     /// - Parameters:
     ///     - player: VersaPlayer being used
     func playbackDidPause(player: VersaPlayer)
+
+    /// Notifies when current VersaPlayerItem is ready to play
+    ///
+    /// - Parameters:
+    ///     - player: VersaPlayer being used
+    ///     - item: VersaPlayerItem being used
+    func playbackItemReady(player: VersaPlayer, item: VersaPlayerItem?)
     
 }
 
@@ -115,4 +122,6 @@ public extension VersaPlayerPlaybackDelegate {
     func playbackWillPause(player: VersaPlayer) { }
 
     func playbackDidPause(player: VersaPlayer) { }
+
+    func playbackItemReady(player: VersaPlayer, item: VersaPlayerItem?) { }
 }
