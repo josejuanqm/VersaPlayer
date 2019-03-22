@@ -36,7 +36,7 @@ open class VersaPlayer: AVPlayer, AVAssetResourceLoaderDelegate {
     }
     
     /// VersaPlayer instance
-    public weak var handler: VersaPlayerView!
+    public weak var handler: VersaPlayerView?
     
     /// Caption text style rules
     lazy public var captionStyling: VersaPlayerCaptionStyling = {
@@ -57,22 +57,22 @@ open class VersaPlayer: AVPlayer, AVAssetResourceLoaderDelegate {
     
     /// Play content
     override open func play() {
-        handler.playbackDelegate?.playbackWillBegin(player: self)
+        self.handler?.playbackDelegate?.playbackWillBegin(player: self)
         NotificationCenter.default.post(name: VersaPlayer.VPlayerNotificationName.willPlay.notification, object: self, userInfo: nil)
-        if !(handler.playbackDelegate?.playbackShouldBegin(player: self) ?? true) {
+        if !(self.handler?.playbackDelegate?.playbackShouldBegin(player: self) ?? true) {
             return
         }
         NotificationCenter.default.post(name: VersaPlayer.VPlayerNotificationName.play.notification, object: self, userInfo: nil)
         super.play()
-        handler.playbackDelegate?.playbackDidBegin(player: self)
+        self.handler?.playbackDelegate?.playbackDidBegin(player: self)
     }
     
     /// Pause content
     override open func pause() {
-        handler.playbackDelegate?.playbackWillPause(player: self)
+        self.handler?.playbackDelegate?.playbackWillPause(player: self)
         NotificationCenter.default.post(name: VersaPlayer.VPlayerNotificationName.pause.notification, object: self, userInfo: nil)
         super.pause()
-        handler.playbackDelegate?.playbackDidPause(player: self)
+        self.handler?.playbackDelegate?.playbackDidPause(player: self)
     }
     
     /// Replace current item with a new one
@@ -170,9 +170,9 @@ extension VersaPlayer {
             if keyPath == "status" {
                 switch status {
                 case AVPlayer.Status.readyToPlay:
-                    handler.playbackDelegate?.playbackReady(player: self)
+                    self.handler?.playbackDelegate?.playbackReady(player: self)
                 case AVPlayer.Status.failed:
-                    handler.playbackDelegate?.playbackDidFailed(with: VersaPlayerPlaybackError.unknown)
+                    self.handler?.playbackDelegate?.playbackDidFailed(with: VersaPlayerPlaybackError.unknown)
                 default:
                     break;
                 }
@@ -215,21 +215,21 @@ extension VersaPlayer {
                         default:
                             playbackError = .unknown
                         }
-                        handler.playbackDelegate?.playbackDidFailed(with: playbackError)
+                        self.handler?.playbackDelegate?.playbackDidFailed(with: playbackError)
                     }
                 }
             case "playbackBufferEmpty":
                 isBuffering = true
                 NotificationCenter.default.post(name: VersaPlayer.VPlayerNotificationName.buffering.notification, object: self, userInfo: nil)
-                handler.playbackDelegate?.startBuffering(player: self)
+                self.handler?.playbackDelegate?.startBuffering(player: self)
             case "playbackLikelyToKeepUp":
                 isBuffering = false
                 NotificationCenter.default.post(name: VersaPlayer.VPlayerNotificationName.endBuffering.notification, object: self, userInfo: nil)
-                handler.playbackDelegate?.endBuffering(player: self)
+                self.handler?.playbackDelegate?.endBuffering(player: self)
             case "playbackBufferFull":
                 isBuffering = false
                 NotificationCenter.default.post(name: VersaPlayer.VPlayerNotificationName.endBuffering.notification, object: self, userInfo: nil)
-                handler.playbackDelegate?.endBuffering(player: self)
+                self.handler?.playbackDelegate?.endBuffering(player: self)
             default:
                 break;
             }
@@ -246,14 +246,14 @@ extension VersaPlayer {
         print("VersaPlayerResourceLoading: \(url)")
         
         guard
-            let certificateURL = handler.decryptionDelegate?.urlFor(player: self),
+            let certificateURL = self.handler?.decryptionDelegate?.urlFor(player: self),
             let certificateData = try? Data(contentsOf: certificateURL) else {
                 print("VersaPlayerResourceLoadingError", #function, "Unable to read the certificate data.")
                 loadingRequest.finishLoading(with: NSError(domain: "quasar.studio.error", code: -2, userInfo: nil))
                 return false
         }
         
-        let contentId = handler.decryptionDelegate?.contentIdFor(player: self) ?? ""
+        let contentId = self.handler?.decryptionDelegate?.contentIdFor(player: self) ?? ""
         guard
             let contentIdData = contentId.data(using: String.Encoding.utf8),
             let spcData = try? loadingRequest.streamingContentKeyRequestData(forApp: certificateData, contentIdentifier: contentIdData, options: nil),
@@ -263,7 +263,7 @@ extension VersaPlayer {
                 return false
         }
         
-        guard let ckcURL = handler.decryptionDelegate?.contentKeyContextURLFor(player: self) else {
+        guard let ckcURL = self.handler?.decryptionDelegate?.contentKeyContextURLFor(player: self) else {
             loadingRequest.finishLoading(with: NSError(domain: "quasar.studio.error", code: -4, userInfo: nil))
             print("VersaPlayerResourceLoadingError", #function, "Unable to read the ckcURL.")
             return false
