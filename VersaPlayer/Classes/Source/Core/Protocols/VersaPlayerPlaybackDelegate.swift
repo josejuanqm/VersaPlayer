@@ -9,7 +9,7 @@
 import Foundation
 import AVFoundation
 
-public protocol VersaPlayerPlaybackDelegate: AnyObject {
+public protocol VersaPlayerPlaybackDelegate: class {
     
     /// Notifies when playback time changes
     ///
@@ -73,5 +73,46 @@ public protocol VersaPlayerPlaybackDelegate: AnyObject {
     /// - Parameters:
     ///     - error: playback error
     func playbackDidFailed(with error: VersaPlayerPlaybackError)
+
+    /// Notifies when player will pause playback
+    ///
+    /// - Parameters:
+    ///     - player: VersaPlayer being used
+    func playbackWillPause(player: VersaPlayer)
+
+    /// Notifies when player did pause playback
+    ///
+    /// - Parameters:
+    ///     - player: VersaPlayer being used
+    func playbackDidPause(player: VersaPlayer)
     
+}
+
+public extension VersaPlayerPlaybackDelegate {
+
+    func timeDidChange(player: VersaPlayer, to time: CMTime) { }
+
+    func playbackShouldBegin(player: VersaPlayer) -> Bool {
+      return true
+    }
+
+    func playbackDidJump(player: VersaPlayer) { }
+
+    func playbackWillBegin(player: VersaPlayer) { }
+
+    func playbackReady(player: VersaPlayer) { }
+
+    func playbackDidBegin(player: VersaPlayer) { }
+
+    func playbackDidEnd(player: VersaPlayer) { }
+
+    func startBuffering(player: VersaPlayer) { }
+
+    func endBuffering(player: VersaPlayer) { }
+
+    func playbackDidFailed(with error: VersaPlayerPlaybackError) { }
+
+    func playbackWillPause(player: VersaPlayer) { }
+
+    func playbackDidPause(player: VersaPlayer) { }
 }
