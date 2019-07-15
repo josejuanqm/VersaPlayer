@@ -112,10 +112,10 @@ open class VersaPlayerControlsCoordinator: View, VersaPlayerGestureRecieverViewD
     /// - Parameters:
     ///     - point: CGPoint at which tap was recognized
     open func didDoubleTap(at point: CGPoint) {
-        if player.renderingView.renderingLayer.playerLayer.videoGravity == AVLayerVideoGravity.resizeAspect {
-            player.renderingView.renderingLayer.playerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        if player.renderingView.playerLayer.videoGravity == AVLayerVideoGravity.resizeAspect {
+            player.renderingView.playerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
         }else {
-            player.renderingView.renderingLayer.playerLayer.videoGravity = AVLayerVideoGravity.resizeAspect
+            player.renderingView.playerLayer.videoGravity = AVLayerVideoGravity.resizeAspect
         }
     }
     
