@@ -219,7 +219,7 @@ extension VersaPlayer {
                     }
 
                     if status == .readyToPlay, let currentItem = self.currentItem as? VersaPlayerItem {
-                      handler.playbackDelegate?.playbackItemReady(player: self, item: currentItem)
+                      self.handler?.playbackDelegate?.playbackItemReady(player: self, item: currentItem)
                     }
                 }
             case "playbackBufferEmpty":

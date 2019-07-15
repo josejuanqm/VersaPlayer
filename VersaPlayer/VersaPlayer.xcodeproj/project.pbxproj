@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		17328DAA2213261B0014E399 /* VersaPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 17328DA82213261B0014E399 /* VersaPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		17328E002213269B0014E399 /* VersaPlayerPlaybackError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17328DE72213269B0014E399 /* VersaPlayerPlaybackError.swift */; };
-		17328E012213269B0014E399 /* VersaPlayerLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17328DE92213269B0014E399 /* VersaPlayerLayer.swift */; };
 		17328E022213269B0014E399 /* VersaPlayerRenderingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17328DEA2213269B0014E399 /* VersaPlayerRenderingView.swift */; };
 		17328E032213269B0014E399 /* VersaPlayerDecryptionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17328DEC2213269B0014E399 /* VersaPlayerDecryptionDelegate.swift */; };
 		17328E042213269B0014E399 /* VersaPlayerPlaybackDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17328DED2213269B0014E399 /* VersaPlayerPlaybackDelegate.swift */; };
@@ -34,7 +33,6 @@
 		17328DA82213261B0014E399 /* VersaPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VersaPlayer.h; sourceTree = "<group>"; };
 		17328DA92213261B0014E399 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17328DE72213269B0014E399 /* VersaPlayerPlaybackError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersaPlayerPlaybackError.swift; sourceTree = "<group>"; };
-		17328DE92213269B0014E399 /* VersaPlayerLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersaPlayerLayer.swift; sourceTree = "<group>"; };
 		17328DEA2213269B0014E399 /* VersaPlayerRenderingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersaPlayerRenderingView.swift; sourceTree = "<group>"; };
 		17328DEC2213269B0014E399 /* VersaPlayerDecryptionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersaPlayerDecryptionDelegate.swift; sourceTree = "<group>"; };
 		17328DED2213269B0014E399 /* VersaPlayerPlaybackDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersaPlayerPlaybackDelegate.swift; sourceTree = "<group>"; };
@@ -124,7 +122,6 @@
 		17328DE82213269B0014E399 /* Rendering */ = {
 			isa = PBXGroup;
 			children = (
-				17328DE92213269B0014E399 /* VersaPlayerLayer.swift */,
 				17328DEA2213269B0014E399 /* VersaPlayerRenderingView.swift */,
 			);
 			path = Rendering;
@@ -272,7 +269,6 @@
 				17328E032213269B0014E399 /* VersaPlayerDecryptionDelegate.swift in Sources */,
 				17328E112213269B0014E399 /* VersaPlayerControlsCoordinator.swift in Sources */,
 				17328E022213269B0014E399 /* VersaPlayerRenderingView.swift in Sources */,
-				17328E012213269B0014E399 /* VersaPlayerLayer.swift in Sources */,
 				17328E062213269B0014E399 /* VersaPlayerMediaTrack.swift in Sources */,
 				17328E002213269B0014E399 /* VersaPlayerPlaybackError.swift in Sources */,
 				17328E082213269B0014E399 /* VersaPlayerCaptionStyling.swift in Sources */,
