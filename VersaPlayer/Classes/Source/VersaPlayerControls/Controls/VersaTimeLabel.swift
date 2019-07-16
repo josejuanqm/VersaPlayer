@@ -19,10 +19,13 @@ public typealias TextField = UITextField
 #endif
 
 open class VersaTimeLabel: TextField {
-    
-    public var timeFormat: String = "HH:mm:ss"
 
     open func update(toTime: TimeInterval) {
+        var timeFormat: String = "HH:mm:ss"
+        //If time is less than an hour, better just show minutes
+        if toTime <= 3599{
+            timeFormat = "mm:ss"
+        }
         let date = Date(timeIntervalSince1970: toTime)
         let formatter = DateFormatter()
         formatter.timeZone = TimeZone.init(secondsFromGMT: 0)
