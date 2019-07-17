@@ -22,7 +22,6 @@ open class VersaTimeLabel: TextField {
 
     open func update(toTime: TimeInterval) {
         var timeFormat: String = "HH:mm:ss"
-        //If time is less than an hour, better just show minutes
         if toTime <= 3599{
             timeFormat = "mm:ss"
         }
