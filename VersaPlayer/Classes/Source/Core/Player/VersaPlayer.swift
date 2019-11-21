@@ -49,10 +49,7 @@ open class VersaPlayer: AVPlayer, AVAssetResourceLoaderDelegate {
     deinit {
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.AVPlayerItemTimeJumped, object: self)
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: self)
-
-        #if DEBUG
-            print("9 \(String(describing: self))")
-        #endif
+        removeObserver(self, forKeyPath: "status")
     }
     
     /// Play content
@@ -167,7 +164,7 @@ extension VersaPlayer {
     /// Value observer
     override open func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if let obj = object as? VersaPlayer, obj == self {
-            if keyPath == "status" {
+            if keyPath == "status" && handler != nil {
                 switch status {
                 case AVPlayer.Status.readyToPlay:
                     handler.playbackDelegate?.playbackReady(player: self)

@@ -26,9 +26,7 @@ open class VersaPlayerControlsCoordinator: View, VersaPlayerGestureRecieverViewD
     public var gestureReciever: VersaPlayerGestureRecieverView!
 
     deinit {
-      #if DEBUG
-          print("2 \(String(describing: self))")
-      #endif
+        
     }
 
     #if os(macOS)

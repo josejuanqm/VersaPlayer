@@ -29,9 +29,7 @@ open class VersaPlayerRenderingView: View {
   public weak var player: VersaPlayerView!
 
   deinit {
-    #if DEBUG
-    print("6 \(String(describing: self))")
-    #endif
+    
   }
 
   /// Constructor

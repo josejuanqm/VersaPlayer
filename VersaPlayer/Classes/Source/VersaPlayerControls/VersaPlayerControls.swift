@@ -84,10 +84,6 @@ open class VersaPlayerControls: View {
         NotificationCenter.default.removeObserver(self, name: VersaPlayer.VPlayerNotificationName.pause.notification, object: nil)
         NotificationCenter.default.removeObserver(self, name: VersaPlayer.VPlayerNotificationName.buffering.notification, object: nil)
         NotificationCenter.default.removeObserver(self, name: VersaPlayer.VPlayerNotificationName.endBuffering.notification, object: nil)
-
-        #if DEBUG
-            print("4 \(String(describing: self))")
-        #endif
     }
     
     #if os(macOS)
