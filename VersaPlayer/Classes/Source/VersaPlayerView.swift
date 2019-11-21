@@ -57,7 +57,7 @@ open class VersaPlayerView: View, PIPProtocol {
     public weak var decryptionDelegate: VersaPlayerDecryptionDelegate? = nil
     
     /// VersaPlayer initial container
-    private var nonFullscreenContainer: View!
+    private weak var nonFullscreenContainer: View!
     
     #if os(iOS)
     /// AVPictureInPictureController instance
