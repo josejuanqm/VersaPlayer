@@ -71,6 +71,11 @@ open class VersaPlayer: AVPlayer, AVAssetResourceLoaderDelegate {
         super.pause()
         handler.playbackDelegate?.playbackDidPause(player: self)
     }
+  
+    /// Mute content
+    private func setMute(_ value: Bool) {
+      isMuted = value
+    }
     
     /// Replace current item with a new one
     ///
