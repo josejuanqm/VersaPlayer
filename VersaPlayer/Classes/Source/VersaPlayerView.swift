@@ -118,7 +118,8 @@ open class VersaPlayerView: View, PIPProtocol {
         coordinator.gestureReciever = gestureReciever
         controls.controlsCoordinator = coordinator
         #if os(macOS)
-        addSubview(coordinator, positioned: NSWindow.OrderingMode.above, relativeTo: renderingView)
+        let parent = self.superview
+        parent?.addSubview(coordinator, positioned: NSWindow.OrderingMode.above, relativeTo: renderingView)
         #else
         addSubview(coordinator)
         bringSubviewToFront(coordinator)

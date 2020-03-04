@@ -711,11 +711,11 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="9g0-l8-tIZ" customClass="VersaPlayerView" customModule="VersaPlayer">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                                <rect key="frame" x="0.0" y="62" width="480" height="208"/>
                             </customView>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="9g0-l8-tIZ" secondAttribute="bottom" id="DbJ-jG-0k0"/>
+                            <constraint firstAttribute="bottom" secondItem="9g0-l8-tIZ" secondAttribute="bottom" constant="62" id="DbJ-jG-0k0"/>
                             <constraint firstItem="9g0-l8-tIZ" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="Kck-w7-bpM"/>
                             <constraint firstItem="9g0-l8-tIZ" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="dNr-9k-oQx"/>
                             <constraint firstAttribute="trailing" secondItem="9g0-l8-tIZ" secondAttribute="trailing" id="gBO-Uj-ceI"/>
