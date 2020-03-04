@@ -180,7 +180,7 @@ open class VersaPlayerControls: View {
         prepareSeekbar()
         seekbarSlider?.target = self
         seekbarSlider?.action = #selector(playheadChanged(with:))
-        
+        preparePlaybackButton()
         #else
         
         playPauseButton?.addTarget(self, action: #selector(togglePlayback), for: .touchUpInside)
@@ -338,7 +338,7 @@ open class VersaPlayerControls: View {
     /// - Parameters:
     ///     - sender: NSSlider that updated
     @IBAction open func playheadChanged(with sender: NSSlider) {
-        handler.pause()
+//        handler.pause()
         handler.isSeeking = true
         let value = sender.doubleValue
         let time = CMTime(seconds: value, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
@@ -388,6 +388,14 @@ open class VersaPlayerControls: View {
                 playPauseButton?.set(active: true)
                 handler.play()
             }
+        }
+    }
+    
+    private func preparePlaybackButton(){
+        if handler.isPlaying {
+            playPauseButton?.set(active: true )
+        }else {
+            playPauseButton?.set(active: false)
         }
     }
     

@@ -736,7 +736,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="15" id="MhJ-3R-Bfh"/>
                             </constraints>
-                            <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="Qnr-Fb-Lve"/>
+                            <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="Qnr-Fb-Lve"/>
                         </slider>
                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1Q2-Hr-y7k" customClass="VersaTimeLabel" customModule="VersaPlayer">
                             <rect key="frame" x="18" y="43" width="37" height="16"/>
@@ -755,7 +755,7 @@
                             </textFieldCell>
                         </textField>
                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="CR9-6i-svp" customClass="VersaStatefulButton" customModule="VersaPlayer">
-                            <rect key="frame" x="200" y="110" width="81" height="32"/>
+                            <rect key="frame" x="200" y="48" width="81" height="32"/>
                             <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="u27-jG-yga">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                 <font key="font" metaFont="system"/>
@@ -765,9 +765,43 @@
                                 <userDefinedRuntimeAttribute type="image" keyPath="inactiveImage" value="NSCaution"/>
                             </userDefinedRuntimeAttributes>
                         </button>
+                        <customView translatesAutoresizingMaskIntoConstraints="NO" id="DBU-jw-u6w" userLabel="ProgressView">
+                            <rect key="frame" x="215" y="103" width="50" height="50"/>
+                            <subviews>
+                                <progressIndicator maxValue="100" displayedWhenStopped="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="8tU-15-Xy4">
+                                    <rect key="frame" x="17" y="17" width="16" height="16"/>
+                                </progressIndicator>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="8tU-15-Xy4" firstAttribute="centerX" secondItem="DBU-jw-u6w" secondAttribute="centerX" id="8ps-Yv-qCu"/>
+                                <constraint firstAttribute="width" constant="50" id="HSp-xi-24s"/>
+                                <constraint firstItem="8tU-15-Xy4" firstAttribute="centerY" secondItem="DBU-jw-u6w" secondAttribute="centerY" id="Q2v-Gt-tDo"/>
+                                <constraint firstAttribute="height" constant="50" id="Rtq-U9-MrO"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="progress" destination="8tU-15-Xy4" id="Nqh-Na-eLi"/>
+                            </connections>
+                        </customView>
+                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vQd-To-4GX" customClass="VersaStatefulButton" customModule="VersaPlayer">
+                            <rect key="frame" x="113" y="48" width="68" height="32"/>
+                            <buttonCell key="cell" type="push" title="Prev" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="bEH-84-wpf">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                        </button>
+                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="iOv-04-5He" customClass="VersaStatefulButton" customModule="VersaPlayer">
+                            <rect key="frame" x="308" y="48" width="68" height="32"/>
+                            <buttonCell key="cell" type="push" title="Prev" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Mxv-ar-XbS">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                        </button>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="CR9-6i-svp" firstAttribute="centerY" secondItem="yFj-i9-BSz" secondAttribute="centerY" id="MAO-iy-zuh"/>
+                        <constraint firstItem="DBU-jw-u6w" firstAttribute="centerX" secondItem="yFj-i9-BSz" secondAttribute="centerX" id="DrH-D3-dTZ"/>
+                        <constraint firstItem="DBU-jw-u6w" firstAttribute="centerY" secondItem="yFj-i9-BSz" secondAttribute="centerY" id="HAL-dI-dhp"/>
+                        <constraint firstAttribute="trailing" secondItem="iOv-04-5He" secondAttribute="trailing" constant="110" id="IXt-ZX-6Zw"/>
+                        <constraint firstItem="CR9-6i-svp" firstAttribute="centerY" secondItem="yFj-i9-BSz" secondAttribute="centerY" constant="62" id="MAO-iy-zuh"/>
                         <constraint firstItem="7nd-JI-8fh" firstAttribute="trailing" secondItem="gHe-sb-utQ" secondAttribute="trailing" id="RL0-gv-Esd"/>
                         <constraint firstItem="CR9-6i-svp" firstAttribute="centerX" secondItem="yFj-i9-BSz" secondAttribute="centerX" id="UQX-5Z-E5N"/>
                         <constraint firstAttribute="trailing" secondItem="gHe-sb-utQ" secondAttribute="trailing" constant="20" id="UtW-oS-nMI"/>
@@ -775,12 +809,18 @@
                         <constraint firstItem="gHe-sb-utQ" firstAttribute="top" secondItem="7nd-JI-8fh" secondAttribute="bottom" constant="8" id="fE9-HU-54R"/>
                         <constraint firstItem="1Q2-Hr-y7k" firstAttribute="leading" secondItem="gHe-sb-utQ" secondAttribute="leading" id="hic-yS-FeD"/>
                         <constraint firstItem="gHe-sb-utQ" firstAttribute="leading" secondItem="yFj-i9-BSz" secondAttribute="leading" constant="20" id="iRV-8v-bhv"/>
+                        <constraint firstItem="vQd-To-4GX" firstAttribute="leading" secondItem="yFj-i9-BSz" secondAttribute="leading" constant="119" id="ik1-VF-wuc"/>
+                        <constraint firstAttribute="bottom" secondItem="vQd-To-4GX" secondAttribute="bottom" constant="55" id="jim-bm-Dos"/>
                         <constraint firstAttribute="bottom" secondItem="gHe-sb-utQ" secondAttribute="bottom" constant="20" id="n3i-zj-MoF"/>
+                        <constraint firstAttribute="bottom" secondItem="iOv-04-5He" secondAttribute="bottom" constant="55" id="okx-oN-HIJ"/>
                     </constraints>
                     <connections>
+                        <outlet property="bufferingView" destination="DBU-jw-u6w" id="5C1-aO-dc2"/>
                         <outlet property="currentTimeLabel" destination="1Q2-Hr-y7k" id="Nf2-VA-9dz"/>
                         <outlet property="playPauseButton" destination="CR9-6i-svp" id="hJw-Kg-cBl"/>
                         <outlet property="seekbarSlider" destination="gHe-sb-utQ" id="GdA-HB-ERG"/>
+                        <outlet property="skipBackwardButton" destination="vQd-To-4GX" id="vNK-25-5B9"/>
+                        <outlet property="skipForwardButton" destination="iOv-04-5He" id="2dN-YF-daz"/>
                         <outlet property="totalTimeLabel" destination="7nd-JI-8fh" id="XqQ-fZ-BQz"/>
                     </connections>
                 </customView>
