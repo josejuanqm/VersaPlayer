@@ -27,7 +27,7 @@ open class VersaPlayerRenderingView: View {
      #else
       return AVPlayerLayer()
     #endif
- }()
+  }()
 
   /// VersaPlayer instance being rendered by renderingLayer
   public weak var player: VersaPlayerView!
