@@ -338,6 +338,7 @@ open class VersaPlayerControls: View {
     /// - Parameters:
     ///     - sender: NSSlider that updated
     @IBAction open func playheadChanged(with sender: NSSlider) {
+        handler.pause()
         handler.isSeeking = true
         let value = sender.doubleValue
         let time = CMTime(seconds: value, preferredTimescale: CMTimeScale(NSEC_PER_SEC))

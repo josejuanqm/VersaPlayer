@@ -27,6 +27,8 @@ open class VersaPlayerControlsBehaviour {
     /// Whether controls should be shown when showingControls is false
     public var shouldShowControls: Bool = true
     
+    public var shouldAutohide: Bool = false
+
     /// Elapsed time between controls being shown and current time
     public var elapsedTime: TimeInterval = 0
     
@@ -97,26 +99,31 @@ open class VersaPlayerControlsBehaviour {
     
     /// Hide the controls
     open func hide() {
-        if deactivationBlock != nil {
-            deactivationBlock!(controls)
-        }else {
-            defaultDeactivationBlock()
+        if shouldAutohide {
+          if deactivationBlock != nil {
+                  deactivationBlock!(controls)
+          }else {
+              defaultDeactivationBlock()
+          }
+          showingControls = false
         }
-        showingControls = false
+  
     }
     
     /// Show the controls
     open func show() {
-        if !shouldShowControls {
-            return
+        if shouldAutohide {
+            if !shouldShowControls {
+                return
+            }
+            activationTime = elapsedTime
+            if activationBlock != nil {
+                activationBlock!(controls)
+            }else {
+                defaultActivationBlock()
+            }
+            showingControls = true
         }
-        activationTime = elapsedTime
-        if activationBlock != nil {
-            activationBlock!(controls)
-        }else {
-            defaultActivationBlock()
-        }
-        showingControls = true
     }
     
 }

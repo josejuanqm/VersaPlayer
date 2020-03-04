@@ -28,7 +28,7 @@ open class VersaPlayer: AVPlayer, AVAssetResourceLoaderDelegate {
         case buffering = "VERSA_PLAYER_BUFFERING"
         case endBuffering = "VERSA_PLAYER_END_BUFFERING"
         case didEnd = "VERSA_PLAYER_END_PLAYING"
-        
+
         /// Notification name representation
         public var notification: NSNotification.Name {
             return NSNotification.Name.init(self.rawValue)
@@ -169,6 +169,7 @@ extension VersaPlayer {
             if keyPath == "status" && handler != nil {
                 switch status {
                 case AVPlayer.Status.readyToPlay:
+                    NotificationCenter.default.post(name: VersaPlayer.VPlayerNotificationName.timeChanged.notification, object: self, userInfo: [VPlayerNotificationInfoKey.time.rawValue: CMTime.zero])
                     handler.playbackDelegate?.playbackReady(player: self)
                 case AVPlayer.Status.failed:
                     handler.playbackDelegate?.playbackDidFailed(with: VersaPlayerPlaybackError.unknown)
@@ -229,6 +230,8 @@ extension VersaPlayer {
                 isBuffering = false
                 NotificationCenter.default.post(name: VersaPlayer.VPlayerNotificationName.endBuffering.notification, object: self, userInfo: nil)
                 handler.playbackDelegate?.endBuffering(player: self)
+                guard  let item = self.currentItem as? VersaPlayerItem else { return  }
+                NotificationCenter.default.post(name: VersaPlayer.VPlayerNotificationName.timeChanged.notification, object: self, userInfo: [VPlayerNotificationInfoKey.time.rawValue: item.currentTime()])
             case "playbackBufferFull":
                 isBuffering = false
                 NotificationCenter.default.post(name: VersaPlayer.VPlayerNotificationName.endBuffering.notification, object: self, userInfo: nil)
