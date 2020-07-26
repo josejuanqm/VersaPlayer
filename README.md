@@ -187,7 +187,7 @@ bufferingView | UIView | Shown when player is buffering
 
 #### DRM
 
-VersaPlayer also brings support for encrypted content, to make use of this funcionality you must implement VersaPlayerDecryptionDelegate and assign it to VersaPlayer's decryptionDelegate property.
+VersaPlayer also brings support for encrypted content, to make use of this functionality you must implement VersaPlayerDecryptionDelegate and assign it to VersaPlayer's decryptionDelegate property.
 
 To read more about this topic go to:
 
