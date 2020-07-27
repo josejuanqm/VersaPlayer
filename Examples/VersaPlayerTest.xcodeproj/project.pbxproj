@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -49,6 +49,8 @@
 		11C1C19D2191550F00A4F7D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2FFE1673769B2B47DCD4E8E6 /* Pods-VersaPlayerTest_macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VersaPlayerTest_macOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-VersaPlayerTest_macOS/Pods-VersaPlayerTest_macOS.release.xcconfig"; sourceTree = "<group>"; };
 		32F71FE5298C24E4B80EDF06 /* Pods-VersaPlayerTest_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VersaPlayerTest_iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-VersaPlayerTest_iOS/Pods-VersaPlayerTest_iOS.release.xcconfig"; sourceTree = "<group>"; };
+		3DF592DA24CDC022002AB260 /* DEVELOPMENT_TEAM.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DEVELOPMENT_TEAM.xcconfig; sourceTree = "<group>"; };
+		3DF592DB24CDC022002AB260 /* Shared.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Shared.xcconfig; sourceTree = "<group>"; };
 		6E00691A79E2D954E582531F /* Pods_VersaPlayerTest_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VersaPlayerTest_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A283B97A087CE29BBF21C985 /* Pods-VersaPlayerTest_tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VersaPlayerTest_tvOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VersaPlayerTest_tvOS/Pods-VersaPlayerTest_tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		B16666E571659532CAD4D771 /* Pods-VersaPlayerTest_macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VersaPlayerTest_macOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VersaPlayerTest_macOS/Pods-VersaPlayerTest_macOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 		11C1C11721912DB200A4F7D5 = {
 			isa = PBXGroup;
 			children = (
+				3DF592D924CDC022002AB260 /* Xcode-config */,
 				11C1C12221912DB200A4F7D5 /* VersaPlayerTest */,
 				11C1C16A219146CF00A4F7D5 /* VersaPlayerTest_iOS */,
 				11C1C1932191550D00A4F7D5 /* VersaPlayerTest_tvOS */,
@@ -153,6 +156,15 @@
 				07B70CAE23E36CCC7131A726 /* Pods_VersaPlayerTest_tvOS.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3DF592D924CDC022002AB260 /* Xcode-config */ = {
+			isa = PBXGroup;
+			children = (
+				3DF592DA24CDC022002AB260 /* DEVELOPMENT_TEAM.xcconfig */,
+				3DF592DB24CDC022002AB260 /* Shared.xcconfig */,
+			);
+			path = "Xcode-config";
 			sourceTree = "<group>";
 		};
 		A7FBCA3A635E05A7FC92317E /* Pods */ = {
@@ -503,6 +515,7 @@
 /* Begin XCBuildConfiguration section */
 		11C1C12E21912DB300A4F7D5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3DF592DB24CDC022002AB260 /* Shared.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -564,6 +577,7 @@
 		};
 		11C1C12F21912DB300A4F7D5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3DF592DB24CDC022002AB260 /* Shared.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
