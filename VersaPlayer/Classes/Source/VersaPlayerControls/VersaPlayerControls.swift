@@ -201,7 +201,7 @@ open class VersaPlayerControls: View {
         if !AVPictureInPictureController.isPictureInPictureSupported() {
             pipButton?.alpha = 0.3
             pipButton?.isUserInteractionEnabled = false
-        }else {
+        } else {
             pipButton?.addTarget(self, action: #selector(togglePip), for: .touchUpInside)
         }
         
@@ -383,7 +383,7 @@ open class VersaPlayerControls: View {
         if handler.isPlaying {
             playPauseButton?.set(active: false)
             handler.pause()
-        }else {
+        } else {
             if handler.playbackDelegate?.playbackShouldBegin(player: handler.player) ?? true {
                 playPauseButton?.set(active: true)
                 handler.play()
@@ -394,7 +394,7 @@ open class VersaPlayerControls: View {
     private func preparePlaybackButton(){
         if handler.isPlaying {
             playPauseButton?.set(active: true )
-        }else {
+        } else {
             playPauseButton?.set(active: false)
         }
     }
@@ -407,10 +407,10 @@ open class VersaPlayerControls: View {
                 handler.player.rate = 1
                 if wasPlayingBeforeRewinding {
                     handler.play()
-                }else {
+                } else {
                     handler.pause()
                 }
-            }else {
+            } else {
                 playPauseButton?.set(active: false)
                 rewindButton?.set(active: true)
                 wasPlayingBeforeRewinding = handler.isPlaying
@@ -430,10 +430,10 @@ open class VersaPlayerControls: View {
                 handler.player.rate = 1
                 if wasPlayingBeforeForwarding {
                     handler.play()
-                }else {
+                } else {
                     handler.pause()
                 }
-            }else {
+            } else {
                 playPauseButton?.set(active: false)
                 forwardButton?.set(active: true)
                 wasPlayingBeforeForwarding = handler.isPlaying

@@ -97,7 +97,7 @@ open class VersaPlayerControlsCoordinator: View, VersaPlayerGestureRecieverViewD
     open func didTap(at point: CGPoint) {
         if controls.behaviour.showingControls {
             controls.behaviour.hide()
-        }else {
+        } else {
             controls.behaviour.show()
         }
     }
@@ -109,7 +109,7 @@ open class VersaPlayerControlsCoordinator: View, VersaPlayerGestureRecieverViewD
     open func didDoubleTap(at point: CGPoint) {
         if player.renderingView.playerLayer.videoGravity == AVLayerVideoGravity.resizeAspect {
             player.renderingView.playerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
-        }else {
+        } else {
             player.renderingView.playerLayer.videoGravity = AVLayerVideoGravity.resizeAspect
         }
     }

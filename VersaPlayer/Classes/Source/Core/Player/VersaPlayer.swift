@@ -112,7 +112,7 @@ extension VersaPlayer {
         
         if item.reversePlaybackEndTime.isValid {
             return item.reversePlaybackEndTime
-        }else {
+        } else {
             return CMTime(seconds: 0, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
         }
     }
@@ -127,10 +127,10 @@ extension VersaPlayer {
         
         if item.forwardPlaybackEndTime.isValid {
             return item.forwardPlaybackEndTime
-        }else {
+        } else {
             if item.duration.isValid && !item.duration.isIndefinite {
                 return item.duration
-            }else {
+            } else {
                 return item.currentTime()
             }
         }
@@ -177,7 +177,7 @@ extension VersaPlayer {
                     break;
                 }
             }
-        }else {
+        } else {
             switch keyPath ?? "" {
             case "status":
                 if let value = change?[.newKey] as? Int, let status = AVPlayerItem.Status(rawValue: value), let item = object as? AVPlayerItem {

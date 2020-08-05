@@ -102,7 +102,7 @@ open class VersaPlayerControlsBehaviour {
         if shouldAutohide {
           if deactivationBlock != nil {
                   deactivationBlock!(controls)
-          }else {
+          } else {
               defaultDeactivationBlock()
           }
           showingControls = false
@@ -119,7 +119,7 @@ open class VersaPlayerControlsBehaviour {
             activationTime = elapsedTime
             if activationBlock != nil {
                 activationBlock!(controls)
-            }else {
+            } else {
                 defaultActivationBlock()
             }
             showingControls = true
