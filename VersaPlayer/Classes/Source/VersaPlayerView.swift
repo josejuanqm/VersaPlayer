@@ -86,12 +86,12 @@ open class VersaPlayerView: View, PIPProtocol {
     
     /// Whether Player is Fast Forwarding
     public var isForwarding: Bool {
-        return player.rate > 1
+        return player.rate > 1.0
     }
     
     /// Whether Player is Rewinding
     public var isRewinding: Bool {
-        return player.rate < 0
+        return player.rate < 0.0
     }
     
     public override init(frame: CGRect) {
@@ -109,7 +109,7 @@ open class VersaPlayerView: View, PIPProtocol {
     ///
     /// - Parameters:
     ///     - controls: VersaPlayerControls instance used to display controls
-    ///     - gestureReciever: Optional gesture reciever view to be used to recieve gestures
+    ///     - gestureReciever: Optional gesture reciever view to be used to receive gestures
     public func use(controls: VersaPlayerControls, with gestureReciever: VersaPlayerGestureRecieverView? = nil) {
         self.controls = controls
         let coordinator = VersaPlayerControlsCoordinator()
@@ -194,7 +194,7 @@ open class VersaPlayerView: View, PIPProtocol {
         
         if enabled {
             pipController?.startPictureInPicture()
-        }else {
+        } else {
             pipController?.stopPictureInPicture()
         }
     }
@@ -222,7 +222,7 @@ open class VersaPlayerView: View, PIPProtocol {
                 layout(view: self, into: window)
             }
             #endif
-        }else {
+        } else {
             removeFromSuperview()
             layout(view: self, into: nonFullscreenContainer)
         }
@@ -265,7 +265,7 @@ open class VersaPlayerView: View, PIPProtocol {
     @IBAction open func togglePlayback(sender: Any? = nil) {
         if isPlaying {
             pause()
-        }else {
+        } else {
             play()
         }
     }
