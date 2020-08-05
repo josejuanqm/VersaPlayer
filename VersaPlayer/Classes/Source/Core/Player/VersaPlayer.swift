@@ -165,8 +165,12 @@ extension VersaPlayer {
     
     /// Value observer
     override open func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        guard let handler = handler else {
+            return
+        }
+        
         if let obj = object as? VersaPlayer, obj == self {
-            if keyPath == "status" && handler != nil {
+            if keyPath == "status" {
                 switch status {
                 case AVPlayer.Status.readyToPlay:
                     NotificationCenter.default.post(name: VersaPlayer.VPlayerNotificationName.timeChanged.notification, object: self, userInfo: [VPlayerNotificationInfoKey.time.rawValue: CMTime.zero])
