@@ -436,6 +436,7 @@
 				2BE3746113A51946B8DCF4EB1A8CBEDB /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		D8CE39782B3B4BE5C5EC4C4CC385A167 /* iOS */ = {
 			isa = PBXGroup;
