@@ -111,7 +111,7 @@
 		07A0ECE5AC7082D254C34FAD72D2D957 /* VersaPlayerGestureRecieverView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = VersaPlayerGestureRecieverView.swift; sourceTree = "<group>"; };
 		088E33E3D3341632224ABD54F1D58645 /* VersaPlayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = VersaPlayer.swift; sourceTree = "<group>"; };
 		10B0B99D40EB87A1CB60089AF93D3A4C /* Pods-VersaPlayerTest_tvOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-VersaPlayerTest_tvOS-Info.plist"; sourceTree = "<group>"; };
-		181655993C93515B69434B7260D9904E /* Pods_VersaPlayerTest_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VersaPlayerTest_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		181655993C93515B69434B7260D9904E /* Pods_VersaPlayerTest_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_VersaPlayerTest_tvOS.framework; path = "Pods-VersaPlayerTest_tvOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E90ABEE4143C213B9EDF66C11CF3574 /* VersaPlayer-macOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "VersaPlayer-macOS-dummy.m"; path = "../VersaPlayer-macOS/VersaPlayer-macOS-dummy.m"; sourceTree = "<group>"; };
 		1FCA1759258C5765421AA599FEF0A12F /* Pods-VersaPlayerTest_iOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-VersaPlayerTest_iOS-Info.plist"; sourceTree = "<group>"; };
 		20DDD1F448AE67C7035461B61209F1D5 /* VersaPlayerGestureRecieverViewDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = VersaPlayerGestureRecieverViewDelegate.swift; sourceTree = "<group>"; };
@@ -127,7 +127,7 @@
 		487A9FC8D4567672588A2024D35ACA55 /* VersaPlayerDecryptionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = VersaPlayerDecryptionDelegate.swift; sourceTree = "<group>"; };
 		4954BF04F48BF341580EE870A65FDA44 /* Pods-VersaPlayerTest_iOS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-VersaPlayerTest_iOS-acknowledgements.plist"; sourceTree = "<group>"; };
 		5299FF6454FFBE00E37CC60AD9BAFD2D /* VersaPlayer-tvOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "VersaPlayer-tvOS-umbrella.h"; path = "../VersaPlayer-tvOS/VersaPlayer-tvOS-umbrella.h"; sourceTree = "<group>"; };
-		52F1040AA6B45D3693F2D35DCBF7FF62 /* VersaPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VersaPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		52F1040AA6B45D3693F2D35DCBF7FF62 /* VersaPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = VersaPlayer.framework; path = "VersaPlayer-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		56564D3C25437991F66865ED65E7EE9A /* Pods-VersaPlayerTest_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VersaPlayerTest_iOS.release.xcconfig"; sourceTree = "<group>"; };
 		59969A1DA72F5F5BA8A9453DF143D249 /* Pods-VersaPlayerTest_iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-VersaPlayerTest_iOS.modulemap"; sourceTree = "<group>"; };
 		69002142AEF900439F40DEF979FDD650 /* VersaPlayer-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "VersaPlayer-tvOS.debug.xcconfig"; path = "../VersaPlayer-tvOS/VersaPlayer-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -143,8 +143,8 @@
 		7FF8D8267C85B69320B5293B19F31D49 /* VersaPlayerItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = VersaPlayerItem.swift; sourceTree = "<group>"; };
 		8343F3F832A472BC2996BB9C406F3F75 /* Pods-VersaPlayerTest_macOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VersaPlayerTest_macOS-umbrella.h"; sourceTree = "<group>"; };
 		85BA7987DDC9E6B595FABD560A561BF4 /* Pods-VersaPlayerTest_tvOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VersaPlayerTest_tvOS-umbrella.h"; sourceTree = "<group>"; };
-		88EFBF3E842CA1A3578E22EBE6CF3B65 /* Pods_VersaPlayerTest_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VersaPlayerTest_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		897E72FAE9657DE99DC67804EE5F80F5 /* VersaPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VersaPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		88EFBF3E842CA1A3578E22EBE6CF3B65 /* Pods_VersaPlayerTest_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_VersaPlayerTest_macOS.framework; path = "Pods-VersaPlayerTest_macOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		897E72FAE9657DE99DC67804EE5F80F5 /* VersaPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = VersaPlayer.framework; path = "VersaPlayer-macOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B9EF346BAB3C3FB6B2EFBB6AC194231 /* VersaPlayer-tvOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; name = "VersaPlayer-tvOS.modulemap"; path = "../VersaPlayer-tvOS/VersaPlayer-tvOS.modulemap"; sourceTree = "<group>"; };
 		8C8F8C056946907BC2222B44E1C2278A /* VersaPlayer-macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "VersaPlayer-macOS.release.xcconfig"; path = "../VersaPlayer-macOS/VersaPlayer-macOS.release.xcconfig"; sourceTree = "<group>"; };
 		8CBC7F049983DC0F6F252A8C503FE902 /* VersaPlayer-tvOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "VersaPlayer-tvOS-prefix.pch"; path = "../VersaPlayer-tvOS/VersaPlayer-tvOS-prefix.pch"; sourceTree = "<group>"; };
@@ -153,21 +153,21 @@
 		928AD20B9285E1E841BA9D7DE7AB2A62 /* VersaPlayer-macOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; name = "VersaPlayer-macOS.modulemap"; path = "../VersaPlayer-macOS/VersaPlayer-macOS.modulemap"; sourceTree = "<group>"; };
 		9679695D51A70BD5D3173598C02873A2 /* Pods-VersaPlayerTest_macOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-VersaPlayerTest_macOS-dummy.m"; sourceTree = "<group>"; };
 		979A2EEEFC89BAAB746EC0876D745B0B /* VersaPlayer-macOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = "VersaPlayer-macOS-Info.plist"; path = "../VersaPlayer-macOS/VersaPlayer-macOS-Info.plist"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A0E30AAB07B3AFC617B8091406AF67E0 /* VersaPlayer-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "VersaPlayer-iOS.modulemap"; sourceTree = "<group>"; };
-		A3D817BBC1F1D63AD751302FDB0BDA1D /* Pods_VersaPlayerTest_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VersaPlayerTest_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3D817BBC1F1D63AD751302FDB0BDA1D /* Pods_VersaPlayerTest_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_VersaPlayerTest_iOS.framework; path = "Pods-VersaPlayerTest_iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADC8B4A00B96E01B39FCFFB50CD4B3A3 /* VersaPlayer-iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "VersaPlayer-iOS-prefix.pch"; sourceTree = "<group>"; };
 		B05CB186D04F1427375B310CB47BB12B /* Pods-VersaPlayerTest_iOS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-VersaPlayerTest_iOS-acknowledgements.markdown"; sourceTree = "<group>"; };
 		B486FE63FCF7EEE103D22C3243347B61 /* Pods-VersaPlayerTest_tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VersaPlayerTest_tvOS.release.xcconfig"; sourceTree = "<group>"; };
-		B85AF755978AC3C038F1C76A206E56C8 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		B85AF755978AC3C038F1C76A206E56C8 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		BB847BF33EBB73DB4499BBDDFC86B234 /* VersaPlayerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VersaPlayerView.swift; path = VersaPlayer/Classes/Source/VersaPlayerView.swift; sourceTree = "<group>"; };
 		BF090CF8C5B5A96CE65D4A9D8C4F6FDF /* Pods-VersaPlayerTest_macOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-VersaPlayerTest_macOS-Info.plist"; sourceTree = "<group>"; };
 		BFFD8459C74C0E556511469DC5AE5003 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		C0185B374910DC35A4B26B15B3580F58 /* Pods-VersaPlayerTest_macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VersaPlayerTest_macOS.release.xcconfig"; sourceTree = "<group>"; };
 		C0BD67592547009AA4BE6619BE66CD77 /* Pods-VersaPlayerTest_tvOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-VersaPlayerTest_tvOS.modulemap"; sourceTree = "<group>"; };
-		C60A7D82FEACB536FBCD80CB0C51B329 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		C60A7D82FEACB536FBCD80CB0C51B329 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		CBABE10441E2D7444D95EFD2724B0440 /* Pods-VersaPlayerTest_tvOS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-VersaPlayerTest_tvOS-acknowledgements.markdown"; sourceTree = "<group>"; };
-		D142431EEDB5E981C4F1DCE33EBB6182 /* VersaPlayer.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = VersaPlayer.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		D142431EEDB5E981C4F1DCE33EBB6182 /* VersaPlayer.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = VersaPlayer.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		D2ABA954847954ED7242876E747446D9 /* Pods-VersaPlayerTest_macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VersaPlayerTest_macOS.debug.xcconfig"; sourceTree = "<group>"; };
 		D5AE7A0F9F33A2AF297B3D9423954F2A /* VersaPlayer-iOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "VersaPlayer-iOS-Info.plist"; sourceTree = "<group>"; };
 		DD5FDD090FEEC6D5937349946B123458 /* Pods-VersaPlayerTest_iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VersaPlayerTest_iOS-umbrella.h"; sourceTree = "<group>"; };
@@ -180,7 +180,7 @@
 		EFC7F89A0B698D3E5EF2C96D7A2826CE /* Pods-VersaPlayerTest_tvOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-VersaPlayerTest_tvOS-dummy.m"; sourceTree = "<group>"; };
 		F265EBB618FD1E94E8CF639A9E4FBE2A /* Pods-VersaPlayerTest_tvOS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-VersaPlayerTest_tvOS-acknowledgements.plist"; sourceTree = "<group>"; };
 		F4CF457B699E24FE50E30043D57519F4 /* Pods-VersaPlayerTest_macOS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-VersaPlayerTest_macOS-acknowledgements.plist"; sourceTree = "<group>"; };
-		F6DCA1253EF2AA1927B4F6DE67298D6E /* VersaPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VersaPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6DCA1253EF2AA1927B4F6DE67298D6E /* VersaPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = VersaPlayer.framework; path = "VersaPlayer-tvOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7387249B15813729C81D51D084184C1 /* VersaPlayerMediaTrack.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = VersaPlayerMediaTrack.swift; sourceTree = "<group>"; };
 		FEFF06A276C726B8DE188EC3A53EB22A /* VersaPlayer-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "VersaPlayer-iOS-umbrella.h"; sourceTree = "<group>"; };
 		FF958F5A2DB24E4431D5F0958ED8F604 /* VersaPlayer-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "VersaPlayer-iOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -264,6 +264,7 @@
 				7FF8D8267C85B69320B5293B19F31D49 /* VersaPlayerItem.swift */,
 				F7387249B15813729C81D51D084184C1 /* VersaPlayerMediaTrack.swift */,
 			);
+			name = Player;
 			path = Player;
 			sourceTree = "<group>";
 		};
@@ -383,6 +384,7 @@
 			children = (
 				2EDC04E4FB4F5B871834D4C1C5F06D7C /* VersaPlayerPlaybackError.swift */,
 			);
+			name = Enums;
 			path = Enums;
 			sourceTree = "<group>";
 		};
@@ -393,6 +395,7 @@
 				72AD7335CDC24F0D18C1D26DC61EB1A1 /* VersaPlayerExtension.swift */,
 				2F6B3053F39B3172A190FE334AD0FE7C /* VersaPlayerPlaybackDelegate.swift */,
 			);
+			name = Protocols;
 			path = Protocols;
 			sourceTree = "<group>";
 		};
@@ -403,6 +406,7 @@
 				07A0ECE5AC7082D254C34FAD72D2D957 /* VersaPlayerGestureRecieverView.swift */,
 				20DDD1F448AE67C7035461B61209F1D5 /* VersaPlayerGestureRecieverViewDelegate.swift */,
 			);
+			name = Core;
 			path = Core;
 			sourceTree = "<group>";
 		};
@@ -423,6 +427,7 @@
 				E37F995B85AE5A7A952EF1CE2C4FFF00 /* VersaStatefulButton.swift */,
 				045EA93AC13401BBABA4DA3CF1918084 /* VersaTimeLabel.swift */,
 			);
+			name = Controls;
 			path = Controls;
 			sourceTree = "<group>";
 		};
@@ -436,7 +441,6 @@
 				2BE3746113A51946B8DCF4EB1A8CBEDB /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
-			usesTabs = 0;
 		};
 		D8CE39782B3B4BE5C5EC4C4CC385A167 /* iOS */ = {
 			isa = PBXGroup;
@@ -468,6 +472,7 @@
 			children = (
 				DF75C3C655B85FD804BBFE38897946BF /* VersaPlayerRenderingView.swift */,
 			);
+			name = Rendering;
 			path = Rendering;
 			sourceTree = "<group>";
 		};
@@ -869,46 +874,7 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		211E8280EFA3629C22E42517EEE89624 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B486FE63FCF7EEE103D22C3243347B61 /* Pods-VersaPlayerTest_tvOS.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-VersaPlayerTest_tvOS/Pods-VersaPlayerTest_tvOS-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-VersaPlayerTest_tvOS/Pods-VersaPlayerTest_tvOS.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = appletvos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 12.0;
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		2709BB3D8A638286915EF77E29E10192 /* Debug */ = {
+		1DE89D5BB220E6CECC64103CC1B8E59B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D2ABA954847954ED7242876E747446D9 /* Pods-VersaPlayerTest_macOS.debug.xcconfig */;
 			buildSettings = {
@@ -949,6 +915,45 @@
 			};
 			name = Debug;
 		};
+		211E8280EFA3629C22E42517EEE89624 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B486FE63FCF7EEE103D22C3243347B61 /* Pods-VersaPlayerTest_tvOS.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-VersaPlayerTest_tvOS/Pods-VersaPlayerTest_tvOS-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-VersaPlayerTest_tvOS/Pods-VersaPlayerTest_tvOS.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		2970EE64128A2488F1E6983C9A52F04E /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FF958F5A2DB24E4431D5F0958ED8F604 /* VersaPlayer-iOS.release.xcconfig */;
@@ -985,6 +990,72 @@
 			};
 			name = Release;
 		};
+		2E30427E24C0D5884BAE52CEC8792F4D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+				TVOS_DEPLOYMENT_TARGET = 12.0;
+			};
+			name = Debug;
+		};
 		2E387C1C6AA212E9024517EBE44EE23E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 231AAE2B7CB183E4C1CA3729DC55A010 /* VersaPlayer-iOS.debug.xcconfig */;
@@ -1020,7 +1091,42 @@
 			};
 			name = Debug;
 		};
-		3E090B40967D5A05563809387FA40CAE /* Release */ = {
+		4BD1A3005176302D0F236283C6252191 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 69002142AEF900439F40DEF979FDD650 /* VersaPlayer-tvOS.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/VersaPlayer-tvOS/VersaPlayer-tvOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/VersaPlayer-tvOS/VersaPlayer-tvOS-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/VersaPlayer-tvOS/VersaPlayer-tvOS.modulemap";
+				PRODUCT_MODULE_NAME = VersaPlayer;
+				PRODUCT_NAME = VersaPlayer;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		57B79C3F52AA3A43D7EBC5A25D2C8194 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -1081,41 +1187,6 @@
 				TVOS_DEPLOYMENT_TARGET = 12.0;
 			};
 			name = Release;
-		};
-		4BD1A3005176302D0F236283C6252191 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 69002142AEF900439F40DEF979FDD650 /* VersaPlayer-tvOS.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/VersaPlayer-tvOS/VersaPlayer-tvOS-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/VersaPlayer-tvOS/VersaPlayer-tvOS-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/VersaPlayer-tvOS/VersaPlayer-tvOS.modulemap";
-				PRODUCT_MODULE_NAME = VersaPlayer;
-				PRODUCT_NAME = VersaPlayer;
-				SDKROOT = appletvos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.0;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
 		};
 		74D4FEB33CA410090F7B6C5CC926AD69 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1194,76 +1265,11 @@
 			};
 			name = Debug;
 		};
-		872316868A75CB8E6AECD158CC1A6BFC /* Debug */ = {
+		94245FF07957D06315704CBEBFA9F182 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0185B374910DC35A4B26B15B3580F58 /* Pods-VersaPlayerTest_macOS.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_DEBUG=1",
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				SYMROOT = "${SRCROOT}/../build";
-				TVOS_DEPLOYMENT_TARGET = 12.0;
-			};
-			name = Debug;
-		};
-		99FAC518795818BC4B70ED5B3F573BB4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = EF1FDD6FB67D2CF0FAC9B48A2C04F3AE /* VersaPlayer-macOS.debug.xcconfig */;
-			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -1277,26 +1283,28 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				GCC_PREFIX_HEADER = "Target Support Files/VersaPlayer-macOS/VersaPlayer-macOS-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/VersaPlayer-macOS/VersaPlayer-macOS-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-VersaPlayerTest_macOS/Pods-VersaPlayerTest_macOS-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = staticlib;
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MODULEMAP_FILE = "Target Support Files/VersaPlayer-macOS/VersaPlayer-macOS.modulemap";
-				PRODUCT_MODULE_NAME = VersaPlayer;
-				PRODUCT_NAME = VersaPlayer;
+				MODULEMAP_FILE = "Target Support Files/Pods-VersaPlayerTest_macOS/Pods-VersaPlayerTest_macOS.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 4.2;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		AF6257BAD493AE53EBDAFF137ED94C96 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1374,7 +1382,7 @@
 			};
 			name = Release;
 		};
-		E0866AB775EC941EA443FDBD3DE9C4ED /* Release */ = {
+		D24BB260FAAAC063636EDDC807DF17D1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8C8F8C056946907BC2222B44E1C2278A /* VersaPlayer-macOS.release.xcconfig */;
 			buildSettings = {
@@ -1412,11 +1420,10 @@
 			};
 			name = Release;
 		};
-		FF04B53C2C748B5B548780D2B90D8E45 /* Release */ = {
+		FD310ECA948276548ACADDFC6AE14121 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C0185B374910DC35A4B26B15B3580F58 /* Pods-VersaPlayerTest_macOS.release.xcconfig */;
+			baseConfigurationReference = EF1FDD6FB67D2CF0FAC9B48A2C04F3AE /* VersaPlayer-macOS.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -1430,28 +1437,26 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = "Target Support Files/Pods-VersaPlayerTest_macOS/Pods-VersaPlayerTest_macOS-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/VersaPlayer-macOS/VersaPlayer-macOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/VersaPlayer-macOS/VersaPlayer-macOS-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MODULEMAP_FILE = "Target Support Files/Pods-VersaPlayerTest_macOS/Pods-VersaPlayerTest_macOS.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				MODULEMAP_FILE = "Target Support Files/VersaPlayer-macOS/VersaPlayer-macOS.modulemap";
+				PRODUCT_MODULE_NAME = VersaPlayer;
+				PRODUCT_NAME = VersaPlayer;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 4.2;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
@@ -1477,8 +1482,8 @@
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				872316868A75CB8E6AECD158CC1A6BFC /* Debug */,
-				3E090B40967D5A05563809387FA40CAE /* Release */,
+				2E30427E24C0D5884BAE52CEC8792F4D /* Debug */,
+				57B79C3F52AA3A43D7EBC5A25D2C8194 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1504,8 +1509,8 @@
 		AF9337FDA6C2A514FF0BC5BBFC99A454 /* Build configuration list for PBXNativeTarget "Pods-VersaPlayerTest_macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2709BB3D8A638286915EF77E29E10192 /* Debug */,
-				FF04B53C2C748B5B548780D2B90D8E45 /* Release */,
+				1DE89D5BB220E6CECC64103CC1B8E59B /* Debug */,
+				94245FF07957D06315704CBEBFA9F182 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1513,8 +1518,8 @@
 		D6B27A320A9300375E0C696CFA27F64E /* Build configuration list for PBXNativeTarget "VersaPlayer-macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				99FAC518795818BC4B70ED5B3F573BB4 /* Debug */,
-				E0866AB775EC941EA443FDBD3DE9C4ED /* Release */,
+				FD310ECA948276548ACADDFC6AE14121 /* Debug */,
+				D24BB260FAAAC063636EDDC807DF17D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
