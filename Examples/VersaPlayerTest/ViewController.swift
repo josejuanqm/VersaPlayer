@@ -21,6 +21,7 @@ class ViewController: NSViewController {
         if let url = URL.init(string: "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8") {
             let item = VersaPlayerItem(url: url)
             playerView.autoplay = false
+            playerView.controls?.behaviour.shouldAutohide = true
             playerView.renderingView.playerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
             playerView.set(item: item)
         }
