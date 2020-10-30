@@ -1,3 +1,5 @@
+DEVELOPMENT_TEAM = VZ7659A4W3
+
 #include? "DEVELOPMENT_TEAM.xcconfig"
 
 // Create the file DEVELOPMENT_TEAM.xcconfig
