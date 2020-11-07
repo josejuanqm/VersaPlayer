@@ -135,14 +135,16 @@ extension VersaPlayer {
             }
         }
     }
-    
+    @objc private func playerDidEnd(_ notification:Notification){
+
+        if let item = notification.object as? AVPlayerItem, item == self.currentItem{
+            NotificationCenter.default.post(name: VersaPlayer.VPlayerNotificationName.didEnd.notification, object: self, userInfo: nil)
+            self.handler?.playbackDelegate?.playbackDidEnd(player: self)
+        }
+    }
     /// Prepare players playback delegate observers
     open func preparePlayerPlaybackDelegate() {
-      NotificationCenter.default.addObserver(forName: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil, queue: OperationQueue.main) { [weak self] (notification) in
-        guard let self = self else { return }
-        NotificationCenter.default.post(name: VersaPlayer.VPlayerNotificationName.didEnd.notification, object: self, userInfo: nil)
-        self.handler?.playbackDelegate?.playbackDidEnd(player: self)
-      }
+     NotificationCenter.default.addObserver(self, selector: #selector(playerDidEnd), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: self.currentItem)
       NotificationCenter.default.addObserver(forName: NSNotification.Name.AVPlayerItemTimeJumped, object: self, queue: OperationQueue.main) { [weak self] (notification) in
         guard let self = self else { return }
         self.handler?.playbackDelegate?.playbackDidJump(player: self)
