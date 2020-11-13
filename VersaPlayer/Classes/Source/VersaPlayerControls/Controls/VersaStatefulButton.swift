@@ -26,7 +26,7 @@ open class VersaStatefulButton: Button {
         didSet {
             if state == .on {
                 image = activeImage
-            }else {
+            } else {
                 image = inactiveImage
             }
         }
@@ -49,7 +49,7 @@ open class VersaStatefulButton: Button {
         #else
         if active {
             setImage(activeImage, for: .normal)
-        }else {
+        } else {
             setImage(inactiveImage, for: .normal)
         }
         #endif
