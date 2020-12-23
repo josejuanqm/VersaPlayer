@@ -24,7 +24,7 @@ open class VersaPlayerControls: View {
     public weak var handler: VersaPlayerView!
     
     /// VersaPlayerControlsBehaviour being used to validate ui
-    public var behaviour: VersaPlayerControlsBehaviour!
+    public var behaviour: VersaPlayerControlsBehaviour?
     
     #if os(iOS)
     public var airplayButton: MPVolumeView? = nil
@@ -100,7 +100,7 @@ open class VersaPlayerControls: View {
     #else
     
     open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        behaviour.hide()
+        behaviour?.hide()
     }
     
     open override func didMoveToSuperview() {
@@ -130,7 +130,7 @@ open class VersaPlayerControls: View {
         setSeekbarSlider(start: handler.player.startTime().seconds, end: handler.player.endTime().seconds, at: time.seconds)
         
         if !(handler.isSeeking || handler.isRewinding || handler.isForwarding) {
-            behaviour.update(with: time.seconds)
+            behaviour?.update(with: time.seconds)
         }
     }
     
@@ -357,7 +357,7 @@ open class VersaPlayerControls: View {
         let value = Double(sender.value)
         let time = CMTime(seconds: value, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
         handler.player.seek(to: time)
-        behaviour.update(with: time.seconds)
+        behaviour?.update(with: time.seconds)
     }
     
     /// Toggle PIP mode

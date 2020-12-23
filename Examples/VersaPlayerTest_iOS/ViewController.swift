@@ -19,7 +19,7 @@ class ViewController: UIViewController {
         
         playerView.layer.backgroundColor = UIColor.black.cgColor
         playerView.use(controls: controls)
-        playerView.controls?.behaviour.shouldAutohide = true
+        playerView.controls?.behaviour?.shouldAutohide = true
         
         if let url = URL.init(string: "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8") {
             let item = VersaPlayerItem(url: url)
