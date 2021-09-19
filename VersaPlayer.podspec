@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name             = 'VersaPlayer'
-    s.version          = '3.0.2'
+    s.version          = '3.0.1'
     s.summary          = 'Versatile AVPlayer implementation for iOS'
     
     s.description      = 'Versatile AVPlayer implementation for iOS.'
@@ -23,5 +23,5 @@ Pod::Spec.new do |s|
     s.tvos.deployment_target = '9.0'
     s.macos.deployment_target = '10.12'
     s.swift_version = '4.2'
-    s.source_files = 'VersaPlayer/Classes/**/*'
+    s.source_files = 'Sources/VersaPlayer/**/*'
 end
