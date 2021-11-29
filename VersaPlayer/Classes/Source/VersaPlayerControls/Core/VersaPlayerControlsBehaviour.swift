@@ -99,6 +99,10 @@ open class VersaPlayerControlsBehaviour {
     
     /// Hide the controls
     open func hide() {
+        guard shouldHideControls else {
+            return
+        }
+        
         if deactivationBlock != nil {
             deactivationBlock!(controls)
         }else {
@@ -109,9 +113,10 @@ open class VersaPlayerControlsBehaviour {
     
     /// Show the controls
     open func show() {
-        if !shouldShowControls {
+        guard shouldShowControls else {
             return
         }
+        
         activationTime = elapsedTime
         if activationBlock != nil {
             activationBlock!(controls)
