@@ -135,6 +135,10 @@ open class VersaPlayerControls: View {
     }
     
     public func setSeekbarSlider(start startValue: Double, end endValue: Double, at time: Double) {
+        let time = time.isNaN ? 0 : time
+        let startValue = startValue.isNaN ? 0 : startValue
+        let endValue = endValue.isNaN ? 0 : endValue
+        
         #if os(macOS)
         seekbarSlider?.minValue = startValue
         seekbarSlider?.maxValue = endValue
