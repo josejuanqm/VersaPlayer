@@ -234,8 +234,10 @@ extension VersaPlayer {
                 isBuffering = false
                 NotificationCenter.default.post(name: VersaPlayer.VPlayerNotificationName.endBuffering.notification, object: self, userInfo: nil)
                 handler.playbackDelegate?.endBuffering(player: self)
-                guard  let item = self.currentItem as? VersaPlayerItem else { return  }
-                NotificationCenter.default.post(name: VersaPlayer.VPlayerNotificationName.timeChanged.notification, object: self, userInfo: [VPlayerNotificationInfoKey.time.rawValue: item.currentTime()])
+                
+//              iPhone XR, iOS 16.1.1, for this notification seek slider is updated with bad values, and not able to slide also
+//                guard  let item = self.currentItem as? VersaPlayerItem else { return  }
+//                NotificationCenter.default.post(name: VersaPlayer.VPlayerNotificationName.timeChanged.notification, object: self, userInfo: [VPlayerNotificationInfoKey.time.rawValue: item.currentTime()])
             case "playbackBufferFull":
                 isBuffering = false
                 NotificationCenter.default.post(name: VersaPlayer.VPlayerNotificationName.endBuffering.notification, object: self, userInfo: nil)
