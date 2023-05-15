@@ -189,8 +189,8 @@ open class VersaPlayerView: View, PIPProtocol {
     /// - Parameters:
     ///     - enabled: Whether or not to enable
     open func setNativePip(enabled: Bool) {
-        if pipController == nil && renderingView != nil {
-            let controller = AVPictureInPictureController(playerLayer: renderingView!.playerLayer)
+        if pipController == nil, let renderingView = renderingView {
+            let controller = AVPictureInPictureController(playerLayer: renderingView.playerLayer)
             controller?.delegate = self
             pipController = controller
         }

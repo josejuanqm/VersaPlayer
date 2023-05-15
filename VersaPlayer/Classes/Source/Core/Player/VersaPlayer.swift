@@ -84,23 +84,20 @@ open class VersaPlayer: AVPlayer, AVAssetResourceLoaderDelegate {
             asset.resourceLoader.setDelegate(self, queue: queue)
         }
         
-        if currentItem != nil {
-            currentItem!.removeObserver(self, forKeyPath: "playbackBufferEmpty")
-            currentItem!.removeObserver(self, forKeyPath: "playbackLikelyToKeepUp")
-            currentItem!.removeObserver(self, forKeyPath: "playbackBufferFull")
-            currentItem!.removeObserver(self, forKeyPath: "status")
-        }
+        currentItem?.removeObserver(self, forKeyPath: "playbackBufferEmpty")
+        currentItem?.removeObserver(self, forKeyPath: "playbackLikelyToKeepUp")
+        currentItem?.removeObserver(self, forKeyPath: "playbackBufferFull")
+        currentItem?.removeObserver(self, forKeyPath: "status")
         
         super.replaceCurrentItem(with: item)
+        
         NotificationCenter.default.post(name: VersaPlayer.VPlayerNotificationName.assetLoaded.notification, object: self, userInfo: nil)
-        if item != nil {
-            currentItem!.addObserver(self, forKeyPath: "playbackBufferEmpty", options: .new, context: nil)
-            currentItem!.addObserver(self, forKeyPath: "playbackLikelyToKeepUp", options: .new, context: nil)
-            currentItem!.addObserver(self, forKeyPath: "playbackBufferFull", options: .new, context: nil)
-            currentItem!.addObserver(self, forKeyPath: "status", options: .new, context: nil)
-        }
+        
+        currentItem?.addObserver(self, forKeyPath: "playbackBufferEmpty", options: .new, context: nil)
+        currentItem?.addObserver(self, forKeyPath: "playbackLikelyToKeepUp", options: .new, context: nil)
+        currentItem?.addObserver(self, forKeyPath: "playbackBufferFull", options: .new, context: nil)
+        currentItem?.addObserver(self, forKeyPath: "status", options: .new, context: nil)
     }
-    
 }
 
 extension VersaPlayer {
