@@ -64,7 +64,11 @@ open class VersaPlayerGestureRecieverView: View {
         
         pinchGesture = NSMagnificationGestureRecognizer(target: self, action: #selector(pinchHandler(with:)))
         panGesture = NSPanGestureRecognizer(target: self, action: #selector(panHandler(with:)))
-        panGesture?.numberOfTouchesRequired = 1
+        if #available(OSX 10.12.2, *) {
+            panGesture?.numberOfTouchesRequired = 1
+        } else {
+            // Fallback on earlier versions
+        }
         
         addGestureRecognizer(tapGesture!)
         addGestureRecognizer(doubleTapGesture!)
@@ -122,9 +126,7 @@ open class VersaPlayerGestureRecieverView: UIView {
     public var panGestureInitialPoint: CGPoint = CGPoint.zero
 
     deinit {
-      #if DEBUG
-          print("3 \(String(describing: self))")
-      #endif
+      
     }
 
     override open func didMoveToSuperview() {

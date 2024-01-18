@@ -26,9 +26,13 @@ open class VersaPlayerItem: AVPlayerItem {
     }
 
     deinit {
-      #if DEBUG
-          print("8 \(String(describing: self))")
-      #endif
+     
+    }
+    
+    private func convert(with mediaSelectionOption: AVMediaSelectionOption, group: AVMediaSelectionGroup) -> VersaPlayerMediaTrack {
+        let title = mediaSelectionOption.displayName
+        let language = mediaSelectionOption.extendedLanguageTag ?? "none"
+        return VersaPlayerMediaTrack(option: mediaSelectionOption, group: group, name: title, language: language)
     }
 
     private func tracks(for characteristic: AVMediaCharacteristic) -> [VersaPlayerMediaTrack] {
@@ -37,11 +41,18 @@ open class VersaPlayerItem: AVPlayerItem {
         }
         let options = group.options
         let tracks = options.map { (option) -> VersaPlayerMediaTrack in
-            let title = option.displayName
-            let language = option.extendedLanguageTag ?? "none"
-            return VersaPlayerMediaTrack(option: option, group: group, name: title, language: language)
+            return convert(with: option, group: group)
         }
         return tracks
+    }
+    
+    public func currentMediaTrack(for characteristic: AVMediaCharacteristic) -> VersaPlayerMediaTrack? {
+        
+        if let tracks = asset.mediaSelectionGroup(forMediaCharacteristic: characteristic), let currentTrack = currentMediaSelection.selectedMediaOption(in: tracks) {
+            return convert(with: currentTrack, group: tracks)
+        }
+        
+        return nil
     }
     
 }

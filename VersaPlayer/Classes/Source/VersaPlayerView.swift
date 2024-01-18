@@ -31,11 +31,7 @@ public protocol PIPProtocol {}
 open class VersaPlayerView: View, PIPProtocol {
     
     deinit {
-      player.replaceCurrentItem(with: nil)
-
-      #if DEBUG
-          print("1 \(String(describing: self))")
-      #endif
+        player.replaceCurrentItem(with: nil)
     }
 
     /// VersaPlayer extension dictionary
@@ -57,7 +53,7 @@ open class VersaPlayerView: View, PIPProtocol {
     public weak var decryptionDelegate: VersaPlayerDecryptionDelegate? = nil
     
     /// VersaPlayer initial container
-    private var nonFullscreenContainer: View!
+    private weak var nonFullscreenContainer: View!
     
     #if os(iOS)
     /// AVPictureInPictureController instance
@@ -90,12 +86,12 @@ open class VersaPlayerView: View, PIPProtocol {
     
     /// Whether Player is Fast Forwarding
     public var isForwarding: Bool {
-        return player.rate > 1
+        return player.rate > 1.0
     }
     
     /// Whether Player is Rewinding
     public var isRewinding: Bool {
-        return player.rate < 0
+        return player.rate < 0.0
     }
     
     public override init(frame: CGRect) {
@@ -113,7 +109,7 @@ open class VersaPlayerView: View, PIPProtocol {
     ///
     /// - Parameters:
     ///     - controls: VersaPlayerControls instance used to display controls
-    ///     - gestureReciever: Optional gesture reciever view to be used to recieve gestures
+    ///     - gestureReciever: Optional gesture reciever view to be used to receive gestures
     public func use(controls: VersaPlayerControls, with gestureReciever: VersaPlayerGestureRecieverView? = nil) {
         self.controls = controls
         let coordinator = VersaPlayerControlsCoordinator()
@@ -122,7 +118,8 @@ open class VersaPlayerView: View, PIPProtocol {
         coordinator.gestureReciever = gestureReciever
         controls.controlsCoordinator = coordinator
         #if os(macOS)
-        addSubview(coordinator, positioned: NSWindow.OrderingMode.above, relativeTo: renderingView)
+        let parent = self.superview
+        parent?.addSubview(coordinator, positioned: NSWindow.OrderingMode.above, relativeTo: renderingView)
         #else
         addSubview(coordinator)
         bringSubviewToFront(coordinator)
@@ -197,7 +194,7 @@ open class VersaPlayerView: View, PIPProtocol {
         
         if enabled {
             pipController?.startPictureInPicture()
-        }else {
+        } else {
             pipController?.stopPictureInPicture()
         }
     }
@@ -225,7 +222,7 @@ open class VersaPlayerView: View, PIPProtocol {
                 layout(view: self, into: window)
             }
             #endif
-        }else {
+        } else {
             removeFromSuperview()
             layout(view: self, into: nonFullscreenContainer)
         }
@@ -268,7 +265,7 @@ open class VersaPlayerView: View, PIPProtocol {
     @IBAction open func togglePlayback(sender: Any? = nil) {
         if isPlaying {
             pause()
-        }else {
+        } else {
             play()
         }
     }

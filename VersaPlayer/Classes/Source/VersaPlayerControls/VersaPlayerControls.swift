@@ -84,10 +84,6 @@ open class VersaPlayerControls: View {
         NotificationCenter.default.removeObserver(self, name: VersaPlayer.VPlayerNotificationName.pause.notification, object: nil)
         NotificationCenter.default.removeObserver(self, name: VersaPlayer.VPlayerNotificationName.buffering.notification, object: nil)
         NotificationCenter.default.removeObserver(self, name: VersaPlayer.VPlayerNotificationName.endBuffering.notification, object: nil)
-
-        #if DEBUG
-            print("4 \(String(describing: self))")
-        #endif
     }
     
     #if os(macOS)
@@ -139,6 +135,10 @@ open class VersaPlayerControls: View {
     }
     
     public func setSeekbarSlider(start startValue: Double, end endValue: Double, at time: Double) {
+        let time = time.isNaN ? 0 : time
+        let startValue = startValue.isNaN ? 0 : startValue
+        let endValue = endValue.isNaN ? 0 : endValue
+        
         #if os(macOS)
         seekbarSlider?.minValue = startValue
         seekbarSlider?.maxValue = endValue
@@ -184,7 +184,7 @@ open class VersaPlayerControls: View {
         prepareSeekbar()
         seekbarSlider?.target = self
         seekbarSlider?.action = #selector(playheadChanged(with:))
-        
+        preparePlaybackButton()
         #else
         
         playPauseButton?.addTarget(self, action: #selector(togglePlayback), for: .touchUpInside)
@@ -205,7 +205,7 @@ open class VersaPlayerControls: View {
         if !AVPictureInPictureController.isPictureInPictureSupported() {
             pipButton?.alpha = 0.3
             pipButton?.isUserInteractionEnabled = false
-        }else {
+        } else {
             pipButton?.addTarget(self, action: #selector(togglePip), for: .touchUpInside)
         }
         
@@ -342,6 +342,7 @@ open class VersaPlayerControls: View {
     /// - Parameters:
     ///     - sender: NSSlider that updated
     @IBAction open func playheadChanged(with sender: NSSlider) {
+        handler.pause()
         handler.isSeeking = true
         let value = sender.doubleValue
         let time = CMTime(seconds: value, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
@@ -386,11 +387,19 @@ open class VersaPlayerControls: View {
         if handler.isPlaying {
             playPauseButton?.set(active: false)
             handler.pause()
-        }else {
+        } else {
             if handler.playbackDelegate?.playbackShouldBegin(player: handler.player) ?? true {
                 playPauseButton?.set(active: true)
                 handler.play()
             }
+        }
+    }
+    
+    private func preparePlaybackButton(){
+        if handler.isPlaying {
+            playPauseButton?.set(active: true )
+        } else {
+            playPauseButton?.set(active: false)
         }
     }
     
@@ -402,10 +411,10 @@ open class VersaPlayerControls: View {
                 handler.player.rate = 1
                 if wasPlayingBeforeRewinding {
                     handler.play()
-                }else {
+                } else {
                     handler.pause()
                 }
-            }else {
+            } else {
                 playPauseButton?.set(active: false)
                 rewindButton?.set(active: true)
                 wasPlayingBeforeRewinding = handler.isPlaying
@@ -425,10 +434,10 @@ open class VersaPlayerControls: View {
                 handler.player.rate = 1
                 if wasPlayingBeforeForwarding {
                     handler.play()
-                }else {
+                } else {
                     handler.pause()
                 }
-            }else {
+            } else {
                 playPauseButton?.set(active: false)
                 forwardButton?.set(active: true)
                 wasPlayingBeforeForwarding = handler.isPlaying

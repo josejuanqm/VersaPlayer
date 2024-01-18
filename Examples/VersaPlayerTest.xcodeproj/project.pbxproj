@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -49,6 +49,8 @@
 		11C1C19D2191550F00A4F7D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2FFE1673769B2B47DCD4E8E6 /* Pods-VersaPlayerTest_macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VersaPlayerTest_macOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-VersaPlayerTest_macOS/Pods-VersaPlayerTest_macOS.release.xcconfig"; sourceTree = "<group>"; };
 		32F71FE5298C24E4B80EDF06 /* Pods-VersaPlayerTest_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VersaPlayerTest_iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-VersaPlayerTest_iOS/Pods-VersaPlayerTest_iOS.release.xcconfig"; sourceTree = "<group>"; };
+		3DF592DA24CDC022002AB260 /* DEVELOPMENT_TEAM.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DEVELOPMENT_TEAM.xcconfig; sourceTree = "<group>"; };
+		3DF592DB24CDC022002AB260 /* Shared.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Shared.xcconfig; sourceTree = "<group>"; };
 		6E00691A79E2D954E582531F /* Pods_VersaPlayerTest_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VersaPlayerTest_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A283B97A087CE29BBF21C985 /* Pods-VersaPlayerTest_tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VersaPlayerTest_tvOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VersaPlayerTest_tvOS/Pods-VersaPlayerTest_tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		B16666E571659532CAD4D771 /* Pods-VersaPlayerTest_macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VersaPlayerTest_macOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VersaPlayerTest_macOS/Pods-VersaPlayerTest_macOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 		11C1C11721912DB200A4F7D5 = {
 			isa = PBXGroup;
 			children = (
+				3DF592D924CDC022002AB260 /* Xcode-config */,
 				11C1C12221912DB200A4F7D5 /* VersaPlayerTest */,
 				11C1C16A219146CF00A4F7D5 /* VersaPlayerTest_iOS */,
 				11C1C1932191550D00A4F7D5 /* VersaPlayerTest_tvOS */,
@@ -96,6 +99,7 @@
 				1646735634FC095C8EC1A193 /* Frameworks */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		11C1C12121912DB200A4F7D5 /* Products */ = {
 			isa = PBXGroup;
@@ -153,6 +157,15 @@
 				07B70CAE23E36CCC7131A726 /* Pods_VersaPlayerTest_tvOS.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3DF592D924CDC022002AB260 /* Xcode-config */ = {
+			isa = PBXGroup;
+			children = (
+				3DF592DA24CDC022002AB260 /* DEVELOPMENT_TEAM.xcconfig */,
+				3DF592DB24CDC022002AB260 /* Shared.xcconfig */,
+			);
+			path = "Xcode-config";
 			sourceTree = "<group>";
 		};
 		A7FBCA3A635E05A7FC92317E /* Pods */ = {
@@ -322,16 +335,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-VersaPlayerTest_iOS/Pods-VersaPlayerTest_iOS-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/VersaPlayer-iOS/VersaPlayer.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-VersaPlayerTest_iOS/Pods-VersaPlayerTest_iOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VersaPlayer.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-VersaPlayerTest_iOS/Pods-VersaPlayerTest_iOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -344,16 +352,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-VersaPlayerTest_macOS/Pods-VersaPlayerTest_macOS-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/VersaPlayer-macOS/VersaPlayer.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-VersaPlayerTest_macOS/Pods-VersaPlayerTest_macOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VersaPlayer.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-VersaPlayerTest_macOS/Pods-VersaPlayerTest_macOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -432,16 +435,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-VersaPlayerTest_tvOS/Pods-VersaPlayerTest_tvOS-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/VersaPlayer-tvOS/VersaPlayer.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-VersaPlayerTest_tvOS/Pods-VersaPlayerTest_tvOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VersaPlayer.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-VersaPlayerTest_tvOS/Pods-VersaPlayerTest_tvOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -518,6 +516,7 @@
 /* Begin XCBuildConfiguration section */
 		11C1C12E21912DB300A4F7D5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3DF592DB24CDC022002AB260 /* Shared.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -567,7 +566,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -579,6 +578,7 @@
 		};
 		11C1C12F21912DB300A4F7D5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3DF592DB24CDC022002AB260 /* Shared.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -622,7 +622,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -637,9 +637,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = VersaPlayerTest/VersaPlayerTest.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = VZ7659A4W3;
+				DEVELOPMENT_TEAM = "";
 				EXPANDED_CODE_SIGN_IDENTITY = "-";
 				EXPANDED_CODE_SIGN_IDENTITY_NAME = "-";
 				INFOPLIST_FILE = VersaPlayerTest/Info.plist;
@@ -659,9 +660,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = VersaPlayerTest/VersaPlayerTest.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = VZ7659A4W3;
+				DEVELOPMENT_TEAM = "";
 				EXPANDED_CODE_SIGN_IDENTITY = "-";
 				EXPANDED_CODE_SIGN_IDENTITY_NAME = "-";
 				INFOPLIST_FILE = VersaPlayerTest/Info.plist;
@@ -682,7 +684,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VZ7659A4W3;
 				INFOPLIST_FILE = VersaPlayerTest_ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -704,7 +705,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VZ7659A4W3;
 				INFOPLIST_FILE = VersaPlayerTest_ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -727,7 +727,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VZ7659A4W3;
 				INFOPLIST_FILE = VersaPlayerTest_tvOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -749,7 +748,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VZ7659A4W3;
 				INFOPLIST_FILE = VersaPlayerTest_tvOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

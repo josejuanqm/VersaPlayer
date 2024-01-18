@@ -18,9 +18,7 @@ public class VersaPlayerCaptionStyling {
     }
 
     deinit {
-      #if DEBUG
-          print("10 \(String(describing: self))")
-      #endif
+      
     }
 
     /// Set attribute

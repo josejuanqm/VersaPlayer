@@ -35,3 +35,6 @@ Carthage/Build
 # `pod install` in .travis.yml
 #
 # Pods/
+
+# User-specific xcconfig files
+Examples/Xcode-config/DEVELOPMENT_TEAM.xcconfig
