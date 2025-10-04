@@ -1,4 +1,3 @@
-[![CI Status](https://img.shields.io/travis/jose.juan.qm@gmail.com/VersaPlayer.svg?style=flat)](https://travis-ci.org/jose.juan.qm@gmail.com/VersaPlayer)
 [![Version](https://img.shields.io/cocoapods/v/VersaPlayer.svg?style=flat)](https://cocoapods.org/pods/VersaPlayer)
 [![License](https://img.shields.io/cocoapods/l/VersaPlayer.svg?style=flat)](https://cocoapods.org/pods/VersaPlayer)
 [![Platform](https://img.shields.io/cocoapods/p/VersaPlayer.svg?style=flat)](https://cocoapods.org/pods/VersaPlayer)
@@ -290,6 +289,10 @@ Full documentation avilable https://josejuanqm.github.io/Libraries-Documentation
 ## Author
 
 Jose Quintero - jose.juan.qm@gmail.com
+
+## Star History
+
+<iframe style="width:100%;height:auto;min-width:600px;min-height:400px;" src="https://www.star-history.com/embed?secret=Z2hwX0I0dnN2SWJJOU9wY3VGSUJBMFBHTGNDU0lYamhJQzFwaTdQZQ==#josejuanqm/VersaPlayer&Date" frameBorder="0"></iframe>
 
 ## Contributors
 
