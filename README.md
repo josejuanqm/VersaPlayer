@@ -292,7 +292,7 @@ Jose Quintero - jose.juan.qm@gmail.com
 
 ## Star History
 
-<iframe style="width:100%;height:auto;min-width:600px;min-height:400px;" src="https://www.star-history.com/embed?secret=Z2hwX0I0dnN2SWJJOU9wY3VGSUJBMFBHTGNDU0lYamhJQzFwaTdQZQ==#josejuanqm/VersaPlayer&Date" frameBorder="0"></iframe>
+[![Star History Chart](https://api.star-history.com/svg?repos=josejuanqm/VersaPlayer&type=Date)](https://www.star-history.com/#josejuanqm/VersaPlayer&Date)
 
 ## Contributors
 
