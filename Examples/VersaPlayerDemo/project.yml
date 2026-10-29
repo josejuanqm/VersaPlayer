@@ -1,0 +1,29 @@
+name: VersaPlayerDemo
+options:
+  bundleIdPrefix: com.versaplayer
+  deploymentTarget:
+    iOS: "17.0"
+    tvOS: "17.0"
+    macOS: "14.0"
+    visionOS: "1.0"
+packages:
+  VersaPlayer:
+    path: ../..
+targets:
+  VersaPlayerDemo:
+    type: application
+    supportedDestinations: [iOS, tvOS, macOS, visionOS]
+    sources: [App]
+    dependencies:
+      - package: VersaPlayer
+    info:
+      path: App/Info.plist
+      properties:
+        UILaunchScreen: {}
+        UIBackgroundModes: [audio]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.versaplayer.demo
+        SWIFT_VERSION: "6.0"
+        CODE_SIGN_STYLE: Automatic
+        ENABLE_PREVIEWS: YES
