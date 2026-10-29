@@ -38,3 +38,7 @@ Carthage/Build
 
 # User-specific xcconfig files
 Examples/Xcode-config/DEVELOPMENT_TEAM.xcconfig
+# SwiftPM
+.build/
+.swiftpm/
+Examples/VersaPlayerDemo/VersaPlayerDemo.xcodeproj/

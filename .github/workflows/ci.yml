@@ -1,0 +1,26 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test (macOS)
+        run: swift test
+      - name: Build all platforms
+        run: |
+          for destination in "generic/platform=iOS Simulator" "generic/platform=tvOS Simulator" "generic/platform=visionOS Simulator"; do
+            xcodebuild -scheme VersaPlayer -destination "$destination" build | tail -1
+          done
+      - name: Build demo app
+        run: |
+          brew install xcodegen
+          cd Examples/VersaPlayerDemo
+          xcodegen generate
+          xcodebuild -project VersaPlayerDemo.xcodeproj -scheme VersaPlayerDemo \
+            -destination "generic/platform=iOS Simulator" CODE_SIGNING_ALLOWED=NO build | tail -1
